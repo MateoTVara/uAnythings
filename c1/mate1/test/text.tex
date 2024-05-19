@@ -1,0 +1,68 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\title{\textbf{La recta en $R^2$}}
+\author{Luis Huatay}
+
+\begin{document}
+\maketitle
+\section{Retos - Semana 1-s1} Plano cartesiano, puntos medios y distancia entre dos puntos.
+\subsection{Ejercicio 1.}
+
+\textsl{\textbf{Demostrar que los puntos $A(0,1), B(3,5), C(7,2), D(4,-2)$ son los vértices de un cuadrado.}}
+\\
+\\
+De acuerdo al gráfico:
+\begin{figure}[h]
+\centering
+  \begin{tikzpicture}
+    %ejex
+    \draw[thick] (-0.5,0) -- (8,0) node[right]{$x$};
+    %ejey
+    \draw[thick] (0,-2.5) -- (0,5.5) node[above]{$y$};
+    %cuadrícula
+    \draw[help lines,gray,dashed,very thin] (-0.5,-2.5) grid (8,5.5);
+    %puntos
+    \draw [fill=black] (0,1) circle [radius=0.1] node[above left]{$A(0,1)$};
+    \draw [fill=black] (3,5) circle [radius=0.1] node[above right]{$B(3,5)$};
+    \draw [fill=black] (7,2) circle [radius=0.1] node[above right]{$C(7,2)$};
+    \draw [fill=black] (4,-2) circle [radius=0.1] node[above right]{$D(4,-2)$};
+    %líneas
+    \draw[thick, red] (0,1) -- (3,5) -- (7,2) -- (4,-2) -- cycle;
+  \end{tikzpicture}
+  \caption{Representación gráfica}
+  \label{fig:my_label}
+\end{figure}
+\\
+\\
+
+Para demostrar ello se consideralo siguiente:
+\begin{itemize}
+    \item Cada lado debe medir lo mismo.
+    \item Los ángulos internos deben medir $90$\textdegree.
+\end{itemize}
+Para el primer aspecto, se calcula la distancia entre los puntos:
+\begin{itemize}
+    \item $AB = \sqrt{(3-0)^2 + (5-1)^2} = \sqrt{9+16} = \sqrt{25} = 5$
+    \item $BC = \sqrt{(7-3)^2 + (2-5)^2} = \sqrt{16+9} = \sqrt{25} = 5$
+    \item $CD = \sqrt{(4-7)^2 + (-2-2)^2} = \sqrt{9+16} = \sqrt{25} = 5$
+    \item $DA = \sqrt{(0-4)^2 + (1+2)^2} = \sqrt{16+9} = \sqrt{25} = 5$
+\end{itemize}
+Para el segundo aspecto se considera la propiedad:
+\begin{equation*}
+  L_1 \perp L_2 \leftrightarrow m1 \cdot m2 = -1
+\end{equation*}
+Donde $m1$ y $m2$ son las pendientes de las rectas $L_1$ y $L_2$ respectivamente.\\
+Para ello se calcula la pendiente de cada lado:
+\begin{itemize}
+    \item $m_{AB} * m_{BC} = \frac{5-1}{3-0} * \frac{2-5}{7-3} = \frac{-12}{12} = -1$
+    \item $m_{BC} * m_{CD} = \frac{2-5}{7-3} * \frac{-2-2}{4-7} = \frac{12}{-12} = -1$
+    \item $m_{CD} * m_{DA} = \frac{-2-2}{4-7} * \frac{-2-1}{4-0} = \frac{12}{-12} = -1$
+    \item $m_{DA} * m_{AB} = \frac{-2-1}{4-0} * \frac{5-1}{3-0} = \frac{-12}{12} = -1$
+\end{itemize}
+\end{document}
