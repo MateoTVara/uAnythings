@@ -1,0 +1,372 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\title{\textbf{Ecuaciones lineales y sistemas de ecuaciones por métodos algebraicos}}
+\author{Luis Huatay}
+
+\begin{document}
+\newgeometry{top=9cm}
+\maketitle
+\begin{center}
+  Resolución de los retos de la semana 11, sesión 1 y 2.
+\end{center}
+\restoregeometry
+
+\newpage
+\newgeometry{
+  top=3cm,
+  bottom=3cm
+}
+\section{Sesión 1}
+\subsection{Resolver la ecuación e indicar su conjunto solución:}
+\begin{align*}
+  2x - \frac{2-3x}{4} - \frac{5+x}{5} &= 2(x-3) - \frac{3}{5}\\
+  \left(\frac{20}{20}\right) 2x - \left(\frac{5}{5}\right)\frac{2-3x}{4} - \left(\frac{4}{4}\right) \frac{5+x}{5} &= 2x - 6 - \frac{3}{5}\\
+  \frac{40x - \left(10-15x\right) - \left(20+4x\right)}{20} &= 2x - 6 - \frac{3}{5}\\
+  \frac{40x - 10 + 15x - 20 - 4x}{20} &= 2x - 6 - \frac{3}{5}\\
+  40x - 10 + 15x - 20 - 4x &= 20\left(2x - 6 - \frac{3}{5}\right)\\
+  \cancel{40x} - 30 + 11x &= \cancel{40x} - 120 - 12\\
+  11x - \cancel{30 + 30} &= -132 +30\\
+  11x &= -102\\
+  x &= -\frac{102}{11} & \therefore \boxed{C.S. = \left\{-\frac{102}{11}\right\}}
+\end{align*}
+\\
+\subsection{Resolver la ecuación e indicar su conjunto solución:}
+\begin{align*}
+  \frac{3x-2}{4} - \frac{5x-1}{3} &= \frac{2x-7}{6}\\
+  \left(\frac{3}{3}\right)\frac{3x-2}{4} - \left(\frac{4}{4}\right)\frac{5x-1}{3} &= \frac{2x-7}{6}\\
+  \frac{9x-6-20x+4}{12} &= \frac{2x-7}{6}\\
+  -11x - 2 &= \cancel{12}\left(\frac{2x-7}{\cancel{6}}\right)\\
+  -11x - 2 &= 2 \left(2x - 7\right)\\
+  -11x - 2 &= 4x - 14\\
+  -11x - 4x &= -14 + 2\\
+  -15x &= -12\\
+  x &= \frac{12}{15} & \therefore \boxed{C.S. = \left\{-\frac{12}{15}\right\}}
+\end{align*}
+\newpage
+\subsection{Una compañía de telefonía celular cobra una cuota mensual de 10 soles por los primeros 15 Gb de consumo y 1.5 soles por cada Gb adicional. La cuenta de Jorge en un mes es de 70 soles. ¿Cuántos Gb ha consumido Jorge durante el mes?}
+\begin{multicols}{2}
+  \textbf{Considerese:}
+  \begin{align*}
+  cuota\ mensual &= 70 \\
+  15\ Gb\ iniciales &= 10 \\
+  Gb\ adicional &= 1.5 = \frac{3}{2}
+  \end{align*}
+
+  \columnbreak % Este comando divide las columnas
+
+  \textbf{Luego:}
+  \begin{align*}
+    60 &= \frac{3}{2} x \\
+    120 &= 3x \\
+    x &= 40
+  \end{align*}
+\end{multicols}
+\begin{align*}
+  \textbf{Finalmente:}\\
+  Cantidad\ de\ Gb\ adicionales &= 40\\
+  Cantidad\ de\ Gb\ primer mes &= 15\\
+  \therefore Cantidad\ de\ Gb\ total &= 15 + 40 = 55
+\end{align*}
+\subsection{Carmen está ahorrando para comprarse un departamento. Ella llega a heredar algún dinero de un familiar cercano, luego esto lo combina con 22 000 dólares que tenía ahorrado y duplica el total en una inversión afortunada. Ella termina con 135 000 dólares, que es justo lo que debe pagar para comprarse el departamento. ¿Cuánto heredó?}
+\begin{multicols}{2}
+  \textbf{Considerese:}
+  \begin{align*}
+  Herencia &= x \\
+  Ahorro &= 22000\\
+  Total &= 2y = 135000
+  \end{align*}
+
+  \columnbreak % Este comando divide las columnas
+
+  \textbf{Luego:}
+  \begin{align*}
+    Ahorro + x &= 2y\\
+  \end{align*}
+\end{multicols}
+
+\begin{align*}
+  \textbf{Finalmente:}\\
+  22000 + x &= 2y \\
+  22000 + x &= 67500 \\
+  x &= 45500\\
+  & \therefore Se\ hereda\ inicialmente\ 45500
+\end{align*}
+\newpage
+\newgeometry{
+  top=1.5cm,
+  bottom=1.5cm
+}
+\section{Sesión 2}
+\subsection{Resolver el sistema de ecuaciones lineales mediante métodos algebraicos:}
+\vspace{-1cm}
+\begin{align*}
+  \left.
+    \begin{array}{rcl}
+      x-y+2z &= &2\\
+      3x+y+5z &= &8\\
+      2x-y-2z &= &-7
+    \end{array}
+  \right\}
+\end{align*}
+\begin{multicols}{2}
+  \textbf{Resolviendo en 1 y 2:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        x-y+2z &= &2\\
+        3x+y+5z &= &8
+      \end{array}
+    \right\} = 4x + 7z &= 10
+  \end{align*}
+  \textbf{Resolviendo en 2 y 3:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        3x+y+5z &= &8\\
+        2x-y-2z &= &-7
+      \end{array}
+    \right\} = 5x + 3z &= 1
+  \end{align*}
+  \textbf{Calculando x:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        4x + 7z &= 10\\
+        5x + 3z &= 1
+      \end{array}
+    \right\}\\
+    x = \frac{30 - 7}{12 - 35} &= \frac{23}{-23}\\
+    &\boxed{x = -1}
+  \end{align*}
+
+  \columnseprule=1pt 
+  \columnbreak
+
+  \textbf{Calculando z:}
+  \begin{align*}
+    5x + 3z &= 1\\
+        5\left(-1\right) + 3z &= 1\\
+        -5 + 3z &= 1\\
+        3z &= 6\\
+        &\boxed{z = 2}
+  \end{align*}
+  \textbf{Luego reemplanzando x, z en 2:}
+  \begin{align*}
+    3x+y+5z &= 8\\
+    3\left(-1\right) + y + 5\left(2\right) &= 8\\
+    -3 + y + 10 &= 8\\
+    &\boxed{y = 1}
+  \end{align*}
+\end{multicols}
+\textbf{Finalmente:}
+\begin{align*}
+  C.S. \left(x,y,z\right) = \left\{(-1, 1, 2)\right\}
+\end{align*}
+\subsection{Resolver el sistema de ecuaciones lineales mediante métodos algebraicos:}
+\vspace{-1cm}
+\begin{align*}
+  \left.
+    \begin{array}{rcl}
+      2x+y+z &= &8\\
+      3x-2y-z &= &1\\
+      4x-7y+3z &= &10
+    \end{array}
+  \right\}
+\end{align*}
+\begin{multicols}{2}
+  \textbf{Resolviendo en 1 y 2:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        2x+y+\cancel{z} &= &8\\
+      3x-2y-\cancel{z} &= &1
+      \end{array}
+    \right\} = 5x - y = 9\\
+  \end{align*}
+
+  \textbf{Resolviendo en 2 y 3:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        \left(3\right)3x-2y-z &= &1\left(3\right)\\
+        4x-7y+3z &= &10
+      \end{array}
+    \right\}\\
+    \left.
+      \begin{array}{rcl}
+        9x-6y-\cancel{3z} &= &3\\
+        4x-7y+\cancel{3z} &= &10
+      \end{array}
+    \right\}\\
+    \left(\frac{-1}{13}\right)13x-13y = 13\left(\frac{-1}{13}\right)\\
+    -x + y = -1
+  \end{align*}
+  \columnseprule=1pt 
+  \textbf{Calculando x:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        5x - \cancel{y} &= &9\\
+        -x + \cancel{y} &= &-1
+      \end{array}
+    \right\}\\
+    4x = 8\\
+    &\boxed{x = 2}
+  \end{align*}
+  \textbf{Calculando y:}
+  \begin{align*}
+    -x + y &= -1\\
+    -\left(2\right) + y &= -1\\
+    -2 + y &= -1\\
+    &\boxed{y = 1}
+  \end{align*}
+
+  \textbf{Luego reemplanzando x, y en 2:}
+  \begin{align*}
+    3x-2y-z &= 1\\
+    3\left(2\right) -2\left(-1\right)-z &=1\\
+    6 - 2 - z &= 1\\
+    4 - z &= 1\\
+    &\boxed{z = 3}
+  \end{align*}
+\end{multicols}
+\textbf{Finalmente:}
+\begin{align*}
+  C.S. \left(x,y,z\right) = \left\{(2,1,3)\right\}
+\end{align*}
+\newpage
+\subsection{Un puesto de frutas vende dos variedades de frutas: estándar y de lujo. Una caja de fresas estándar se vende a \$7 y una de lujo se vende a \$10. En un día, el puesto vende 135 cajas de fresa en un total de \$1101. ¿Cuántas cajas de cada tipo se vendieron?}
+\begin{multicols}{2}
+  \textbf{Considerese:}
+  \begin{align*}
+  Precio\ de\ caja\ estandar &= 7\\
+  Precio\ de\ caja\ de\ lujo &= 10\\
+  Total\ de\ cajas &= 135\\
+  Total\ de\ dinero &= 1101
+  \end{align*}
+
+  \textbf{Luego:}
+  \begin{align*}
+    Cajas\ de\ fresas\ estandar &= x \\
+    Cajas\ de\ fresas\ de\ lujo &= y\\
+    \left.
+      \begin{array}{rcl}
+        7x + 10y &= &1101\\
+        x + y &= &135
+        \end{array}
+    \right\}
+  \end{align*}\\
+
+  \columnseprule=1pt 
+  \columnbreak
+
+  \textbf{Calculando x:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        7x + 10y &= &1101\\
+        \left(-10\right)x + y &= &135\left(-10\right)
+        \end{array}
+    \right\}\\
+    \left.
+      \begin{array}{rcl}
+        7x + \cancel{10y} &= &1101\\
+        -10x -\cancel{10y} &= &-1350
+        \end{array}
+    \right\}\\
+    -3x = -249\\
+    \boxed{x = 83}
+  \end{align*}
+
+
+  \textbf{Calculando y:}
+  \begin{align*}
+    x + y &= 135\\
+    83 + y &= 135\\
+    &\boxed{y = 52}
+  \end{align*}
+\end{multicols}
+\textbf{Finalmente:}
+Se vendieron 83 cajas de fresas estándar y 52 cajas de fresas de lujo.
+\subsection{Un agricultor tiene 1200 acres de tierras en las que produce maíz, trigo y frijol de soya. Cuesta \$45 por acre producir maiz, \$60 producir trigo y \$50 producir frijol de soya. Debido a la demanda del mercado, el agricultor producirá el doble de acres de trigo que de maíz. Ha asignado \$63750 para el costo de producir sus cosechas. ¿Cuántos acres de cada cultivo debe plantar?.}
+\begin{multicols}{2}
+  \textbf{Considerese:}
+  \begin{align*}
+  Acres de Maiz &= x\\
+  Acres de Trigo &= y\\
+  Acres de Frijol de Soya &= z
+  \end{align*}
+  \textbf{Expresión dada por el área total:}
+  \begin{align*}
+    x + y + z &= 1200
+  \end{align*}
+  \textbf{Expresión dada por la demanda:}
+  \begin{align*}
+    x + 2x + z &= 1200\\
+    3x + z &= 1200
+  \end{align*}
+  \textbf{Expresión dada por la inversión:}
+  \begin{align*}
+    45x + 60y + 50z &= 63750
+  \end{align*}  
+  \textbf{Dado el sistema:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        45x + 60y + 50z &= &63750\\
+        \left(-60\right)x + y + z &= &1200\left(-60\right)
+      \end{array}
+    \right\}\\
+    \left.
+      \begin{array}{rcl}
+        45x + \cancel{60y} + 50z &= &63750\\
+        -60x - \cancel{60y} - 60z &= &-72000
+      \end{array}
+    \right\}\\
+    -15x - 10z = -8250
+  \end{align*}\\
+  \columnseprule=1pt
+  \columnbreak
+  \\
+  \textbf{Luego reemplazando en área:}
+  \begin{align*}
+    \left.
+      \begin{array}{rcl}
+        -15x - 10z &= &-8250\\
+        \left(10\right)3x + z &= &1200\left(10\right)
+      \end{array}
+    \right\}\\
+    \left.
+      \begin{array}{rcl}
+        -15x - \cancel{10z} &= &-8250\\
+        30x + \cancel{10z} &= &12000
+      \end{array}
+    \right\}\\
+    15x = 3750\\
+    \boxed{x = 250}
+  \end{align*}
+  \textbf{Hallando z:}
+  \begin{align*}
+    3x + z &= 1200\\
+    3\left(250\right) + z &= 1200\\
+    750 + z &= 1200
+    &\boxed{z = 450}
+  \end{align*}
+  \textbf{Hallando y:}
+  \begin{align*}
+    x + y + z &= 1200\\
+    250 + y + 450 &= 1200\\
+    y &= 1200-700\\&\boxed{y = 500}
+  \end{align*}
+  \textbf{El granjero ocupa 250 acres de maíz, 500 acres de trigo y 450 acres de frijol de soya.}
+\end{multicols}
+\end{document}
