@@ -1,0 +1,132 @@
+Algoritmo pregunta_1
+	Definir a, b Como Real
+	Escribir "Ingrese dos números"
+	Leer a, b
+	Si a > b Entonces
+		Escribir "El mayor es a"
+	FinSi
+	Si a < b Entonces
+		Escribir "El mayor es b"
+	FinSi
+	Si a = b Entonces
+		Escribir "Los números son iguales"
+	FinSi
+	Si b <> 0 Entonces
+		Escribir "El residuo de a/b es: ", a MOD b
+	FinSi
+	Si b = 0 Entonces
+		Escribir "No es posible la división entre 0"
+	FinSi
+FinAlgoritmo
+
+Algoritmo pregunta_2
+	Definir sueldobase, horasextra, sueldoneto, pagoextra Como Real
+	Definir categoria Como Entero
+	Escribir "Ingrese sueldo base:"
+	Leer sueldobase
+	Escribir "Ingrese total de horas extras:"
+	Leer horasextra
+	Repetir
+		Escribir "Ingrese la categoría del trabajador [1, 2, 3, 4]"
+		Leer categoria
+	Hasta Que categoria >= 1 Y categoria <= 4
+	Segun categoria
+		1:	pagoextra = horasextra * 30
+		2:	pagoextra = horasextra * 38
+		3:	pagoextra = horasextra * 50
+		4:	pagoextra = horasextra * 70
+	FinSegun
+	sueldoneto = sueldobase + pagoextra
+	Escribir "Sueldo base: ", sueldobase, "	Pago por horas extras: ", pagoextra, "	Pago Total: ", sueldoneto
+FinAlgoritmo
+
+Algoritmo pregunta_3
+	Definir a, b Como Real
+	Definir operador Como Entero
+	Escribir "Ingrese dos números:"
+	Leer a, b
+	Repetir
+		Escribir "Ingrese 1 para sumar, 2 para restar, 3 para multiplicar o 4 para dividir."
+		Leer operador
+	Hasta Que operador >= 1 Y operador <= 4
+	Segun operador
+		1: Escribir "La suma es: ", a+b
+		2: Escribir "La diferencia es: ", a-b
+		3: Escribir "El producto es: ", a*b
+	FinSegun
+	Si b > 0 O b < 0 Entonces
+		Escribir "La división es: ", a/b
+	SiNo
+		Escribir "La división por 0 no es posible."
+	FinSi
+FinAlgoritmo
+
+
+Algoritmo pregunta_4_version1
+	Definir duracionllamada, clave Como Entero
+	Repetir
+		Escribir "Ingrese la cantidad de segundos de la llamada:"
+		Leer duracionllamada
+	Hasta Que duracionllamada > 0
+	Repetir
+		Escribir "Ingrese la clave geográfica de destino:"
+		Escribir "1 -> Estados Unidos"
+		Escribir "2 -> Canadá"
+		Escribir "5 -> América del Sur"
+		Escribir "6 -> América Central"
+		Escribir "7 -> México"
+		Escribir "9 -> Europa"
+		Escribir "10 -> Asia"
+		Escribir "15 -> África"
+		Escribir "20 -> Oceanía"
+		Leer clave
+	Hasta Que clave > 0 Y clave <= 20
+	Segun clave
+		1: Escribir "El costo de la llamada es: $", duracionllamada*0.13
+		2: Escribir "El costo de la llamada es: $", duracionllamada*0.11
+		5: Escribir "El costo de la llamada es: $", duracionllamada*0.22
+		6: Escribir "El costo de la llamada es: $", duracionllamada*0.19
+		7: Escribir "El costo de la llamada es: $", duracionllamada*0.17
+		9: Escribir "El costo de la llamada es: $", duracionllamada*0.17
+		10: Escribir "El costo de la llamada es: $", duracionllamada*0.20
+		15: Escribir "El costo de la llamada es: $", duracionllamada*0.39
+		20: Escribir "El costo de la llamada es: $", duracionllamada*0.28
+		De Otro Modo:
+			Escribir "Clave no existe, vuelva a intentarlo"
+	FinSegun
+FinAlgoritmo
+
+
+Algoritmo pregunta_4_version2
+	Definir duracionllamada, clave Como Entero
+	Repetir
+		Escribir "Ingrese la cantidad de segundos de la llamada:"
+		Leer duracionllamada
+	Hasta Que duracionllamada > 0
+	Repetir
+		Escribir "Ingrese la clave geográfica de destino:"
+		Escribir "1 -> Estados Unidos"
+		Escribir "2 -> Canadá"
+		Escribir "3 -> América del Sur"
+		Escribir "4 -> América Central"
+		Escribir "5 -> México"
+		Escribir "6 -> Europa"
+		Escribir "7 -> Asia"
+		Escribir "8 -> África"
+		Escribir "9 -> Oceanía"
+		Leer clave
+	Hasta Que clave > 0 Y clave <= 9
+	Segun clave
+		1: Escribir "El costo de la llamada es: $", duracionllamada*0.13
+		2: Escribir "El costo de la llamada es: $", duracionllamada*0.11
+		3: Escribir "El costo de la llamada es: $", duracionllamada*0.22
+		4: Escribir "El costo de la llamada es: $", duracionllamada*0.19
+		5: Escribir "El costo de la llamada es: $", duracionllamada*0.17
+		6: Escribir "El costo de la llamada es: $", duracionllamada*0.17
+		7: Escribir "El costo de la llamada es: $", duracionllamada*0.20
+		8: Escribir "El costo de la llamada es: $", duracionllamada*0.39
+		9: Escribir "El costo de la llamada es: $", duracionllamada*0.28
+		De Otro Modo:
+			Escribir "Clave no existe, vuelva a intentarlo"
+	FinSegun
+FinAlgoritmo

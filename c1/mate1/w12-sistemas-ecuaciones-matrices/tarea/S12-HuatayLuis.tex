@@ -1,0 +1,870 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\title{\textbf{Resolución de sistemas de ecuaciones lineales por el método de matriz inversa y Cramer.} \\ 
+\vspace{0.5cm}
+\large \textbf{Para el primer ciclo de introducción a la matemática para ingeniería}}
+\author{\textbf{Luis Huatay}\\\\\texttt{noggnzzz@gmail.com}}
+
+
+\vspace{-1cm}
+
+\begin{document}
+\newgeometry{top=9cm}
+\maketitle
+\begin{center}
+  Resolución de las actividades propuestas en la sesión 1 y 2.
+\end{center}
+\restoregeometry
+
+\newpage
+\newgeometry{
+  top=1.5cm,
+  bottom=1.5cm,
+  left=1.5cm,
+  right=1.5cm
+}
+\section{Retos - Sesión 1}
+\subsection{Resolver utilizando el método de matriz inversa}
+\vspace{-0.5cm}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    3x+4y-3z &= &5\\
+    x+2y-2z &= &1\\
+    2x+2y-3z &= &5
+  \end{array}
+  \right.\
+\end{align*}
+\begin{multicols*}{2}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      3 & 4 & -3\\
+      1 & 2 & -2\\
+      2 & 2 & -3
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      5\\
+      1\\
+      5
+    \end{bmatrix}\\
+  \end{align*}
+  \vspace{-2cm}
+  \begin{center}
+    \begin{align*}
+      X &= \begin{bmatrix}
+        x\\
+        y\\
+        z
+      \end{bmatrix}
+    \end{align*}
+  \end{center}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textit{Entonces:}
+  \begin{align*}
+    X &= A^{-1}B
+  \end{align*}
+  \textbullet{ \textbf{Calculamos la matriz inversa de A:}}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{|A|}Adj\left(A\right)
+  \end{align*}
+  \textit{De acuerdo a Sarrus:}
+  \begin{align*}
+    |A| &= -18-16-6+12+12+12\\
+    |A| &= -4
+  \end{align*}
+  \textit{Hallando la matriz adjunta:}
+  \begin{align*}
+    &Cof\left(A\right) = \begin{bmatrix}
+      +\left(-6+4\right) & -\left(-3+4\right) & +\left(2-4\right)\\
+      -\left(-12+6\right) & +\left(-9+6\right) & -\left(6-8\right)\\
+      +\left(-8+6\right) & -\left(-6+3\right) & +\left(6-4\right)
+    \end{bmatrix}\\\\
+    &Cof\left(A\right) = \begin{bmatrix}
+      -2 & 1 & -2\\
+      6 & -3 & 2\\
+      -2 & 3 & 2
+    \end{bmatrix}\\\\
+    &Adj\left(A\right) = \left(Cof\left(A\right)\right)^t = \begin{bmatrix}
+      -2 & 6 & -2\\
+      1 & -3 & 3\\
+      -2 & 2 & 2
+    \end{bmatrix}
+  \end{align*}\\
+  \columnbreak\\
+  \columnseprule=1pt 
+  \textit{Matriz inversa de A:}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{-4}\begin{bmatrix}
+      -2 & 6 & -2\\
+      1 & -3 & 3\\
+      -2 & 2 & 2
+    \end{bmatrix}\\\\
+    A^{-1} &= \begin{bmatrix}
+      \dfrac{1}{2} & -\dfrac{3}{2} & \dfrac{1}{2}\\\\
+      -\dfrac{1}{4} & \dfrac{3}{4} & -\dfrac{3}{4}\\\\
+      \dfrac{1}{2} & -\dfrac{1}{2} & -\dfrac{1}{2}
+    \end{bmatrix}
+  \end{align*}\\
+  \textbullet{ \textbf{Finalemnte:}}
+  \begin{align*}
+    X &= A^{-1}B\\
+    X &= \begin{bmatrix}
+      \dfrac{1}{2} & -\dfrac{3}{2} & \dfrac{1}{2}\\\\
+      -\dfrac{1}{4} & \dfrac{3}{4} & -\dfrac{3}{4}\\\\
+      \dfrac{1}{2} & -\dfrac{1}{2} & -\dfrac{1}{2}
+    \end{bmatrix}\begin{bmatrix}
+      5\\
+      1\\
+      5
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      \dfrac{1\left(5\right)}{2}&-&\dfrac{3\left(1\right)}{2}&+&\dfrac{1\left(5\right)}{2}\\\\
+      -\dfrac{1\left(5\right)}{4}&+&\dfrac{3\left(1\right)}{4}&-&\dfrac{3\left(5\right)}{4}\\\\
+      \dfrac{1\left(5\right)}{2}&-&\dfrac{1\left(1\right)}{2}&-&\dfrac{1\left(5\right)}{2}
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      \dfrac{7}{2}\\\\
+      -\dfrac{7}{4}\\\\
+      -\dfrac{1}{2}
+    \end{bmatrix}\\\\
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(\dfrac{7}{2}, -\dfrac{7}{4}, -\dfrac{1}{2}\right)\right\}
+  \end{align*}
+\end{multicols*}
+\newpage
+\subsection{Resolver utilizando el método de matriz inversa}
+\vspace{-0.5cm}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    x+y+z &= &1\\
+    x-2y+3z &= &2\\
+    x+0y+z &= &5
+  \end{array}
+  \right.\
+\end{align*}
+\begin{multicols*}{2}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      1 & -2 & 3\\
+      1 & 0 & 1
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      1\\
+      2\\
+      5
+    \end{bmatrix}\\
+  \end{align*}
+  \vspace{-2cm}
+  \begin{center}
+    \begin{align*}
+      X &= \begin{bmatrix}
+        x\\
+        y\\
+        z
+      \end{bmatrix}
+    \end{align*}
+  \end{center}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textit{Entonces:}
+  \begin{align*}
+    X &= A^{-1}B
+  \end{align*}
+  \textbullet{ \textbf{Calculamos la matriz inversa de A:}}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{|A|}Adj\left(A\right)
+  \end{align*}
+  \textit{De acuerdo a Sarrus:}
+  \begin{align*}
+    |A| &= -2+3+0-\left(-2\right)-(0)-1\\
+    |A| &= 2
+  \end{align*}
+  \textit{Hallando la matriz adjunta:}
+  \begin{align*}
+    &Cof\left(A\right) = \begin{bmatrix}
+      +\left(-2-0\right) & -\left(1-3\right) & +\left(0+2\right)\\
+      -\left(1-0\right) & +\left(1-1\right) & -\left(0-1\right)\\
+      +\left(3+2\right) & -\left(3-1\right) & +\left(-2-1\right)
+    \end{bmatrix}\\\\
+    &Cof\left(A\right) = \begin{bmatrix}
+      -2 & 2 & 2\\
+      -1 & 0 & 1\\
+      5 & -2 & -3
+    \end{bmatrix}\\\\
+    &Adj\left(A\right) = \left(Cof\left(A\right)\right)^t = \begin{bmatrix}
+      -2 & -1 & 5\\
+      2 & 0 & -2\\
+      2 & 1 & -3
+    \end{bmatrix}
+  \end{align*}\\
+  \columnbreak\\
+  \columnseprule=1pt 
+  \textit{Matriz inversa de A:}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{2}\begin{bmatrix}
+      -2 & -1 & 5\\
+      2 & 0 & -2\\
+      2 & 1 & -3
+    \end{bmatrix}\\\\
+    A^{-1} &= \begin{bmatrix}
+      -1 & -\dfrac{1}{2} & \dfrac{5}{2}\\\\
+      1 & 0 & -1\\\\
+      1 & \dfrac{1}{2} & -\dfrac{3}{2}
+    \end{bmatrix}
+  \end{align*}\\
+  \textbullet{ \textbf{Finalemnte:}}
+  \begin{align*}
+    X &= A^{-1}B\\
+    X &= \begin{bmatrix}
+      -1 & -\dfrac{1}{2} & \dfrac{5}{2}\\\\
+      1 & 0 & -1\\\\
+      1 & \dfrac{1}{2} & -\dfrac{3}{2}
+    \end{bmatrix}\begin{bmatrix}
+      1\\
+      2\\
+      5
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      -1\left(1\right)&-&\dfrac{1\left(2\right)}{2}&+&\dfrac{5\left(5\right)}{2}\\\\
+      1\left(1\right)&+&0\left(2\right)&-&1\left(5\right)\\\\
+      1\left(1\right)&+&\dfrac{1\left(2\right)}{2}&-&\dfrac{3\left(5\right)}{2}
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      \dfrac{21}{2}\\\\
+      -4\\\\
+      -\dfrac{11}{2}
+    \end{bmatrix}\\\\
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(\dfrac{21}{2},-4,-\dfrac{11}{2}\right)\right\}
+  \end{align*}
+\end{multicols*}
+\newpage
+\subsection{Un joyero tiene tres clases de monedas A, B y C. Las monedas de tipo A tienen 2 gramos de oro, 4 g de plata y 14 g de cobre;
+las de tipo B tienen 6 g de oro, 4 de plata y 10 de cobre, y las del tipo C tienen 8 g de oro, 6 g de plata y 6 g de cobre. ¿Cuántas monedas de cada tipo se debe fundir para obtener 44 gramos de oro, 44 gramos de plata y 112 gramos de cobre?}
+\begin{multicols}{2}
+\textbullet{ \textbf{Sea la tabla de composición:}}\\
+\begin{align*}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & A & B & C & Total\\
+    \hline
+    Au & 2 & 6 & 8 & 44\\
+    Ag & 4 & 4 & 6 & 44\\
+    Cu & 14 & 10 & 6 & 112\\
+    \hline
+  \end{tabular}
+\end{align*}\\
+\textbullet{ \textbf{Dado el sistema de ecuaciones:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      2a+4b+14c &= &44\\
+      6a+4b+10c &= &44\\
+      8a+6b+6c &= &112
+    \end{array}
+    \right.\
+  \end{align*}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      2 & 6 & 8\\
+      4 & 4 & 6\\
+      14 & 10 & 6
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      44\\
+      44\\
+      112
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textit{Entonces:}
+  \begin{align*}
+    X &= A^{-1}B
+  \end{align*}
+  \textbullet{ \textbf{Calculamos la matriz inversa de A:}}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{|A|}Adj\left(A\right)
+  \end{align*}
+  \textit{De acuerdo a Sarrus:}
+  \begin{align*}
+    |A| &= 48+504+320-448-120-144\\
+    |A| &= 160
+  \end{align*}
+  \textit{Hallando la matriz adjunta:}
+  \begin{align*}
+    &Cof\left(A\right) = \begin{bmatrix}
+      +\left(24-60\right) & -\left(24-84\right) & +\left(40-56\right)\\
+      -\left(36-80\right) & +\left(12-112\right) & -\left(20-84\right)\\
+      +\left(36-32\right) & -\left(12-32\right) & +\left(8-24\right)
+    \end{bmatrix}\\\\
+    &Cof\left(A\right) = \begin{bmatrix}
+      -36 & 60 & -16\\
+      44 & -100 & 64\\
+      4 & 20 & -16
+    \end{bmatrix}\\\\
+    &Adj\left(A\right) = \left(Cof\left(A\right)\right)^t = \begin{bmatrix}
+      -36 & 44 & 4\\
+      60 & -100 & 20\\
+      -16 & 64 & -16
+    \end{bmatrix}
+  \end{align*}
+  \columnbreak\\
+  \columnseprule=1pt 
+  \textit{Matriz inversa de A:}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{160}\begin{bmatrix}
+      -36 & 44 & 4\\
+      60 & -100 & 20\\
+      -16 & 64 & -16
+    \end{bmatrix}\\\\
+    A^{-1} &= \begin{bmatrix}
+      -\dfrac{9}{40} & \dfrac{11}{40} & \dfrac{1}{40}\\\\
+      \dfrac{3}{8} & -\dfrac{5}{8} & \dfrac{1}{8}\\\\
+      -\dfrac{1}{10} & \dfrac{2}{5} & -\dfrac{1}{10}
+    \end{bmatrix}
+  \end{align*}\\
+  \textbullet{ \textbf{Finalemnte:}}
+  \begin{align*}
+    X &= A^{-1}B\\
+    X &= \begin{bmatrix}
+      -\dfrac{9}{40} & \dfrac{11}{40} & \dfrac{1}{40}\\\\
+      \dfrac{3}{8} & -\dfrac{5}{8} & \dfrac{1}{8}\\\\
+      -\dfrac{1}{10} & \dfrac{2}{5} & -\dfrac{1}{10}
+    \end{bmatrix}\begin{bmatrix}
+      44\\
+      44\\
+      112
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      -\dfrac{9\left(44\right)}{40}&+&\dfrac{11\left(44\right)}{40}&+&\dfrac{1\left(112\right)}{40}\\\\
+      \dfrac{3\left(44\right)}{8}&-&\dfrac{5\left(44\right)}{8}&+&\dfrac{1\left(112\right)}{8}\\\\
+      -\dfrac{1\left(44\right)}{10}&+&\dfrac{2\left(44\right)}{5}&-&\dfrac{1\left(112\right)}{10}
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      5\\
+      3\\
+      2
+    \end{bmatrix}\\\\
+    \therefore \ &C.S. \left(A,B,C\right) = \left\{\left(5,3,2\right)\right\}
+  \end{align*}
+\end{multicols}
+\newpage
+\subsection{A una función de teatro asisten hombres, mujeres y niños. Cada niño paga 10 soles; cada mujer 50 soles y cada hombre 60 soles. El día de hoy la recaudación ha sido de 16300 soles, con 340 asistentes en total. Se sabe además que las mujeres son el doble de la diferencia entre los hombres y los niños (asistieron más hombres que niños). ¿Cuántos hombres, mujeres y niños asistieron a dicha función de teatro?. Modele mediante un sistema de ecuación y resuelva por el método de matriz inversa.}
+\begin{multicols}{2}
+  \textbullet{ \textbf{Sean las variables:}}
+  \begin{align*}
+    x &= \text{Hombres}\\
+    y &= \text{Mujeres}\\
+    z &= \text{Niños}
+  \end{align*}
+  \textbullet{ \textbf{De acuerdo a las asistentes mujeres:}}
+  \begin{align*}
+    y &= 2\left(x-z\right)\\
+    y &= 2x-2z\\
+    0 &= 2x-y-2z 
+  \end{align*}
+  \textbullet{ \textbf{Dado el sistema de ecuaciones:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      6x+5y+z &= 1630& \text{ Por dinero recaudado}\\
+      x+y+z &= 340& \text{ Por asistentes}\\
+      2x-y-2z &= 0& \text{ Por asistentes mujeres}
+    \end{array}
+    \right.\
+  \end{align*}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      6 & 5 & 1\\
+      1 & 1 & 1\\
+      2 & -1 & -2
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      1630\\
+      340\\
+      0
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textit{Entonces:}
+  \begin{align*}
+    X &= A^{-1}B
+  \end{align*}
+  \textbullet{ \textbf{Calculamos la matriz inversa de A:}}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{|A|}Adj\left(A\right)
+  \end{align*}
+  \textit{De acuerdo a Sarrus:}
+  \begin{align*}
+    |A| &= -12+10-1-2+6+10\\
+    |A| &= 11
+  \end{align*}
+  \textit{Hallando la matriz adjunta:}
+  \begin{align*}
+    &Cof\left(A\right) = \begin{bmatrix}
+      +\left(-2+1\right) & -\left(-2-2\right) & +\left(-3\right)\\
+      -\left(-10+1\right) & +\left(-12-2\right) & -\left(-16\right)\\
+      +\left(5-1\right) & -\left(6-1\right) & +\left(1\right)
+    \end{bmatrix}\\\\
+    &Cof\left(A\right) = \begin{bmatrix}
+      -1 & 4 & -3\\
+      9 & -14 & 16\\
+      4 & -5 & 1
+    \end{bmatrix}
+  \end{align*}
+  \columnbreak\\
+  \columnseprule=1pt 
+  \vspace{-1cm}
+  \begin{align*}
+    &Adj\left(A\right) = \left(Cof\left(A\right)\right)^t = \begin{bmatrix}
+      -1 & 9 & 4\\
+      4 & -14 & -5\\
+      -3 & 16 & 1
+    \end{bmatrix}
+  \end{align*}
+  \textit{Luego:}
+  \begin{align*}
+    A^{-1} &= \dfrac{1}{11}\begin{bmatrix}
+      -1 & 9 & 4\\
+      4 & -14 & -5\\
+      -3 & 16 & 1
+    \end{bmatrix}\\\\
+    A^{-1} &= \begin{bmatrix}
+      -\dfrac{1}{11} & \dfrac{9}{11} & \dfrac{4}{11}\\\\
+      \dfrac{4}{11} & -\dfrac{14}{11} & -\dfrac{5}{11}\\\\
+      -\dfrac{3}{11} & \dfrac{16}{11} & \dfrac{1}{11}
+    \end{bmatrix}
+  \end{align*}
+  \textbullet{ \textbf{Finalemnte:}}
+  \begin{align*}
+    X &= A^{-1}B\\
+    X &= \begin{bmatrix}
+      -\dfrac{1}{11} & \dfrac{9}{11} & \dfrac{4}{11}\\\\
+      \dfrac{4}{11} & -\dfrac{14}{11} & -\dfrac{5}{11}\\\\
+      -\dfrac{3}{11} & \dfrac{16}{11} & \dfrac{1}{11}
+    \end{bmatrix}\begin{bmatrix}
+      1630\\
+      340\\
+      0
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      -\dfrac{1\left(1630\right)}{11}&+&\dfrac{9\left(340\right)}{11}&+&\dfrac{4\left(0\right)}{11}\\\\
+      \dfrac{4\left(1630\right)}{11}&-&\dfrac{14\left(340\right)}{11}&-&\dfrac{5\left(0\right)}{11}\\\\
+      -\dfrac{3\left(1630\right)}{11}&+&\dfrac{16\left(340\right)}{11}&+&\dfrac{1\left(0\right)}{11}
+    \end{bmatrix}\\\\
+    X &= \begin{bmatrix}
+      130\\
+      160\\
+      5
+    \end{bmatrix}\\\\
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(130,160,5\right)\right\}
+  \end{align*}
+\end{multicols}
+\newpage
+\section{Retos - Sesión 2}
+\subsection{Resolver utilizando el método de Cramer.}
+\vspace{-0.5cm}
+\begin{multicols}{3}
+  \textbullet{ \textbf{Sea el sistema:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x+y+z &= &30\\
+      x+y-2z &= &0\\
+      x+3y-2z &= &20
+    \end{array}
+    \right.\
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      1 & 1 & -2\\
+      1 & 3 & -2
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      30\\
+      0\\
+      20
+    \end{bmatrix}
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Donde:}}
+  \vspace{-0.5cm}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+  \end{align*}
+\end{multicols}
+\vspace{-0.5cm}
+\begin{multicols}{2}
+  \textbullet{ \textbf{De acuerdo con el método Cramer:}}\\
+  \textit{Hallando} $|A|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 1 & 1\\
+      1 & 1 & -2\\
+      1 & 3 & -2
+    \end{vmatrix} = -2-2+3-1+6+2 = 6
+  \end{align*}
+  \textit{Hallando} $|A_x|$:
+  \begin{align*}
+    \begin{vmatrix}
+      30 & 1 & 1\\
+      0 & 1 & -2\\
+      20 & 3 & -2
+    \end{vmatrix} = -60-40-20+180 = 60
+  \end{align*}
+  \textit{Hallando} $|A_y|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 30 & 1\\
+      1 & 0 & -2\\
+      1 & 20 & -2
+    \end{vmatrix} = -60+20+40+60 = 60
+  \end{align*}
+  \textit{Hallando} $|A_z|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 1 & 30\\
+      1 & 1 & 0\\
+      1 & 3 & 20
+    \end{vmatrix} = 20+90-30-20 = 60
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    x &= \dfrac{|A_x|}{|A|} = \dfrac{60}{6} = 10\\\\
+    y &= \dfrac{|A_y|}{|A|} = \dfrac{60}{6} = 10\\\\
+    z &= \dfrac{|A_z|}{|A|} = \dfrac{60}{6} = 10
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(10,10,10\right)\right\}
+  \end{align*}
+  % \columnbreak\\
+  \columnseprule=1pt
+\end{multicols}
+\subsection{Resolver utilizando el método de Cramer.}
+\vspace{-0.5cm}
+\begin{multicols}{3}
+  \textbullet{ \textbf{Sea el sistema:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x+y+z &= &50\\
+      2x-y+0z &= &1\\
+      2x+0y-5z &= &0
+    \end{array}
+    \right.\
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      2 & -1 & 0\\
+      2 & 0 & -5
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      50\\
+      1\\
+      0
+    \end{bmatrix}
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Donde:}}
+  \vspace{-0.5cm}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+  \end{align*}
+\end{multicols}
+\begin{multicols}{2}
+  \textbullet{ \textbf{De acuerdo con el método Cramer:}}\\
+  \textit{Hallando} $|A|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 1 & 1\\
+      2 & -1 & 0\\
+      2 & 0 & -5
+    \end{vmatrix} = 5+2+10 = 17
+  \end{align*}
+  \textit{Hallando} $|A_x|$:
+  \begin{align*}
+    \begin{vmatrix}
+      50 & 1 & 1\\
+      1 & -1 & 0\\
+      0 & 0 & -5
+    \end{vmatrix} = 250+5+0 = 255
+  \end{align*}
+  \textit{Hallando} $|A_y|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 50 & 1\\
+      2 & 1 & 0\\
+      2 & 0 & -5
+    \end{vmatrix} = -5-2+500 = 493
+  \end{align*}
+  \columnbreak\\
+  \columnseprule=1pt
+  \textit{Hallando}$|A_z|$:
+  \begin{align*}
+    \begin{vmatrix}
+      1 & 1 & 50\\
+      2 & -1 & 1\\
+      2 & 0 & 0
+    \end{vmatrix} = 2+100 = 102
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    x &= \dfrac{|A_x|}{|A|} = \dfrac{255}{17} = 15\\\\
+    y &= \dfrac{|A_y|}{|A|} = \dfrac{493}{17} = 29\\\\
+    z &= \dfrac{|A_z|}{|A|} = \dfrac{102}{17} = 6
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(15,29,6\right)\right\}
+  \end{align*}
+\end{multicols}
+\newpage
+\subsection{Cinemark dispone de tres salas A, B, C. Los precios de las entradas a cada una de estas salas son 1, 2 y 3 dólares respectivamente. Un día la recaudación conjunta de las tres salas fue de 425 dólares y el número total de espectadores que acudieron fue de 200. Si los espectadores de la sala A hubiesen asistido a la sala B y los de la sala B a la sala A, se obtendría una recaudación de 400 dólares. ¿Cuál es el número de espectadores que acudió a cada sala? Plantear un sistema de ecuaciones lineales y resuelva por el método de Cramer.}
+\vspace{-0.5cm}
+\begin{multicols}{3}
+  \textbullet{ \textbf{Dadas las variables:}}
+  \begin{align*}
+    a: &\text{ Sala A}\\
+    b: &\text{ Sala B}\\
+    c: &\text{ Sala C}
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Sea el sistema de ecuaciones:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      a+b+c &= &200\\
+      1a+2b+3c &= &425\\
+      2a+1b+3c &= &400
+    \end{array}
+    \right.\
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Entonces las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      1 & 2 & 3\\
+      2 & 1 & 3
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      200\\
+      425\\
+      400
+    \end{bmatrix}
+  \end{align*}
+\end{multicols}
+\vspace{-1cm}
+  \textbullet{ \textbf{Donde:}}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}&
+    B: &\text{ Matriz de términos independientes}
+  \end{align*}
+    \textbullet{ \textbf{De acuerdo con el método Cramer:}}\\\\
+    \textit{Hallando} $|A|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 1 & 1\\
+        1 & 2 & 3\\
+        2 & 1 & 3
+      \end{vmatrix} = 6+6+1-4-3-3
+    \end{align*}
+    \begin{center}
+      \begin{align*}
+        |A| = 3
+      \end{align*}
+    \end{center}
+    \textit{Hallando} $|A_a|$:
+    \begin{align*}
+      \begin{vmatrix}
+        200 & 1 & 1\\
+        425 & 2 & 3\\
+        400 & 1 & 3
+      \end{vmatrix} = 1200+1200+425-800-600-1275
+    \end{align*}
+    \begin{center}
+      \begin{align*}
+        |A_a| = 150
+      \end{align*}
+    \end{center}
+    \textit{Hallando} $|A_b|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 200 & 1\\
+        1 & 425 & 3\\
+        2 & 400 & 3
+      \end{vmatrix} = 1275+1200+400-850-1200-600
+    \end{align*}
+    \begin{center}
+      \begin{align*}
+        |A_a| = 225
+      \end{align*}
+    \end{center}
+    \textit{Hallando} $|A_c|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 1 & 200\\
+        1 & 2 & 425\\
+        2 & 1 & 400
+      \end{vmatrix} = 1650+200-800-425-400
+    \end{align*}
+    \begin{center}
+      \begin{align*}
+        |A_a| = 225
+      \end{align*}
+    \end{center}
+    \textbullet{ \textbf{Finalmente:}}
+    \begin{align*}
+      a &= \dfrac{|A_a|}{|A|} = \dfrac{150}{3} = 50&
+      b &= \dfrac{|A_b|}{|A|} = \dfrac{225}{3} = 75&
+      c &= \dfrac{|A_c|}{|A|} = \dfrac{225}{3} = 75
+    \end{align*}
+    \begin{align*}
+      \therefore \ &C.S. \left(a,b,c\right) = \left\{\left(50,75,75\right)\right\}
+    \end{align*}
+\newpage
+\subsection{Tres compuestos se combinan para formar tres tipos de fertilizantes. Una unidad del fertilizante del tipo I requiere 10 kg del compuesto A, 30 kg del compuesto B y 60 kg del compuesto C. Una unidad del fertilizante del tipo II requiere 20 kg del compuesto A, 30 kg del compuesto B y 50 kg del compuesto C. Una unidad del fertilizante del tipo III requiere 50 kg del compuesto A y 50 kg del compuesto C. Si hay disponibles 1600 kg del compuesto A, 1200kg del B y 3200 kg del C. ¿Cuantas unidades de los tres tipos de fertilizantes se pueden producir si se usa todo el material químico disponible?. Plantear un sistema de ecuaciones lineales y resuelva por el método de Cramer.}
+\begin{multicols}{3}
+  \textbullet{ \textbf{Dada la tabla:}}\\
+  \begin{align*}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      & I & II & III & Total\\
+      \hline
+      A & 1 & 2 & 5 & 160\\
+      B & 3 & 3 & 0 & 120\\
+      C & 6 & 5 & 5 & 320\\
+      \hline
+    \end{tabular}
+  \end{align*}
+  \begin{align*}
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Sea el sistema de ecuaciones:}}
+  \vspace{-1cm}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      I+2II+5III &= &160\\
+      3I+3II+0III &= &120\\
+      6I+5II+5III &= &320
+    \end{array}
+    \right.\
+  \end{align*}
+  \columnbreak\\
+  \textbullet{ \textbf{Entonces las matrices:}}\\
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 2 & 5\\
+      3 & 3 & 0\\
+      6 & 5 & 5
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      160\\
+      120\\
+      320
+    \end{bmatrix}
+  \end{align*}
+\end{multicols}
+\vspace{-1cm}
+  \textbullet{ \textbf{Donde:}}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}&
+    B: &\text{ Matriz de términos independientes}
+  \end{align*}
+    \textbullet{ \textbf{De acuerdo con el método Cramer:}}\\\\
+    \textit{Hallando} $|A|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 2 & 5\\
+        3 & 3 & 0\\
+        6 & 5 & 5
+      \end{vmatrix} = +90-90-30 = -30&&|A| = -30
+    \end{align*}
+    \textit{Hallando} $|A_a|$:
+    \begin{align*}
+      \begin{vmatrix}
+        160 & 2 & 5\\
+        120 & 3 & 0\\
+        320 & 5 & 5
+      \end{vmatrix} = 5400-6000 = -600&&|A_a| = -600
+    \end{align*}
+    \textit{Hallando} $|A_b|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 160 & 5\\
+        3 & 120 & 0\\
+        6 & 320 & 5
+      \end{vmatrix} = 5400-6000 = -600&&|A_b| = -600
+    \end{align*}
+    \textit{Hallando} $|A_c|$:
+    \begin{align*}
+      \begin{vmatrix}
+        1 & 2 & 160\\
+        3 & 3 & 120\\
+        6 & 5 & 320
+      \end{vmatrix} = 4800-5400 = -600&&|A_c| = -600
+    \end{align*}
+    \textbullet{ \textbf{Finalmente:}}
+    \begin{align*}
+      I &= \dfrac{|A_a|}{|A|} = \dfrac{-600}{-30} = 20&
+      II &= \dfrac{|A_b|}{|A|} = \dfrac{-600}{-30} = 20&
+      III &= \dfrac{|A_c|}{|A|} = \dfrac{-600}{-30} = 20
+    \end{align*}
+    \begin{align*}
+      \therefore \ &C.S. \left(I,II,III\right) = \left\{\left(20,20,20\right)\right\}
+    \end{align*}
+\end{document}
