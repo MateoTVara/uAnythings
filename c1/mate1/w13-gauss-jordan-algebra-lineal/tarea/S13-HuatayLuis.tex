@@ -1,0 +1,912 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\title{\textbf{Resolución de sistemas de ecuaciones lineales por el método Gauss-Jordan} \\ 
+\vspace{0.5cm}
+\large \textbf{Para el primer ciclo de introducción a la matemática para ingeniería}}
+\author{\textbf{Luis Huatay}\\\\\texttt{noggnzzz@gmail.com}\\\\\texttt{U24218809}}
+
+
+\vspace{-1cm}
+
+\begin{document}
+\newgeometry{top=9cm}
+\maketitle
+\begin{center}
+Resolución de las actividades propuestas en la sesión 1 y 2 de la semana 13.
+\end{center}
+\restoregeometry
+
+\newpage
+\newgeometry{
+  top=1.5cm,
+  bottom=1.5cm,
+  left=1.5cm,
+  right=1.5cm
+}
+\section{Retos - Sesión 1}
+\subsection{Resolver utilizando el método de eliminación Gaussiana}
+\vspace{-0.5cm}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    2x+3y-z &= &9\\
+    3x+4y+2z &= &0\\
+    x-6y-5z &= &-9
+  \end{array}
+  \right.\
+\end{align*}
+\begin{multicols*}{2}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      2 & 3 & -1\\
+      3 & 4 & 2\\
+      1 & -6 & -5
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      5\\
+      1\\
+      5
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textbullet{ \textbf{Sea la matriz aumentada:}}
+  \begin{align*}
+    \left[A|B\right] = \left[
+      \begin{array}{ccc|c}
+        2 & 3 & -1 & 9 \\\\
+        3 & 4 & 2 & 0 \\\\
+        1 & -6 & -5 & -9 
+      \end{array}
+    \right]
+\end{align*}
+  \textbullet{ \textbf{Aplicando operaciones elementales:}}
+    \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        2 & 3 & -1 & 9 \\\\
+        3 & 4 & 2 & 0 \\\\
+        1 & -6 & -5 & -9
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_3\left(-1\right)+F_1 \\\\
+      \leftarrow F_3\left(-3\right)+F_2 \\\\
+      \\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 9 & 4 & 18 \\\\
+        0 & 22 & 17 & 27 \\\\
+        1 & -6 & -5 & -9
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_2\left(\frac{-9}{22}\right)+F_1 \\\\
+      \\
+      \\
+      \\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & \dfrac{-65}{22} & \dfrac{153}{22} \\\\
+        0 & 22 & 17 & 27 \\\\
+        0 & -6 & \dfrac{-45}{22} & \dfrac{-351}{22}
+      \end{array}
+    \right]
+    \begin{array}{r}
+       \\\\\\
+      \leftarrow F_2\left(\frac{1}{22}\right) \\\\
+      \\
+      \\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & \dfrac{-65}{22} & \dfrac{153}{22} \\\\
+        0 & 1 & \dfrac{17}{22} & \dfrac{27}{22} \\\\
+        0 & -6 & \dfrac{-45}{22} & \dfrac{-351}{22}
+      \end{array}
+    \right]
+    \begin{array}{r}
+       \\\\\\
+       \\\\\\
+      \leftarrow F_2\left(6\right)+F_3 \\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & \dfrac{-65}{22} & \dfrac{153}{22} \\\\
+        0 & 1 & \dfrac{17}{22} & \dfrac{27}{22} \\\\
+        0 & 0 & \dfrac{57}{22} & \dfrac{-189}{22}
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\\\
+       \leftarrow F_3\left(\frac{-17}{57}\right)+F_2
+      \\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & \dfrac{-65}{22} & \dfrac{153}{22} \\\\
+        0 & 1 & 0 & \dfrac{72}{19} \\\\
+        0 & 0 & \dfrac{57}{22} & \dfrac{-189}{22}
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_3\left(\dfrac{65}{57}\right)+F_1
+      \\\\
+      \\\\
+      \\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & 0 & \dfrac{-54}{19} \\\\
+        0 & 1 & 0 & \dfrac{72}{19} \\\\
+        0 & 0 & \dfrac{57}{22} & \dfrac{-189}{22}
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \\\\\\
+      \leftarrow F_3\left(\dfrac{65}{57}\right)+F_1
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & 0 & \dfrac{-54}{19} \\\\
+        0 & 1 & 0 & \dfrac{72}{19} \\\\
+        0 & 0 & 1 & \dfrac{-63}{19} 
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}\\
+  \begin{align*}
+    B&=\left[
+      \begin{array}{c}
+        \dfrac{-54}{19}\\\\
+        \dfrac{72}{19}\\\\
+        \dfrac{-63}{19}
+      \end{array}
+    \right]
+    &=
+    &&X&=\left[
+      \begin{array}{c}
+        x \\\\
+        y \\\\
+        z 
+      \end{array}
+    \right]
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(\dfrac{-54}{19},\dfrac{72}{19},\dfrac{-63}{19}\right)\right\}
+  \end{align*}
+  \columnseprule=1pt
+\end{multicols*}
+\newpage
+\subsection{Una fábrica posee tres máquinas A, B, C, las cuales trabajan en un día, durante 15, 22 y 23 horas respectivamente. Se producen tres artículos X, Y, Z en estas máquinas, en un día y de la siguiente manera: la unidad X está en A durante 1 hora, en B durante 2 horas y en C durante 1 hora; la unidad Y está en A durante 2 horas, en B durante 2 horas y en C durante 3 horas; la unidad Z está en A durante 1 hora, en B durante 2 horas y en C durante 2 horas. Si las maquinas se usan a máxima capacidad, durante un día, Hallar el número de cada artículo que es posible producir.}
+\begin{multicols}{2}
+\textbullet{ \textbf{Dada la tabla de composición:}}\\
+\begin{align*}
+  \begin{tabular}{c|c|c|c|c}
+    & x & y & z & Total\\
+    \hline
+    \textit{A} & 1 & 2 & 1 & 15\\
+    \textit{B} & 2 & 2 & 2 & 22\\
+    \textit{C} & 1 & 3 & 2 & 23\\
+  \end{tabular}
+\end{align*}
+\textbullet{ \textbf{Sea el sistema de ecuaciones:}}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    x+2y+z &= &15\\
+    2x+2y+2z &= &22\\
+    x+3y+2z &= &23
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet{ \textbf{Entonces las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    1 & 2 & 1\\
+    2 & 2 & 2\\
+    1 & 3 & 2
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    15\\
+    22\\
+    23
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    x\\
+    y\\
+    z
+  \end{bmatrix}
+\end{align*}
+\textit{Donde:}
+\begin{align*}
+  A: &\text{ Matriz de coeficientes}\\
+  B: &\text{ Matriz de términos independientes}\\
+  X: &\text{ Matriz de incógnitas}
+\end{align*}
+\textbullet{ \textbf{Aplicando el método de Gauss-Jordan:}}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 1 & 15 \\\\
+      2 & 2 & 2 & 22 \\\\
+      1 & 3 & 2 & 23
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \leftarrow F_1\left(-2\right)+F_2 \\\\
+    \leftarrow F_1\left(-1\right)+F_3
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 1 & 15 \\\\
+      0 & -2 & 0 & -8 \\\\
+      0 & 1 & 1 & 8
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\
+    \leftarrow F_2\left(-\frac{1}{2}\right)
+    \\\\
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 1 & 15 \\\\
+      0 & 1 & 0 & 4 \\\\
+      0 & 1 & 1 & 8
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \leftarrow F_2\left(-2\right)+F_1
+    \\\\
+    \\\\\\
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 1 & 7 \\\\
+      0 & 1 & 0 & 4 \\\\
+      0 & 1 & 1 & 8
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \\\\
+    \leftarrow F_3\left(-1\right)+F_1
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 1 & 7 \\\\
+      0 & 1 & 0 & 4 \\\\
+      0 & 0 & 1 & 4
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \leftarrow F_3\left(-1\right)+F_1
+    \\\\
+    \\\\
+    \\
+  \end{array}
+\end{align*}
+\columnbreak
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 0 & 3 \\\\
+      0 & 1 & 0 & 4 \\\\
+      0 & 0 & 1 & 4
+    \end{array}
+  \right]
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  B&=\left[
+    \begin{array}{c}
+      3\\\\
+      4\\\\
+      4
+    \end{array}
+  \right]
+  &=
+  &&X&=\left[
+    \begin{array}{c}
+      x \\\\
+      y \\\\
+      z 
+    \end{array}
+  \right]
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(3,4,4\right)\right\}
+\end{align*}
+\columnseprule=1pt
+\end{multicols}
+\newpage
+\subsection{Un nutriólogo desea alimentar a un sujeto con una dieta diaria de tres suplementos de dieta MiniCal, LiquiFast y SlimQuick. Es importante que el sujeto consuma exactamente 500 mg de potasio, 75 gr de proteína y 1150 unidades de vitamina D cada día. MiniCal contiene 50 mg de potasio, 5 g de proteína y 90 unidades de vitamina D; LiquiFast contiene 75 mg de potasio, 10 g de proteína y 100 unidades de vitamina D; SlimQuick contiene 10 mg de potasio, 3 g de proteína y 50 unidades de vitamina D. ¿Cuántas onzas de cada alimento debe consumir cada día para satisfacer exactamente las necesidades de nutrientes?}
+\begin{multicols*}{2}
+  \columnseprule=1pt
+  \textbullet{ \textbf{Dada la tabla de composición:}}
+\begin{align*}
+  \begin{tabular}{c|c|c|c|c}
+    & MiniCal & LiquiFast & SlimQuick & Total\\
+    \hline
+    \textit{Potasio} & 50 & 75 & 10 & 500\\
+    \textit{Proteína} & 5 & 10 & 3 & 75\\
+    \textit{Vitamina D} & 90 & 100 & 50 & 1150
+  \end{tabular}
+\end{align*}
+\textbullet{ \textbf{Sea el sistema de ecuaciones:}}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    10x+15y+2z &= &100\\
+    5x+10y+3z &= &75\\
+    9x+10y+5z &= &115
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet{ \textbf{Entonces las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    10 & 15 & 2\\
+    5 & 10 & 3\\
+    9 & 10 & 5
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    100\\
+    75\\
+    115
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    x\\
+    y\\
+    z
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Método Gauss-Jordan:}}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      10 & 15 & 2 & 100 \\\\
+      5 & 10 & 3 & 75 \\\\
+      9 & 10 & 5 & 115
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \leftarrow F_3\left(-1\right)+F_1 \\\\\\\\\\
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 5 & -3 & -15 \\\\
+      5 & 10 & 3 & 75 \\\\
+      9 & 10 & 5 & 115
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \leftarrow F_1\left(-5\right)+F_2 \\\\
+    \leftarrow F_1\left(-9\right)+F_3
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 5 & -3 & -15 \\\\
+      0 & 5 & 6 & -50 \\\\
+      0 & -35 & 32 & 250
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \leftarrow F_2\left(-1\right)+F_1
+    \\\\\\\\
+    \leftarrow F_2\left(7\right)+F_3
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 3 & 35 \\\\
+      0 & 5 & 6 & -50 \\\\
+      0 & 0 & -10 & -100
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\
+    \leftarrow F_3\left(-\frac{3}{5}\right)+F_2
+    \\\\
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 3 & 35 \\\\
+      0 & 5 & 0 & 10 \\\\
+      0 & 0 & -10 & -100
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \leftarrow F_2\left(\frac{1}{5}\right)
+    \\\\
+    \leftarrow F_2\left(-\frac{1}{10}\right)
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 3 & 35 \\\\
+      0 & 1 & 0 & 2 \\\\
+      0 & 0 & 1 & 10
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \leftarrow F_3\left(-3\right)+F_1
+    \\\\\\
+    \\\\
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 0 & 0 & 5 \\\\
+      0 & 1 & 0 & 2 \\\\
+      0 & 0 & 1 & 10
+    \end{array}
+  \right]
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  B&=\left[
+    \begin{array}{c}
+      5\\\\
+      2\\\\
+      10
+    \end{array}
+  \right]
+  &=
+  &&X&=\left[
+    \begin{array}{c}
+      x \\\\
+      y \\\\
+      z 
+    \end{array}
+  \right]
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(5,2,10\right)\right\}
+\end{align*}
+\end{multicols*}
+\newpage
+\subsection{Un ingeniero dispone de 5000 horas hombre de mano de obra para tres proyectos. Los costos por hora hombre del primer, segundo y tercer proyecto son \$16, \$20, \$24 respectivamente y el costo total es de \$ 106000. Si el número horas hombre para el tercer proyecto es igual a la suma de las horas hombre requeridas por los dos primeros proyectos. Calcule el número de horas hombre que puede disponerse en cada proyecto.}
+  \textbullet{ \textbf{Dado el sistema de ecuaciones:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x+y+z &= &5000\\
+      16x+20y+24z &= &106000\\
+      x+y-z &= &0
+    \end{array}
+    \right.\
+  \end{align*}
+  \textbullet{ \textbf{Entonces las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      4 & 5 & 6\\
+      1 & 1 & -1
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      5000\\
+      26500\\
+      0
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textbullet{ \textbf{Método Gauss-Jordan:}}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 5000 \\\\
+        4 & 5 & 6 & 26500 \\\\
+        1 & 1 & -1 & 0
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_1\left(-4\right)+F_2\\\\
+      \leftarrow F_1\left(-1\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 5000 \\\\
+        0 & 1 & 2 & 6500 \\\\
+        0 & 0 & -2 & -5000
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_2\left(-1\right)+F_1
+      \\\\
+      \leftarrow F_3\left(1\right)+F_1
+      \\\\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & -1 & -1500 \\\\
+        0 & 1 & 0 & 1500 \\\\
+        0 & 0 & -2 & -5000
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\\\\\
+      \leftarrow F_3\left(-\frac{1}{2}\right)
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & -1 & -1500 \\\\
+        0 & 1 & 0 & 1500 \\\\
+        0 & 0 & 1 & 2500
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_3\left(1\right)+F_1
+      \\\\\\\\
+      \\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 0 & 0 & 1000 \\\\
+        0 & 1 & 0 & 1500 \\\\
+        0 & 0 & 1 & 2500
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    B&=\left[
+      \begin{array}{c}
+        1000\\\\
+        1500\\\\
+        2500
+      \end{array}
+    \right]
+    &=
+    &&X&=\left[
+      \begin{array}{c}
+        x \\\\
+        y \\\\
+        z 
+      \end{array}
+    \right]
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(1000,1500,2500\right)\right\}
+  \end{align*}
+\newpage
+\section{Retos - Sesión 2}
+\subsection{Resolver por eliminación Gaussiana}
+\textbullet{ \textbf{Sea el sistema:}}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    3x+2y-2z &= &4\\
+    4x+y-z &= &7\\
+    x+4y-4z &= &-2
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      3 & 2 & -2\\
+      4 & 1 & -1\\
+      1 & 4 & -4
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      4\\
+      7\\
+      -2
+    \end{bmatrix}
+  \end{align*}
+  \textbullet{ \textbf{Eliminación Gaussiana:}}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        3 & 2 & -2 & 4 \\\\
+        4 & 1 & -1 & 7 \\\\
+        1 & 4 & -4 & -2
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \leftarrow F_3\left(-2\right)+F_1 \\\\
+      \leftarrow F_3\left(-4\right)+F_2 \\\\
+      \\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -6 & 6 & 8 \\\\
+        0 & -15 & 15 & 15 \\\\
+        1 & 4 & -4 & -2
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\\\\\
+      \leftarrow F_1\left(-1\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -6 & 6 & 8 \\\\
+        0 & -15 & 15 & 15 \\\\
+        0 & 10 & -10 & -10
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_2\left(-\frac{1}{15}\right)
+      \\\\
+      \leftarrow F_3\left(\frac{1}{10}\right)
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -6 & 6 & 8 \\\\
+        0 & 1 & -1 & -1 \\\\
+        0 & 1 & -1 & -1
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \\\\
+      \leftarrow F_2\left(-1\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -6 & 6 & 8 \\\\
+        0 & 1 & -1 & -1 \\\\
+        0 & 0 & 0 & 0
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x-6y+6z &= &8\\
+      y &= &t-1\\
+      z &= &t
+    \end{array}
+    \right.\ &&z=t\hspace{1cm};\hspace{1cm}t\in\mathbb{R}
+    \end{align*}
+    \begin{align*}
+      x-6\left(t-1\right)+6t &= 8\\
+      x-6t+6+6t &= 8\\
+      x &= 2
+    \end{align*}
+    \begin{align*}
+      \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(2,t-1,t\right)\right\}
+    \end{align*}
+\newpage
+\subsection{Resolver por eliminación Gaussiana:}
+\textbullet{ \textbf{Sea el sistema:}}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    x-y+z &= &1\\
+    -x+y-z &= &-1\\
+    2x-2y+2z &= &2
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & -1 & 1\\
+      -1 & 1 & -1\\
+      2 & -2 & 2
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      1\\
+      -1\\
+      2
+    \end{bmatrix}
+  \end{align*}
+  \textbullet{ \textbf{Eliminación Gaussiana:}}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -1 & 1 & 1 \\\\
+        -1 & 1 & -1 & -1 \\\\
+        2 & -2 & 2 & 2
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_1\left(1\right)+F_2 \\\\
+      \leftarrow F_1\left(-2\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & -1 & 1 & 1 \\\\
+        0 & 0 & 0 & 0 \\\\
+        0 & 0 & 0 & 0
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x-y+z &= &1\\
+      y &= &r\\
+      z &= &t
+    \end{array}
+    \right.\ &&\hspace{1cm}t,r\in\mathbb{R}
+    \end{align*}
+    \begin{align*}
+      x-r+t &= 1\\
+      x &= 1+r-t
+    \end{align*}
+    \begin{align*}
+      \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(r-t+1,r,t\right)\right\}
+    \end{align*}
+\newpage
+\subsection{Una tienda se especializa en la preparación de mezclas de café para conocedores. El dueño desea preparar bolsas de 1 kg que se venderán a 120 dólares, usando café colombiano, brasileño y de Kenia. El costo por kilogramo de estos tres tipos de café es de 140, 70 y 100 dólares respectivamente. Determine la cantidad de cada tipo de café, si el dueño decide usar 1/8 de kilogramo del café brasilero.}
+\newpage
+\subsection{Una fábrica de muebles construye mesas, sillas y armarios, todas de madera. Cada pieza de mueble requiere tres operaciones: corte de madera, ensamblaje y acabado. Realizar una mesa requiere 30 min de corte, 30 min de ensamblaje y 1 h de acabado; una silla requiere 1 h de corte, 90 min de ensamblaje y 90 min de acabado; un armario requiere 1 h de corte, 1 h de ensamblaje y 2 h de acabado. Los trabajadores de la fábrica pueden realizar 300 h de corte, 400 h de ensamblaje y 590 horas de acabado en cada semana. ¿Cuántas mesas, sillas y armarios deben ser producidos para que se usen todas las horas de trabajo disponibles? ¿O esto es imposible?}
+\textbullet\textbf{Dada la tabla de composición:}
+\begin{align*}
+  \begin{tabular}{c|c|c|c|c}
+    & Mesa & Silla & Armario & Total\\
+    \hline
+    \textit{Corte} & 30 & 60 & 60 & 300\\
+    \textit{Ensamblaje} & 30 & 90 & 60 & 400\\
+    \textit{Acabado} &60 & 90 & 120 & 590
+  \end{tabular}
+\end{align*}
+\textbullet\textbf{Sea el sistema de ecuaciones:}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    x+2y+2z &= &10\\
+    3x+9y+6z &= &40\\
+    6x+9y+12z &= &59
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet\textbf{Entonces las matrices:}
+\begin{align*}
+  A &= \begin{bmatrix}
+    1 & 2 & 2\\
+    3 & 9 & 6\\
+    6 & 9 & 12
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    10\\
+    40\\
+    59
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    x\\
+    y\\
+    z
+  \end{bmatrix}
+\end{align*}
+\textbullet\textbf{Por eliminación Gaussiana:}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 2 & 10 \\\\
+      3 & 9 & 6 & 40 \\\\
+      6 & 9 & 12 & 59
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \leftarrow F_1\left(-3\right)+F_2 \\\\
+    \leftarrow F_1\left(-6\right)+F_3
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 2 & 10 \\\\
+      0 & 3 & 0 & 10 \\\\
+      0 & -3 & 0 & -1
+    \end{array}
+  \right]
+  \begin{array}{r}
+    \\\\
+    \\\\
+    \leftarrow F_2\left(1\right)+F_3
+  \end{array}
+\end{align*}
+\begin{align*}
+  \left[A|B\right]&=\left[
+    \begin{array}{ccc|c}
+      1 & 2 & 2 & 10 \\\\
+      0 & 3 & 0 & 10 \\\\
+      0 & 0 & 0 & 9
+    \end{array}
+  \right]
+\end{align*}
+\textbullet\textbf{Finalmente:}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    x+y+z &= &10\\
+    3y &= &10\\
+    0 &= &9
+  \end{array}
+  \right.\
+\end{align*}
+\begin{align*}
+  \therefore \ &\text{El sistema es inconsistente}\\
+  &C.S. \left(x,y,z\right) = \left\{\left(\emptyset\right)\right\}
+\end{align*}
+\end{document}
