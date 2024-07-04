@@ -1,0 +1,828 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{array}
+\title{\textbf{Sesión integradora} \\ 
+\vspace{0.5cm}
+\large \textbf{Para el primer ciclo de introducción a la matemática para ingeniería}}
+\author{\textbf{Luis Huatay}\\\\\texttt{noggnzzz@gmail.com}\\\\\texttt{U24218809}}
+
+
+\vspace{-1cm}
+
+\begin{document}
+\newgeometry{top=9cm}
+\maketitle
+\begin{center}
+Resolución de las actividades de la sesión integradora de la semana 14.
+\end{center}
+\restoregeometry
+
+\newpage
+\newgeometry{
+  top=1.5cm,
+  bottom=1.5cm,
+  left=1.5cm,
+  right=1.5cm
+}
+
+% [2ex] > úsese para seapramiento vertical de matrices
+
+\section{Sesión integradora}
+\subsection{El supermercado vende 3 tipos de conservas, Gloria, Laive y Cameo. El precio promedio de las 3 conservas es de S/9.00 . Un cliente compra 30 unidades de Gloria, 20 de Laive y 10 de Cameo, debiendo abonar S/560.00. Otro compra 20 unidades de Gloria y 25 de Cameo y abona S/310.00. Calcula el precio de una conserva Gloria, otra de Laive y otra de Cameo. Utiliza el método de Gauss-Jordan}
+\vspace{-0.5cm}
+\begin{align*}
+  &\begin{array}{l}
+      \textit{\textbf{Donde:}}\\
+      \text{Gloria}: a\\
+      \text{Laive}: b\\
+      \text{Cameo}: c\\
+  \end{array}
+  \quad
+  \left\{
+  \begin{array}{rcl}
+      a + b + c &= &27\\
+      3a + 2b + c &= &56\\
+      4a + 0y + 5c &= &62
+  \end{array}
+  \right.
+\end{align*}
+  \textbullet{ \textbf{Sean las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      3 & 2 & 1\\
+      4 & 0 & 5
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      27\\
+      56\\
+      62
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      a\\
+      b\\
+      c
+    \end{bmatrix}
+  \end{align*}
+  \textit{Donde:}
+  \begin{align*}
+    A: &\text{ Matriz de coeficientes}\\
+    B: &\text{ Matriz de términos independientes}\\
+    X: &\text{ Matriz de incógnitas}
+  \end{align*}
+  \textbullet{ \textbf{Sea la matriz aumentada:}}
+\begin{align*}
+  \left[A|B\right] = \left[
+    \begin{array}{ccc|c}
+      1 & 1 & 1 & 27\\
+      3 & 2 & 1 & 56\\
+      4 & 0 & 5 & 62
+    \end{array}
+  \right]
+\end{align*}
+  \textbullet{ \textbf{Aplicando operaciones elementales:}}
+    \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 27 \\[1.5ex]
+        3 & 2 & 1 & 56 \\[1.5ex]
+        4 & 0 & 5 & 62
+      \end{array}
+    \right]
+    \quad
+    \begin{array}{r}
+      \\[1.5ex]
+      \leftarrow F_1\left(-3\right)+F_2 \\[1.5ex]
+      \leftarrow F_1\left(-4\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 27 \\[1.5ex]
+        0 & -1 & -2 & -25 \\[1.5ex]
+        0 & -4 & 1 & -46
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\[1.5ex]\\[1.5ex]
+      \leftarrow F_2\left(-4\right)+F_3 
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 27 \\[1.5ex]
+        0 & -1 & -2 & -25 \\[1.5ex]
+        0 & 0 & 9 & 54
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\[1.5ex]
+      \leftarrow F_2\left(-1\right) \\[1.5ex]
+      \leftarrow F_3\left(\frac{1}{9}\right)
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 27 \\[1.5ex]
+        0 & 1 & 2 & 25 \\[1.5ex]
+        0 & 0 & 1 & 6
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+\begin{array}{ccc}
+    \begin{array}{rcl}
+        c &=& 6
+    \end{array}
+    & \quad
+    \begin{array}{rcl}
+        b + 2(6) &=& 25\\
+        b &=& 13
+    \end{array}
+    & \quad
+    \begin{array}{rcl}
+        a + 13 + 6 &=& 27\\
+        a &=& 8
+    \end{array}
+\end{array}
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(a,b,c\right) = \left\{\left(8,13,6\right)\right\}
+\end{align*}
+\newpage
+\subsection{En una reunión del club se juntan 30 personas entre hombres, mujeres y niños. Se sabe que entre los hombres y las mujeres duplican al número de niños. También se sabe que entre los hombres y el triple de las mujeres exceden en 20 al doble de niños. Plantear un sistema de ecuaciones que permita averiguar el número de hombres, mujeres y niños. Resolver el sistema de ecuaciones planteado y comentar el resultado. Utiliza el método de la matriz inversa}
+\vspace{-0.5cm}
+\begin{align*}
+  &\begin{array}{l}
+      \textit{\textbf{Donde:}}\\
+      \text{Hombre}: h\\
+      \text{Mujeres}: m\\
+      \text{Niños}: n\\
+  \end{array}
+  \quad
+  \left\{
+  \begin{array}{rcl}
+    h + m -2n &= &0\\
+    h + 3m -2n &= &20\\
+    h + m + n &= &30
+  \end{array}
+  \right.
+  \quad
+  \begin{array}{l}
+    \text{Por condición con niños.}\\
+    \text{Hombres y el triple de mujeres exceden en 20 al doble de niños.}\\
+    \text{Por cantidad de asistentes.}
+  \end{array}
+\end{align*}
+\begin{multicols*}{2}
+\textbullet{ \textbf{Entonces las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    1 & 1 & -2\\
+    1 & 3 & -2\\
+    1 & 1 & 1
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    0\\
+    20\\
+    30
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    h\\
+    m\\
+    n
+  \end{bmatrix}
+\end{align*}
+\textit{Donde:}
+\begin{align*}
+  A: &\text{ Matriz de coeficientes}\\
+  B: &\text{ Matriz de términos independientes}\\
+  X: &\text{ Matriz de incógnitas}
+\end{align*}
+\textbullet{ \textbf{Aplicando el método de matriz inversa.}}
+\begin{align*}
+  A^{-1} &= \frac{1}{\left|A\right|} \cdot adj\left(A\right)
+\end{align*}
+\textbullet{ \textbf{Calculando el determinante:}}
+\begin{align*}
+  \left|A\right| &= 3 - 2 + 6 + 2 - 1 - 2\\
+  \left|A\right| &= 6
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz de cofactores:}}
+\begin{align*}
+  Cof\left(A\right) &= \begin{bmatrix}
+    +\left(3+2\right) & -\left(1+2\right) & +\left(1-3\right)\\
+    -\left(1+2\right) & +\left(1+2\right) & -\left(1-1\right)\\
+    +\left(-2+6\right) & -\left(-2+2\right) & +\left(3-1\right)
+  \end{bmatrix}\\
+  Cof\left(A\right) &= \begin{bmatrix}
+    5 & -3 & -2\\
+    -3 & 3 & 0\\
+    4 & 0 & 2
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz adjunta:}}
+\begin{align*}
+  adj\left(A\right) &= \left(Cof\left(A\right)\right)^T\\
+  adj\left(A\right) &= \begin{bmatrix}
+    5 & -3 & 4\\
+    -3 & 3 & 0\\
+    -2 & 0 & 2
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz inversa:}}
+\begin{align*}
+  A^{-1} &= \frac{1}{6} \cdot \begin{bmatrix}
+    5 & -3 & 4\\
+    -3 & 3 & 0\\
+    -2 & 0 & 2
+  \end{bmatrix}\\
+  A^{-1} &= \begin{bmatrix}
+    \dfrac{5}{6} & -\dfrac{1}{2} & \dfrac{2}{3}\\[2ex]
+    -\dfrac{1}{2} & \dfrac{1}{2} & 0\\[2ex]
+    -\dfrac{1}{3} & 0 & \dfrac{1}{3}
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  X &= A^{-1} \cdot B\\\\
+  X &= \begin{bmatrix}
+    \dfrac{5}{6} & -\dfrac{1}{2} & \dfrac{2}{3}\\[2ex]
+    -\dfrac{1}{2} & \dfrac{1}{2} & 0\\[2ex]
+    -\dfrac{1}{3} & 0 & \dfrac{1}{3}
+  \end{bmatrix} \cdot \begin{bmatrix}
+    0\\[2ex]
+    20\\[2ex]
+    30
+  \end{bmatrix}\\\\
+  X &= \begin{bmatrix}
+    10\\[2ex]
+    10\\[2ex]
+    10
+  \end{bmatrix}
+\end{align*}
+\text{La cantidad de hombres, mujeres y niños es de 10 cada uno.}
+\begin{align*}
+  \therefore \ &C.S. \left(h,m,n\right) = \left\{\left(10,10,10\right)\right\}
+\end{align*}
+\columnseprule=1pt
+\end{multicols*}
+\newpage
+\subsection{
+El país asiático de China compra 540,000 barriles de petróleo a tres suministradores diferentes del medio oriente que lo venden a \$27, \$28 y \$31 el barril, respectivamente. La factura total asciende a \$15,999,000. Si del primer suministrador recibe el 30\% del total del petróleo comprado, ¿cuál es la cantidad comprada a cada suministrador? Utiliza el método de Cramer.
+}
+  \columnseprule=1pt
+\textbullet{ \textbf{Sea el sistema de ecuaciones:}}
+\begin{align*}
+  \left\{
+  \begin{array}{rcl}
+    27x + 28y + 31z &= &15999000\\
+    x + y + z &= &540000\\
+    x &= &162000
+  \end{array}
+  \right.\
+\end{align*}
+\textbullet{ \textbf{Entonces las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    27 & 28 & 31\\
+    1 & 1 & 1\\
+    1 & 0 & 0
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    15999000\\
+    540000\\
+    162000
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    x\\
+    y\\
+    z
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Método de Cramer:}}\\
+\text{Hallando el determinante de la matriz A:}
+\begin{align*}
+  \left|A\right| &= 28-31\\
+  \left|A\right| &= -3
+\end{align*}
+\text{Hallando el determinante para X:}
+\begin{align*}
+  \left|A_x\right| &= \begin{vmatrix}
+    15999000 & 28 & 31\\
+    540000 & 1 & 1\\
+    162000 & 0 & 0
+  \end{vmatrix}\\
+  \left|A_x\right| &= 4536000 - 5022000\\
+  \left|A_x\right| &= -486000
+\end{align*}
+\text{Hallando el determinante para Y:}
+\begin{align*}
+  \left|A_y\right| &= \begin{vmatrix}
+    27 & 15999000 & 31\\
+    1 & 540000 & 1\\
+    1 & 162000 & 0
+  \end{vmatrix}\\
+  \left|A_y\right| &= 21021000 - 16740000 - 4374000\\
+  \left|A_y\right| &= -93000
+\end{align*}
+\text{Hallando el determinante para Z:}
+\begin{align*}
+  \left|A_z\right| &= \begin{vmatrix}
+    27 & 28 & 15999000\\
+    1 & 1 & 540000\\
+    1 & 0 & 162000
+  \end{vmatrix}\\
+  \left|A_z\right| &= 4374000 + 15120000 - 15999000 - 4536000\\
+  \left|A_z\right| &= -1041000
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  x &= \frac{\left|A_x\right|}{\left|A\right|} = \frac{-486000}{-3} = 162000\\
+  y &= \frac{\left|A_y\right|}{\left|A\right|} = \frac{-93000}{-3} = 31000\\
+  z &= \frac{\left|A_z\right|}{\left|A\right|} = \frac{-1041000}{-3} = 347000
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(162000,31000,347000\right)\right\}
+\end{align*}
+\begin{center}
+  \text{La cantidad comprada a cada suministrador es de 162,000, 31,000 y 347,000 barriles respectivamente.}
+\end{center}
+\newpage
+\subsection{La empresa TOYOTA.SAC ha lanzado al mercado tres nuevos modelos de autos deportivos (A, B y C). El precio de venta de cada modelo es 1.5, 2 y 3 millones de dólares, respectivamente, ascendiendo el importe total de los autos vendidos durante el primer mes a 250 millones. Por otra parte, los costes de fabricación son de 1 millón por auto deportivo para el modelo A, de 1.5 para el modelo B y de 2 para el C. El coste total de fabricación de los autos deportivos vendidos en ese mes fue de 175 millones y el número total de autos deportivos vendidos 140. Determina el número total de autos deportivos que la marca TOYOTA.SAC ha vendido. Utiliza el método de Gauss-Jordan.}
+  \textbullet{ \textbf{Dado el sistema de ecuaciones:}}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x + y + z &= &140\\
+      \left(\dfrac{3}{2}\right)x + 2y + 3z &= &250\\
+      x + \left(\dfrac{3}{2}\right) + 2z &= &175
+    \end{array}
+    \right.\
+    \quad
+    \begin{array}{l}
+      \text{Número total de autos vendidos.}\\[2ex]
+      \text{Importe total de los autos vendidos.}\\[2ex]
+      \text{Coste total de fabricación.}\\[2ex]
+    \end{array}
+  \end{align*}
+  \textbullet{ \textbf{Entonces las matrices:}}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\[2ex]
+      \dfrac{3}{2} & 2 & 3\\[2ex]
+      1 & \dfrac{3}{2} & 2
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      140\\[2ex]
+      250\\[2ex]
+      175
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      x\\[2ex]
+      y\\[2ex]
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textbullet{ \textbf{Método Gauss-Jordan:}}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 140\\[2ex]
+        \dfrac{3}{2} & 2 & 3 & 250\\[2ex]
+        1 & \dfrac{3}{2} & 2 & 175
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\
+      \leftarrow F_1\left(-\dfrac{3}{2}\right)+F_2\\\\
+      \leftarrow F_1\left(-1\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 140\\[2ex]
+        0 & \dfrac{1}{2} & \dfrac{3}{2} & 40\\[2ex]
+        0 & \dfrac{1}{2} & 1 & 35
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\
+      \\
+      \\\\
+      \leftarrow F_2\left(-1\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 140\\[2ex]
+        0 & \dfrac{1}{2} & \dfrac{3}{2} & 40\\[2ex]
+        0 & 0 & -1 & -5
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\\\
+      \leftarrow F_2\left(2\right)\\
+      \leftarrow F_3\left(-2\right)\\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 140\\[2ex]
+        0 & 1 & 3 & 80\\[2ex]
+        0 & 0 & 1 & 10
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet{ \textbf{Finalmente:}}
+  \begin{align*}
+    \begin{array}{ccc}
+      \begin{array}{rcl}
+        z &=& 10
+      \end{array}
+      & \quad
+      \begin{array}{rcl}
+        y + 3(10) &=& 80\\
+        y &=& 50
+      \end{array}
+      & \quad
+      \begin{array}{rcl}
+        x + 50 + 10 &=& 140\\
+        x &=& 80
+      \end{array}
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(80,50,10\right)\right\}
+  \end{align*}
+  \begin{center}
+    \text{La cantidad total de autos vendidos es de 140.}
+  \end{center}
+\newpage
+\subsection{Un almacén distribuye cierto producto que fabrican 3 marcas distintas: A, B y C. La marca A lo envasa en cajas de 250 gramos y su precio es de S/100.00, la marca B lo envasa en cajas de 500 gramos a un precio de S/180.00 y la marca C lo hace en cajas de 1 kilogramo a un precio de S/330.00. El almacén vende a un cliente 2.5 kilogramos de este producto por un importe de S/890.00. Sabiendo que el lote iba envasado en 5 cajas, plantea un sistema para determinar cuántas cajas de cada tipo se han comprado y resuelve el problema. Utiliza el método de la matriz inversa.}
+\textbullet{ \textbf{Sea el sistema:}}
+\begin{align*}
+  &\begin{array}{l}
+      \textit{\textbf{Donde:}}\\
+      \text{Marca A}: a\\
+      \text{Marca B}: b\\
+      \text{Marca C}: c\\
+  \end{array}
+  \quad
+  \left\{
+  \begin{array}{rcl}
+    10a + 18b + 33c &= &89\\
+    a + 2b + 4c &= &10\\
+    a + b + c &= &5
+  \end{array}
+  \right.
+  \quad
+  \begin{array}{l}
+    \text{Precio de las marcas.}\\
+    \text{Por peso}\\
+    \text{Cantidad de cajas.}
+  \end{array}
+\end{align*}
+\textbullet{ \textbf{Sean las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    10 & 18 & 33\\
+    1 & 2 & 4\\
+    1 & 1 & 1
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    89\\
+    10\\
+    5
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    a\\
+    b\\
+    c
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Aplicando el método de matriz inversa.}}
+\begin{align*}
+  A^{-1} &= \frac{1}{\left|A\right|} \cdot adj\left(A\right)
+\end{align*}
+\textbullet{ \textbf{Calculando el determinante:}}
+\begin{align*}
+  \left|A\right| &= 20 + 72 + 33 - 66 - 40 - 18\\
+  \left|A\right| &= 1
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz de cofactores:}}
+\begin{align*}
+  Cof\left(A\right) &= \begin{bmatrix}
+    +\left(2-4\right) & -\left(1-4\right) & +\left(1-2\right)\\
+    -\left(18-33\right) & +\left(10-33\right) & -\left(10-18\right)\\
+    +\left(72-66\right) & -\left(40-33\right) & +\left(20-18\right)
+  \end{bmatrix}\\
+  Cof\left(A\right) &= \begin{bmatrix}
+    -2 & 3 & -1\\
+    15 & -23 & 8\\
+    6 & -7 & 2
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz adjunta:}}
+\begin{align*}
+  adj\left(A\right) &= \left(Cof\left(A\right)\right)^T\\
+  adj\left(A\right) &= \begin{bmatrix}
+    -2 & 15 & 6\\
+    3 & -23 & -7\\
+    -1 & 8 & 2
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Calculando la matriz inversa:}}
+\begin{align*}
+  A^{-1} &= \frac{1}{1} \cdot \begin{bmatrix}
+    -2 & 15 & 6\\
+    3 & -23 & -7\\
+    -1 & 8 & 2
+  \end{bmatrix}\\
+  A^{-1} &= \begin{bmatrix}
+    -2 & 15 & 6\\
+    3 & -23 & -7\\
+    -1 & 8 & 2
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  X &= A^{-1} \cdot B\\
+  X &= \begin{bmatrix}
+    -2 & 15 & 6\\
+    3 & -23 & -7\\
+    -1 & 8 & 2
+  \end{bmatrix} \cdot \begin{bmatrix}
+    89\\
+    10\\
+    5
+  \end{bmatrix}\\
+  X &= \begin{bmatrix}
+    2\\
+    2\\
+    1
+  \end{bmatrix}
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(a,b,c\right) = \left\{\left(2,2,1\right)\right\}
+\end{align*}
+\text{La cantidad de cajas de cada marca es de 2, 2 y 1 respectivamente.}
+\newpage
+\subsection{Una editorial dispone de tres textos diferentes para Matemáticas de 2o de Bachillerato de Ciencias Sociales y Humanas. El texto A se vende a 9 € el ejemplar; el texto B a 11 € y el C a 13 €. En la campaña correspondiente a un curso académico la editorial ingresó, en concepto de ventas de estos libros de Matemáticas 8400 €. Sabiendo que el libro A se vendió tres veces más que el C, y que el B se vendió tanto como el A y el C juntos, plantea un sistema de ecuaciones que te permita averiguar cuántos se vendieron de cada tipo y resuelve el problema. Utiliza el método de Cramer.}
+\textbullet{ \textbf{Sea el sistema:}}
+\begin{align*}
+  &\begin{array}{l}
+      \textit{\textbf{Donde:}}\\
+      \text{Libro A}: a\\
+      \text{Libro B}: b\\
+      \text{Libro C}: c\\
+  \end{array}
+  \quad
+  \left\{
+  \begin{array}{rcl}
+    9a + 11b + 13c &= &8400\\
+    -a +b -c &= &0\\
+    a + 0b - 3c &= &0
+  \end{array}
+  \right.
+  \quad
+  \begin{array}{l}
+    \text{Precio de las marcas.}\\
+    \text{Por cantidad.}\\
+    \text{Por condición.}
+  \end{array}
+\end{align*}
+\textbullet{ \textbf{Entonces las matrices:}}
+\begin{align*}
+  A &= \begin{bmatrix}
+    9 & 11 & 13\\
+    -1 & 1 & -1\\
+    1 & 0 & -3
+  \end{bmatrix}&
+  B &= \begin{bmatrix}
+    8400\\
+    0\\
+    0
+  \end{bmatrix}&
+  X &= \begin{bmatrix}
+    a\\
+    b\\
+    c
+  \end{bmatrix}
+\end{align*}
+\textbullet{ \textbf{Método de Cramer:}}\\
+\text{Hallando el determinante de la matriz A:}
+\begin{align*}
+  \left|A\right| &= -27-11-13-33\\
+  \left|A\right| &= -84
+\end{align*}
+\text{Hallando el determinante para A:}
+\begin{align*}
+  \left|A_x\right| &= \begin{vmatrix}
+    8400 & 11 & 13\\
+    0 & 1 & -1\\
+    0 & 0 & -3
+  \end{vmatrix}\\
+  \left|A_x\right| &= -25200 + 0 + 0\\
+  \left|A_x\right| &= -25200
+\end{align*}
+\text{Hallando el determinante para B:}
+\begin{align*}
+  \left|A_y\right| &= \begin{vmatrix}
+    9 & 8400 & 13\\
+    -1 & 0 & -1\\
+    1 & 0 & -3
+  \end{vmatrix}\\
+  \left|A_y\right| &= -8400-25200\\
+  \left|A_y\right| &= -33600
+\end{align*}
+\text{Hallando el determinante para C:}
+\begin{align*}
+  \left|A_z\right| &= \begin{vmatrix}
+    9 & 11 & 8400\\
+    -1 & 1 & 0\\
+    1 & 0 & 0
+  \end{vmatrix}\\
+  \left|A_z\right| &= -8400
+\end{align*}
+\textbullet{ \textbf{Finalmente:}}
+\begin{align*}
+  a &= \frac{\left|A_x\right|}{\left|A\right|} = \frac{-25200}{-84} = 300\\
+  b &= \frac{\left|A_y\right|}{\left|A\right|} = \frac{-33600}{-84} = 400\\
+  c &= \frac{\left|A_z\right|}{\left|A\right|} = \frac{-8400}{-84} = 100
+\end{align*}
+\begin{align*}
+  \therefore \ &C.S. \left(a,b,c\right) = \left\{\left(300,400,100\right)\right\}
+\end{align*}
+\begin{center}
+  \text{La cantidad de libros vendidos de cada tipo es de 300, 400 y 100 respectivamente.}
+\end{center}
+\newpage
+\subsection{Determina el conjunto solución de los siguientes sistemas de ecuaciones bajo el método Gass-Jordan.}
+\begin{enumerate}
+  \item \textbf{Sea el sistema de ecuaciones:}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x+2y+4z &= &3\\
+      2x+4y+8z &= &1\\
+      0x-y+z &= &-2
+    \end{array}
+    \right.\
+  \end{align*}
+  \textbullet\textbf{Entonces las matrices:}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 2 & 4\\
+      2 & 4 & 8\\
+      0 & -1 & 1
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      3\\
+      1\\
+      -2
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textbullet\textbf{Por Gauss-Jordan:}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 2 & 4 & 3\\
+        2 & 4 & 8 & 1\\
+        0 & -1 & 1 & -2
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_1\left(-2\right)+F_2\\
+      \\\\
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 2 & 4 & 3\\
+        0 & 0 & 0 & -5\\
+        0 & -1 & 1 & -2
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_2\left(-1\right)\\
+      \\\\
+    \end{array}
+  \end{align*}
+  \textbullet\textbf{Finalmente:}
+  \begin{align*}
+    \therefore \ &\text{El sistema es inconsistente}\\
+    &C.S. \left(x,y,z\right) = \left\{\left(\emptyset\right)\right\}
+  \end{align*}
+  \item \textbf{Sea el sistema de ecuaciones:}
+  \begin{align*}
+    \left\{
+    \begin{array}{rcl}
+      x+y+z &= &2\\
+      2x+3y+4z 2&= &1\\
+      -2x-y-8z &= &-7
+    \end{array}
+    \right.\
+  \end{align*}
+  \textbullet\textbf{Entonces las matrices:}
+  \begin{align*}
+    A &= \begin{bmatrix}
+      1 & 1 & 1\\
+      2 & 3 & 4\\
+      -2 & -1 & -8
+    \end{bmatrix}&
+    B &= \begin{bmatrix}
+      2\\
+      1\\
+      -7
+    \end{bmatrix}&
+    X &= \begin{bmatrix}
+      x\\
+      y\\
+      z
+    \end{bmatrix}
+  \end{align*}
+  \textbullet\textbf{Por Gauss-Jordan:}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 2\\
+        2 & 3 & 4 & 1\\
+        -2 & -1 & -8 & -7
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\
+      \leftarrow F_1\left(-2\right)+F_2\\
+      \leftarrow F_1\left(2\right)+F_3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 2\\
+        0 & 1 & 2 & -3\\
+        0 & 1 & -6 & -3
+      \end{array}
+    \right]
+    \begin{array}{r}
+      \\\\
+      \leftarrow F_2\left(-1\right)+F3
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \left[A|B\right]&=\left[
+      \begin{array}{ccc|c}
+        1 & 1 & 1 & 2\\
+        0 & 1 & 2 & -3\\
+        0 & 0 & -8 & 0
+      \end{array}
+    \right]
+  \end{align*}
+  \textbullet\textbf{Finalmente:}
+  \begin{align*}
+    \begin{array}{ccc}
+      \begin{array}{rcl}
+        z &=& 0
+      \end{array}
+      & \quad
+      \begin{array}{rcl}
+        y + 2(0) &=& -3\\
+        y &=& -3
+      \end{array}
+      & \quad
+      \begin{array}{rcl}
+        x - 3 + 0 &=& 2\\
+        x &=& 5
+      \end{array}
+    \end{array}
+  \end{align*}
+  \begin{align*}
+    \therefore \ &C.S. \left(x,y,z\right) = \left\{\left(5,-3,0\right)\right\}
+  \end{align*}
+\end{enumerate}
+\end{document}
