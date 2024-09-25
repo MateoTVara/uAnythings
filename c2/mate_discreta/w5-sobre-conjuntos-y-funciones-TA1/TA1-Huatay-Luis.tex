@@ -1,0 +1,357 @@
+\documentclass[11pt, a4paper]{article}
+\setlength{\headheight}{17.74934pt}
+\addtolength{\topmargin}{-5.74934pt}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=2cm]{assets/logo-utp.png}} % Reemplaza con la ruta de tu imagen
+\fancyhead[R]{\textbf{Matemática Discreta}}
+
+\fancyfoot[R]{\thepage} % Número de página alineado a la derecha
+
+\setlength{\textheight}{23cm}  % Ajusta el alto del texto (puedes aumentar este valor)
+
+
+
+\title{
+  \includegraphics[width=5cm]{./assets/logo-utp.png} \\
+  \vspace{1cm}
+  \textbf{Universidad Tecnológica del Perú} \\
+  \vspace{3.5cm}
+  \textbf{Teoría de Conjuntos y Funciones Matemáticas Aplicadas: Explorando las Funciones de Activación en Redes Neuronales.} \\ 
+  \vspace{1cm}
+  \large \textbf{Para el curso de Matemática Discreta}
+}
+  \author{\textbf{Luis Huatay S.}\\\\\texttt{hsluis4326@gmail.com}\\\\\texttt{U24218809 - 35096}}
+  \vspace{-1cm}
+
+\begin{document}
+\newgeometry{top=4cm}
+\maketitle
+\begin{center}
+Doc. Mattos Quevedo, Juan Manuel
+\end{center}
+\restoregeometry
+
+\newpage 
+
+\textbf{Índice}
+\begin{enumerate}
+  \item Introducción
+  \item Sobre la Teoría de Conjuntos
+  \item Sobre Funciones
+  \item Funciones aplicadas a Redes Neuronales
+  \item Conclusiones
+\end{enumerate}
+
+\newpage
+\vspace*{\fill}
+\section{Introducción}
+  En la historia de la humanidad, pocos momentos han sido tan trascendentales para el pensamiento como el que nos brindó George Cantor (1845 - 1918) al dar vida a una de las más atrevidas creaciones en la historia de las matemáticas: la teoría de conjuntos. Considerada en su tiempo como una verdadera herejía matemática y que incluso llevó a su creador a la locura, esta teoría no solo es una de las contribuciones más extraordinarias del intelecto humano, sino que también permitió a Cantor "domar al infinito", explorando y conceptualizando lo inconcebible. Tanto es así, que podríamos afirmar que las matemáticas modernas son, en gran medida, una consecuencia directa de la teoría de conjuntos. En este informe, exploraremos los fundamentos de la teoría de conjuntos, así como su fascinante evolución hacia una de sus aplicaciones más influyentes: las funciones. Además, descubriremos cómo estas funciones desempeñan un papel fundamental en el desarrollo de las redes neuronales artificiales a través de las denominadas funciones de activación.
+\vspace*{\fill}
+
+\newpage
+
+\section{Sobre la Teoría de Conjuntos}
+  Según J. Amor (2005). Un conjunto es una colección de objetos considerada como un todo; 
+  es decir, considerada como una unidad. Brevemente, podemos decir que un conjunto es una multiplicidad considerada como una unidad. Los objetos que pertenecen a un conjunto se llaman sus elementos y estos pueden ser cualquier tipo de objetos que no sean colecciones o bien pueden ser conjuntos.
+  
+  
+  Con la palabra “objeto”. nos referimos a los objetos de estudio de la Teoría de Conjuntos (T.C.). Los objetos de estudio de la T.C. quedan intuitivamente descritos con las siguientes ideas:
+  \begin{enumerate}
+    \item Si $x$ no tiene elementos, entonces x es un objeto de la T.C.
+    \item Si $x$ es un conjunto, entonces x es un objeto de la T.C.
+    \item Los únicos objetos de la T.C. son los descritos en 1 y 2.
+  \end{enumerate}
+  \begin{flushright}
+    \textit{Amor Montaño, J. A. (2005). Teoría de conjuntos para estudiantes de ciencias.}
+\end{flushright}
+Con respecto a estas ideas podemos entender que:
+
+  \textbf{Idea 1: Objeto sin elemento. } Si $x$ no tiene elementos, entonces es un objeto de la T.C. Esto hace referencia al conjunto vacío, un conjunto que no contiene ningún elemento, denotado como $\emptyset$ o $\{\}$.
+
+  \textbf{Idea 2: Conjunto. } Si $x$ es un conjunto (una colección de elementos), entonces es un objeto de la T.C. Esto cubre todos los conjuntos posibles, ya sean finitos o infinitos.
+
+  \textbf{Idea 2: Exclusividad. } Solo se consideran como objetos de la T.C. aquellos descritos en los puntos 1 y 2. Es decir, los objetos de la T.C. son únicamente conjuntos o el conjunto vacío.
+
+  A continuación, exploraremos en resumen 10 conceptos fundamentales de teoría de conjuntos a través de definiciones clave y ejercicios aplicados. Estos conceptos no solo forman la base de la teoría de conjuntos, sino que también son esenciales para diversas áreas de las matemáticas y la informática. La resolución de los ejercicios proporcionará una comprensión más profunda y práctica de cada concepto, facilitando su aplicación en problemas reales.
+
+  \newpage
+  \subsection{Guía práctica y definiciones sobre Teoría de Conjuntos}
+  \begin{multicols}{2}
+    \begin{center}
+      \textbf{1. Conjunto:}
+    \end{center}
+    Es una colección de objetos considerados como un todo. Los objetos dentro de un conjunto se llaman elementos y se enumeran entre llaves. Los conjuntos se denotan con letras mayúsculas.
+
+    \textbf{Ejercicio:} Dado el conjunto \( A = \{1, 2, 3\} \), marca V o F según corresponda.
+
+    \textbf{Solución:} 
+    \begin{enumerate}
+      \item \( 1 \in A \). \quad \textbf{V}
+    \item \( \{1\} \subset A \). \quad \textbf{V}
+    \item \( 4 \in A \). \quad \textbf{F}
+    \item \( \{1, 4\} \subset A \). \quad \textbf{F}
+    \item \( \{2, 3\} \subset A \). \quad \textbf{V}
+  \end{enumerate}
+
+    \begin{center}
+      \textbf{2. Conjunto potencia:}
+    \end{center}
+    Dado un \( A \) es el conjunto que contiene todos los subconjuntos posibles de \( A \), incluido el conjunto vacío $\emptyset$ y \( A \) mismo. Se denota como \( P(A) \).
+  
+    \textbf{Ejercicio:} Dado el conjunto \( A = \{1, 2\} \), determina el conjunto potencia de \( A \).
+  
+    \textbf{Solución:} Los subconjuntos posibles de \( A \) son \( \{\}, \{1\}, \{2\}, \{1, 2\} \). Por lo tanto: \( P(A) = \{\{\}, \{1\}, \{2\}, \{1, 2\}\} \).
+
+    \begin{center}
+      \textbf{3. Cardinalidad:}
+    \end{center}
+    Es el número de elementos que contiene. Se denota como \( |A| \) o \( n(A) \).
+    
+    \textbf{Ejercicio:} A partir del problema anterior, determina la cardinalidad de \( P(A) \).
+    
+    \textbf{Solución:} La cardinalidad del conjunto potencia de cualquier conjunto se puede determinar por la fórmula \( |P(A)| = 2^{|A|} \). Dado que \( |A| = 2 \), la cardinalidad de \( P(A) \) es \( 2^2 = 4 \).
+
+    \begin{center}
+      \textbf{4. Unión:}
+    \end{center}
+    Dados \( A \) y \( B \) es el conjunto que contiene todos los elementos de ambos conjuntos y se define como: \( A \cup B = \{x | x \in A \text{ o } x \in B\} \).
+    
+    \textbf{Ejercicio:} Dados los conjuntos \( A = \{1, 2\} \), \( B = \{x, 9\} \) además, \( A \cup B = \{1, 2, 7, 9\} \). determina el valor de $x$.
+    
+    \textbf{Solución:} Si, \( A \cup B = \{1, 2, x, 9\} \). Entonces, \( x = 7 \).
+
+    \begin{center}
+      \textbf{5. Intersección:}
+    \end{center}
+    Dados \( A \) y \( B \) es el conjunto que contiene todos los elementos que son comunes a ambos conjuntos y se define como: \( A \cap B = \{x | x \in A \text{ y } x \in B\} \).
+    
+    \textbf{Ejercicio:} Dados los conjuntos \( A = \{1, 2\} \), \( B = \{x, 9\} \) además, \( A \cap B = \{2\} \). determina el valor de $x$.
+    
+    \textbf{Solución:} Si, \( A \cap B = \{x\} \). Entonces, \( x = 2 \).
+
+    \begin{center}
+      \textbf{6. Diferencia:}
+    \end{center}
+    Dados \( A \) y \( B \) es el conjunto que contiene todos los elementos de \( A \) que no están en \( B \) y se define como: \( A - B = \{x | x \in A \text{ y } x \notin B\} \).
+    
+    \textbf{Ejercicio:} Dados los conjuntos \( A = \{1, 2\} \), \( B = \{x, 9\} \) además, \( A - B = \{1\} \). determina el valor de $x$.
+    
+    \textbf{Solución:} Si, \( A - B = \{1, x\} \). Entonces, \( x = 2 \).
+
+    \begin{center}
+      \textbf{7. Relaciones:}
+    \end{center}
+    Una relación $R$ es un subconjunto del producto cartesiano de dos conjuntos $A$ y $B$. Se denota como $R \subseteq A \times B$.
+    
+    \textbf{Ejercicio:} Dado $A = \{x | x \in \mathbb{N}, 3 \leq x \leq 5\}$, $B = \{y | y \in \mathbb{N}, y \leq 2\}$ y $R = \{(x, y) | x \in A \land y \in B\}$. Determina la cardinalidad de $R$.
+    
+    \textbf{Solución:} \sloppy Dado que $A = \{3, 4, 5\}$ y $B = \{1, 2\}$, entonces: \\ 
+    $R = \{(3, 1), (3, 2), (4, 1), (4, 2), (5, 1), (5, 2)\}$ \\ 
+    Por lo tanto, $|R| = 6$.
+
+    \begin{center}
+      \textbf{8. Dominio:}
+    \end{center}
+    Dado una relación $R$, el dominio es el conjunto de todos los primeros elementos de los pares ordenados en $R$. Se denota como $dom(R)$.
+    
+    \textbf{Ejercicio:} Dado $A = \{1,2,3,4\}$ y $B = \{2,3,5\}$ se define la relación $R \subseteq A \times B$ como: 
+    
+    $R = \{(x, y) \in A \times B \mid x + y \text{ es un número primo} \}$
+
+    
+    \textbf{Solución:} Los pares ordenados en $R$ son: $(1, 2), (2, 3), (2, 5), (3, 2), (4, 3)$. Por lo tanto, $dom(R) = \{1, 2, 3, 4\}$.
+
+    \begin{center}
+      \textbf{9. Rango:}
+    \end{center}
+    Dado una relación $R$, el rango es el conjunto de todos los segundos elementos de los pares ordenados en $R$. Se denota como $ran(R)$.
+    
+    \textbf{Ejercicio:} Dado $A = \{1,2,3,4\}$ y $B = \{2,3,5\}$ se define la relación $R \subseteq A \times B$ como:
+    
+    $R = \{(x, y) \in A \times B \mid x + y \text{ es un número primo} \}$
+
+    
+    \textbf{Solución:} Los pares ordenados en $R$ son: $(1, 2), (2, 3), (2, 5), (3, 2), (4, 3)$. Por lo tanto, $ran(R) = \{2, 3, 5\}$.
+
+    \begin{center}
+      \textbf{10. Funciones:}
+    \end{center}
+    Una función $f$ es una relación entre dos conjuntos $A$ y $B$ que asigna a cada elemento de $A$ exactamente un elemento de $B$. Se denota como $f: A \rightarrow B$.
+    
+    \textbf{Ejercicio:} Dada la función $f: \mathbb{R} \rightarrow \mathbb{R}$, $f(x) = x^2 + 1$. Determina $dom(R)$ y $ran(R)$.
+    
+    \textbf{Solución:} \text{Dominio:} La función $f(x) = x^2 + 1$ está definida para todos los números reales. Por lo tanto, $dom(R) = \mathbb{R}$.
+
+    \text{Rango:} Para hallar el rango primero hallamos el vértice de la parábola, La fórmula del vértice para una función cuadrática $f\left(x\right) = ax^2 + bx + c$ es $x = -\frac{b}{2a}$. 
+    
+    En este caso, $a = 1$ y $b = 0$. Por lo tanto, el vértice es $(0, 1)$. Dado que la parábola se abre hacia arriba, el rango es $[1, \infty)$.
+
+  \end{multicols}
+
+\newpage
+
+\section{Sobre Funciones}
+  Según J. Amor (2005). Una \textit{función} es una relación \( F \) con la propiedad de que, para cada \( x \in \text{Dom}(F) \), existe un único \( y \) tal que el par \( \langle x, y \rangle \in F \). A esta única \( y \) se le llama el \textit{valor} de \( F \) en \( x \), y se denota como \( y = F(x) \). Esto significa que una función asigna a cada elemento del dominio exactamente un valor en el codominio. El \textit{imagen} de la función \( F \), denotada como \(\text{Im}(F)\), es el conjunto de todos los valores \( y \) tales que \( y = F(x) \) para algún \( x \in \text{Dom}(F) \). Es decir, \(\text{Im}(F) = \{ F(x) \mid x \in \text{Dom}(F) \}\), lo que también puede escribirse como \( F[\text{Dom}(F)] \).
+
+\begin{flushright}
+    \textit{Amor Montaño, J. A. (2005). Teoría de conjuntos para estudiantes de ciencias.}
+\end{flushright}
+  
+  En resumen, una función es una regla que asigna a cada elemento de un conjunto (dominio) exactamente un elemento de otro conjunto (codominio). Imagina que es como una máquina que toma un valor de entrada y lo transforma en un valor de salida de manera predecible y única.
+
+  \subsection{Algunas deftiniciones importantes en teoría de funciones.}
+
+  \begin{multicols}{2}
+    \begin{center}
+      \textbf{1. Función Inyectiva:}
+    \end{center}
+    Una función es inyectiva si cada elemento del dominio se asigna a un único elemento del codominio. En otras palabras, no hay dos elementos distintos en el dominio que se asignen al mismo elemento en el codominio.
+    
+    \begin{center}
+      \textbf{2. Función Sobreyectiva:}
+    \end{center}
+    Una función es sobreyectiva si cada elemento del codominio tiene al menos un elemento en el dominio que se asigna a él. En otras palabras, no hay elementos en el codominio que no tengan un elemento correspondiente en el dominio.
+    
+    \begin{center}
+      \textbf{3. Función Biyectiva:}
+    \end{center}
+    Una función es biyectiva si es tanto inyectiva como sobreyectiva. Esto significa que cada elemento del dominio se asigna a un único elemento del codominio y que cada elemento del codominio tiene al menos un elemento en el dominio que se asigna a él.
+    
+    \begin{center}
+      \textbf{4. Función Inversa:}
+    \end{center}
+    La función inversa de una función \( f \) es una función que invierte la relación de \( f \). En otras palabras, si \( f \) asigna \( y \) a \( x \), entonces la función inversa asigna \( x \) a \( y \). La función inversa se denota como \( f^{-1} \).
+    
+    \begin{center}
+      \textbf{5. Función Compuesta:}
+    \end{center}
+    La función compuesta es una operación que combina dos funciones para formar una nueva función. La función compuesta se denota como \( f \circ g \) y se lee como "f compuesta con g". La función compuesta se define como \( f \circ g(x) = f(g(x)) \).
+    
+    \begin{center}
+      \textbf{6. Función Trigonométrica:}
+    \end{center}
+    También llamadas trascendentales, son funciones matemáticas que describen las relaciones entre los ángulos y los lados de un triángulo. Las funciones trigonométricas más comunes son el seno, el coseno y la tangente.
+  \end{multicols}
+
+  \newpage
+
+  \section{Funciones aplicadas a Redes Neuronales}
+  Las funciones matemáticas a menudo desempeñan un papel crucial en el desarrollo de tecnologías avanzadas, como las redes neuronales artificiales. Las redes neuronales son sistemas de aprendizaje automático inspirados en la estructura y el funcionamiento del cerebro humano. Estas redes están compuestas por nodos interconectados llamados neuronas, que se organizan en capas y se utilizan para realizar tareas de reconocimiento de patrones, clasificación de datos, procesamiento de lenguaje natural y más.
+  \subsection{Funciones de Activación}
+  En el contexto de las redes neuronales, las funciones de activación son funciones matemáticas que se aplican a la salida de cada neurona para determinar su estado de activación. Estas funciones son esenciales para introducir no linealidades en el modelo y permitir que la red aprenda y represente relaciones complejas en los datos. Algunas de las funciones de activación más comunes incluyen la función sigmoide, la función ReLU (unidad lineal rectificada) y la función tangente hiperbólica.
+
+  Según G. Torres (1994). $A$ es un conjunto llamado "de Activación" que contiene los elementos de entrada de las funciones, posee una estructura de módulo sobre el anillo de pesos, $W$. En la mayor parte de las aplicaciones, $A$ es el conjunto de números reales $\mathbb{R}$. uUna entrada típica a la neurona $i$ está dada por:
+  \[ x_i = \sum_{j=1}^{n} w_{ij}x_j \]
+  donde $w_{ij}$ es el valor de salida de la unidad $j$.
+
+  $\{f_i: A \rightarrow A i \in V\}$ ($V$, es el conjunto de vértices del grafo $D$) es una colección de funciones llamadas de activación o transferencia.
+
+  \begin{flushright}
+    \textit{Torres, L. G. (1994). Redes neuronales y aproximación de funciones. Boletín de Matemáticas, 1(2), 35–58.}
+\end{flushright}
+
+\subsection{Análisis de la aplicación}
+
+La teoría de funciones proporciona una base sólida para comprender las funciones de activación en redes neuronales, las cuales desempeñan un papel crucial en el procesamiento y aprendizaje de las redes. Acontinuación se detallan algúnos aspectos importantes de las funciones de activación en redes neuronales por sobre la teoría:
+
+\begin{enumerate}
+  \item \textbf{Definición y comportamiento:} En la teoría de funciones, se estudian propiedades como continuidad, derivabilidad y límites, que son fundamentales para las funciones de activación. Estas propiedades determinan cómo las funciones de activación transforman los datos de entrada, afectando el rendimiento y la capacidad de aprendizaje de la red neuronal.
+  
+  \item \textbf{Dominio y rango:} La teoría de funciones establece conceptos claros sobre el dominio y el rango de una función, es decir, qué valores puede tomar la entrada y qué valores produce como salida. En las funciones de activación, estos conceptos aseguran que las salidas estén en un rango manejable, por ejemplo, las funciones sigmoide y tangente hiperbólica comprimen las salidas en el rango (0,1) y (-1,1) respectivamente, facilitando el entrenamiento.
+  
+  \item \textbf{Composición de funciones:} Las redes neuronales se estructuran en capas, donde la salida de una capa se convierte en la entrada de la siguiente. Esto se modela matemáticamente mediante la composición de funciones, un concepto central en la teoría de funciones. La capacidad de las funciones de activación para transformar y combinarse adecuadamente es lo que permite a las redes neuronales modelar relaciones complejas.
+  
+\end{enumerate}
+
+\subsection{Cómo se usa en la práctica}
+Las funciones de activación son una parte fundamental en el diseño y entrenamiento de redes neuronales. En la práctica, se seleccionan cuidadosamente las funciones de activación en función de la naturaleza del problema y las características de los datos. Algunas de las funciones de activación más comunes incluyen:
+\begin{enumerate}
+  \item \textbf{Función Sigmoide:} Utilizada en capas ocultas para introducir no linealidad y comprimir las salidas en el rango (0,1).
+  \begin{align*}
+    \sigma(x) = \frac{1}{1 + e^{-x}}
+  \end{align*}
+  \textbf{Gráficamente:} 
+
+  Figura 1: Función Sigmoide
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = $\sigma(x)$,
+        xmin = -10, xmax = 10,
+        ymin = 0, ymax = 1,
+      ]
+      \addplot [
+        domain=-10:10, 
+        samples=100, 
+        color=red,
+      ]
+      {1/(1 + exp(-x))};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \item \textbf{Función ReLU:} Utilizada en capas ocultas para introducir no linealidad y superar el problema de la desaparición del gradiente.
+  \begin{align*}
+    \text{ReLU}(x) = \max(0, x)
+  \end{align*}
+  \textbf{Gráficamente:}
+  Figura 2: Función ReLU
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines = middle,
+        xlabel = $x$,
+        ylabel = $\text{ReLU}(x)$,
+        xmin = -10, xmax = 10,
+        ymin = -1, ymax = 10,
+        domain=-10:10,
+        samples=100,
+        width=10cm,
+        height=6cm,
+      ]
+      \addplot [
+        color=blue,
+      ]
+      {max(0, x)};
+      \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+
+\newpage
+
+\section{Conclusiones}
+La teoría de conjuntos y las funciones matemáticas son fundamentales para comprender y aplicar conceptos avanzados en matemáticas y ciencias de la computación. En este informe, hemos explorado los conceptos básicos de la teoría de conjuntos, así como su evolución hacia las funciones matemáticas y su aplicación en redes neuronales artificiales. Algunas conclusiones importantes son:
+\begin{enumerate}
+  \item La teoría de conjuntos proporciona una base sólida para comprender la estructura y las propiedades de los conjuntos, así como las relaciones entre ellos.
+  \item Las funciones matemáticas son reglas que asignan valores de entrada a valores de salida de manera predecible y única, lo que las convierte en herramientas poderosas para modelar y analizar fenómenos en diversas disciplinas.
+  \item Las funciones de activación desempeñan un papel crucial en el diseño y entrenamiento de redes neuronales, permitiendo a las redes aprender y representar relaciones complejas en los datos.
+\end{enumerate}
+La teoría de conjuntos, pionera en las matemáticas gracias a Georg Cantor, estableció los fundamentos para entender la estructura y las propiedades de los conjuntos. Este desarrollo inicial facilitó la evolución hacia conceptos más complejos, como las funciones matemáticas, que modelan relaciones entre variables de manera precisa. En la actualidad, estos conceptos son esenciales en el campo de la inteligencia artificial, donde las funciones de activación en redes neuronales permiten a los modelos aprender y representar relaciones complejas en los datos, mostrando cómo los principios matemáticos fundamentales siguen siendo clave en tecnologías avanzadas.
+
+\subsection{Bibliografía}
+
+\begin{enumerate}
+  \item Amor Montaño, J. A. (2005). Teoría de conjuntos para estudiantes de ciencias. UNAM.
+  \item Torres, L. G. (1994). Redes neuronales y aproximación de funciones. Boletín de Matemáticas, 1(2), 35–58.
+  \item José M. Muñoz Q. (1978) Introducción a la Teoría de Conjuntos. Universidad Nacional de Colombia.
+\end{enumerate}
+\end{document}
