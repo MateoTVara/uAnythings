@@ -1,0 +1,214 @@
+\documentclass{article}
+\usepackage[a4paper, top=3cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Ajuste de márgenes
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+\usepackage{titlesec} % Para personalizar títulos
+\usepackage{tocloft}  % Para mejorar el índice
+\usepackage{setspace} % Para controlar el espaciado
+
+% Configuración de Fancyhdr para encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=2cm]{assets/logo-utp.png}}
+\fancyhead[R]{\textbf{Estadística descriptiva y probabilidades}}
+
+\fancyfoot[R]{\thepage} % Número de página alineado a la derecha
+
+% Ajustes de espaciado entre párrafos y márgenes superiores
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{17.26935pt} % Altura del encabezado
+\addtolength{\topmargin}{-2.26935pt} % Compensar el aumento de la altura del encabezado
+\setlength{\textheight}{23cm}  % Ajusta el alto del texto
+
+% Definición de comandos personalizados
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
+% Título del documento con mejor control de espaciado
+\title{
+  \includegraphics[width=5cm]{./assets/logo-utp.png} \\
+  \vspace{1cm}
+  \textbf{Universidad Tecnológica del Perú} \\
+  \vspace{2cm}
+  \textbf{Análisis estadístico-descriptivo sobre el uso de herramientas de inteligencia artificial en el rendimiento académico de los alumnos de la UTP darante el periodo académico 2024 I - II} \\
+  \vspace{1cm}
+  \large \textbf{Para el curso de Estadística descriptiva y probabilidades.}
+}
+\author{
+  \textbf{Autores aquí} \\
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  Docente. Mg. Luis Fernando Velarde Vela  
+\end{center}
+\restoregeometry
+
+\newpage
+
+\begin{center}
+  \textbf{\Large Índice}
+\end{center}
+\vspace{0.5cm} % Espacio entre título y contenido
+
+\begin{spacing}{1.15} % Espaciado personalizado para mayor legibilidad
+  \noindent
+  \begin{enumerate}
+    \item Introducción
+    \item Problemática
+    \item Objetivo general
+    \begin{enumerate}
+      \item Objetivos específicos
+    \end{enumerate}
+    \item Términos estadísticos
+    \item Recolección de información
+  \end{enumerate}
+\end{spacing}
+
+\newpage
+\vspace*{\fill}
+\section{Introducción}
+El uso de herramientas de inteligencia artificial (IA) en la educación ha crecido significativamente, transformando las dinámicas de enseñanza y aprendizaje. En la Universidad Tecnológica del Perú (UTP), se han implementado diversas tecnologías de IA durante el periodo académico 2024 I - II, con el objetivo de mejorar el rendimiento académico de los estudiantes. Este cambio ha despertado un interés creciente por evaluar el impacto real de estas herramientas en el desempeño de los alumnos.
+
+Este proyecto tiene como objetivo realizar un análisis estadístico-descriptivo sobre el rendimiento académico de los estudiantes de la UTP que utilizan herramientas de IA. A través de la aplicación de técnicas y conceptos aprendidos en el curso de Estadística Descriptiva y Probabilidades, se espera identificar patrones y tendencias que contribuyan a una mejor comprensión del uso de estas tecnologías en el ámbito educativo y su potencial para optimizar el aprendizaje.
+\vspace*{\fill}
+
+\newpage
+
+\section{Problemática}
+
+Una problemática relevante en el uso de herramientas de inteligencia artificial (IA) en la educación es la preocupación por la ética y la privacidad de los datos de los estudiantes, así como las diferencias en los resultados académicos que estas tecnologías pueden generar. A medida que se integran sistemas de IA en los procesos de aprendizaje y evaluación, surge la inquietud sobre cómo se recopilan, almacenan y utilizan los datos personales de los alumnos. La falta de transparencia en el manejo de esta información puede comprometer la privacidad de los estudiantes y generar desconfianza hacia las instituciones educativas. Además, es fundamental analizar cómo el uso de estas herramientas impacta el rendimiento académico, ya que pueden beneficiar a ciertos grupos de estudiantes mientras que otros, que no tienen el mismo acceso o habilidades tecnológicas, pueden verse rezagados. Esta disparidad en los resultados puede acentuar las brechas existentes en la educación, lo que hace necesario un análisis ético y crítico sobre la implementación de la inteligencia artificial en el ámbito académico.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+      \begin{axis}[
+          width=0.8\textwidth, % Ancho del gráfico
+          height=0.5\textheight, % Altura del gráfico
+          xlabel={Año}, % Etiqueta del eje X
+          ylabel={Usuarios (millones)}, % Etiqueta del eje Y
+          xtick={2020, 2021, 2022, 2023, 2024}, % Ticks del eje X
+          ytick={0, 50, 100, 150, 200}, % Ticks del eje Y
+          ymin=0, % Límite inferior del eje Y
+          ymax=200, % Límite superior del eje Y
+          bar width=0.5cm, % Ancho de las barras
+          enlarge x limits=0.15, % Ampliar límites en el eje X
+          ylabel near ticks, % Posicionar la etiqueta del eje Y cerca de los ticks
+          xlabel near ticks, % Posicionar la etiqueta del eje X cerca de los ticks
+          grid=major, % Mostrar la cuadrícula
+          title={Usuarios de ChatGPT por Año}, % Título del gráfico
+          xticklabel style={align=center}, % Alinear los ticks del eje X
+      ]
+          \addplot[
+              ybar,
+              color=blue % Color de las barras
+          ] 
+          coordinates {(2020, 0.1) (2021, 0.5) (2022, 5) (2023, 100) (2024, 200)};
+      \end{axis}
+  \end{tikzpicture}
+  \caption{Crecimiento de usuarios de ChatGPT desde su lanzamiento.}
+  \label{fig:usuarios_chatgpt}
+\end{figure}
+  Gráficos que describe la recepción y uso de ChatGPT en la población mundial desde su implementación.
+
+\newpage
+
+\section{Objetivo general}
+
+Realizar un análisis estadístico-descriptivo que permita evaluar el impacto del uso de herramientas de inteligencia artificial en el rendimiento académico de los alumnos de la Universidad Tecnológica del Perú (UTP) durante el periodo académico 2024 I - II, identificando patrones, tendencias y relaciones significativas que contribuyan a una mejor comprensión de cómo estas tecnologías afectan el proceso de aprendizaje.
+
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+  \item \textbf{Identificar y analizar} las herramientas de inteligencia artificial más utilizadas por los alumnos de la UTP y caracterizar su funcionalidad, así como su propósito en el proceso de aprendizaje.
+
+  \item \textbf{Recopilar y clasificar} datos de rendimiento académico de los alumnos antes y después de la implementación de herramientas de inteligencia artificial, con el fin de facilitar la comparación y evaluación de su efectividad.
+
+  \item \textbf{Calcular y comparar} las medidas de tendencia central (media, mediana y moda) de las calificaciones de los estudiantes que utilizan herramientas de inteligencia artificial versus aquellos que no las utilizan, para determinar la influencia de estas tecnologías en el rendimiento académico.
+
+  \item \textbf{Evaluar la percepción} de los alumnos sobre el uso de herramientas de inteligencia artificial en su aprendizaje mediante encuestas, identificando las ventajas y desventajas que ellos perciben.
+
+  \item \textbf{Analizar las diferencias} en el rendimiento académico entre diferentes grupos de estudiantes (por ejemplo, por carrera o nivel académico) que utilizan herramientas de inteligencia artificial, buscando patrones que puedan indicar un efecto significativo de estas tecnologías.
+
+  \item \textbf{Investigar la relación} entre la frecuencia de uso de herramientas de inteligencia artificial y el rendimiento académico de los estudiantes, para entender mejor cómo la integración de estas tecnologías puede optimizar el aprendizaje.
+\end{enumerate}
+
+
+\newpage
+
+\section{Términos estadísticos}
+
+A continuación, se presentan los términos estadísticos que se utilizarán en el análisis del rendimiento académico de los alumnos de la UTP en relación con el uso de herramientas de inteligencia artificial. La mayor parte de las definiciones están tomadas de Gaviria y Márquez (2019), con ajustes específicos al contexto del estudio.
+
+\begin{enumerate}
+  \item \textbf{Población:} Se define como el conjunto completo de elementos u objetos de interés sobre los cuales se realizarán las observaciones. En este estudio, la población estará compuesta por todos los estudiantes de la UTP que han utilizado herramientas de inteligencia artificial durante el periodo académico 2024 I - II.
+
+  \item \textbf{Muestra:} Dada una población $P$, una muestra $M$ es un subconjunto representativo de dicha población. La muestra se seleccionará para obtener una representación adecuada del rendimiento académico, y se tomará de un grupo específico de estudiantes que han utilizado diversas herramientas de inteligencia artificial en su proceso de aprendizaje.
+
+  \item \textbf{Unidad de análisis:} La unidad de análisis es el objeto o elemento que se observa en una investigación estadística. En este caso, la unidad de análisis será el rendimiento académico medido a través de las calificaciones de los estudiantes que han utilizado herramientas de inteligencia artificial.
+
+  \item \textbf{Variable:} Una variable es una característica que puede ser medida o categorizada en una población o muestra. En este estudio, se considerarán tanto variables cualitativas, como la percepción de los estudiantes sobre el uso de herramientas de inteligencia artificial, como variables cuantitativas, tales como las calificaciones obtenidas.
+
+  \item \textbf{Parámetro:} Un parámetro es un valor numérico $\theta$ que resume una característica de la población $P$. En este análisis, los parámetros se deducirán a partir del estudio del rendimiento académico en relación con el uso de herramientas de inteligencia artificial.
+
+  \item \textbf{Estadístico:} Un estadístico es un valor numérico que resume la información de la muestra. También se considera una función de los datos muestrales. En este estudio, los estadísticos incluirán medidas de tendencia central, como media y mediana, y medidas de dispersión, como desviación estándar, que se calcularán a partir de las calificaciones de los estudiantes.
+\end{enumerate}
+
+
+\newpage
+
+\section{Recolección de Información}
+
+La recolección de información se llevará a cabo mediante un formulario digital diseñado específicamente para este estudio. Este formulario será compartido entre los estudiantes que forman parte de la muestra, permitiendo la recopilación eficiente de datos sobre su rendimiento académico y el uso de herramientas de inteligencia artificial. Se considerarán las siguientes preguntas para el formulario:
+
+\begin{itemize}
+    \item \textbf{¿Cuánto tiempo inviertes semanalmente en el uso de herramientas de inteligencia artificial para el ámbito educativo?}
+    \item \textbf{¿Cuáles son algunos de los motivos que te orientan a emplear herramientas de inteligencia artificial?}
+    \item \textbf{¿Cuánto crees que influye el uso de herramientas de IA en tus notas?}
+    \item \textbf{¿Crees que las herramientas de IA te ayudan a comprender mejor las clases?}
+    \item \textbf{¿En qué medida consideras que el uso de ChatGPT ha influido en tu capacidad de pensamiento crítico?}
+    \begin{itemize}
+        \item Ha disminuido significativamente
+        \item Ha disminuido ligeramente
+        \item No ha tenido impacto
+        \item Ha aumentado ligeramente
+        \item Ha aumentado significativamente
+    \end{itemize}
+    \item \textbf{¿Con qué propósito utilizas la función de análisis de documentos de ChatGPT?}
+    \begin{itemize}
+        \item Para preparar exámenes
+        \item Para profundizar en temas específicos
+        \item Para aclarar conceptos confusos
+        \item Para generar material de estudio adicional
+        \item Para resolver ejercicios
+    \end{itemize}
+\end{itemize}
+
+Esta estructura permitirá obtener una visión más clara sobre cómo los estudiantes interactúan con las herramientas de inteligencia artificial en su proceso de aprendizaje.
+
+
+\begin{thebibliography}{9}
+
+  \bibitem{Estadística} 
+  Gaviria Peña, C., \& Márquez Fernández, C. A. (2019). \textit{Estadística descriptiva y probabilidad}. Editorial Bonaventuriano. 
+
+\end{thebibliography}
+  
+\end{document}
