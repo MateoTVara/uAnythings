@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.26)  16 OCT 2024 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.26)  17 OCT 2024 00:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -644,24 +644,24 @@ LaTeX Info: Redefining \% on input line 11.
 )
 \openout1 = `InformeFinalEDP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -697,8 +697,8 @@ LaTeX Font Info:    ... okay on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count333
@@ -720,79 +720,84 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 73.
 (./InformeFinalEDP.out) (./InformeFinalEDP.out)
 \@outlinefile=\write4
 \openout4 = `InformeFinalEDP.out'.
 
-<./assets/logo-utp.png, id=59, 2055.68pt x 493.845pt>
+<./assets/logo-utp.png, id=75, 2055.68pt x 493.845pt>
 File: ./assets/logo-utp.png Graphic file (type png)
 <use ./assets/logo-utp.png>
-Package pdftex.def Info: ./assets/logo-utp.png  used on input line 67.
+Package pdftex.def Info: ./assets/logo-utp.png  used on input line 75.
 (pdftex.def)             Requested size: 142.26378pt x 34.1733pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./assets/logo-utp.png>]
-<assets/logo-utp.png, id=70, 2055.68pt x 493.845pt>
+<assets/logo-utp.png, id=87, 2055.68pt x 493.845pt>
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 108.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 118.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [2
 
  <./assets/logo-utp.png>]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 121.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 131.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [3]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 162.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 155.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [4]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 187.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 196.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [5]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 209.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 221.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [6]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 293.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 243.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+ [7]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 365.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 327.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [8]
+ [8{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 390.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 399.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [9]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 402.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 424.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [10]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 411.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 439.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [11] (./InformeFinalEDP.aux
+ [11]
+File: assets/logo-utp.png Graphic file (type png)
+<use assets/logo-utp.png>
+Package pdftex.def Info: assets/logo-utp.png  used on input line 458.
+(pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
+ [12] (./InformeFinalEDP.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -801,21 +806,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `InformeFinalEDP.out' has not changed.
-(rerunfilecheck)             Checksum: C0DEB7B7086E1A9EB867D761F0C15168;1933.
+(rerunfilecheck)             Checksum: FA95A48989E0FF8E862273D59A0D4A63;2706.
  ) 
 Here is how much of TeX's memory you used:
- 33467 strings out of 476014
- 767378 string characters out of 5792005
+ 33491 strings out of 476014
+ 767692 string characters out of 5792005
  1958187 words of memory out of 5000000
- 55022 multiletter control sequences out of 15000+600000
- 566920 words of font info for 70 fonts, out of 8000000 for 9000
+ 55036 multiletter control sequences out of 15000+600000
+ 567089 words of font info for 71 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  102i,15n,107p,1257b,2140s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on InformeFinalEDP.pdf (11 pages, 178510 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on InformeFinalEDP.pdf (12 pages, 192996 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 127 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

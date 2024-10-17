@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1729138326.67039 "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" "InformeFinalEDP.pdf" "InformeFinalEDP" 1729138328.25099 0
-  "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" 1729138326.34591 21320 7780957794c981bf3e1d1e8db0e2f98b ""
+["pdflatex"] 1729143578.83542 "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" "InformeFinalEDP.pdf" "InformeFinalEDP" 1729143580.40918 0
+  "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" 1729143578.5194 25752 582ae1399a4fbe0ed128eed0aff7d317 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1727349926 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1727349926 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -26,12 +26,14 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1727349926 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1727349926 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1727349926 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1727349926 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1727349926 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1727349926 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1727349926 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1727349926 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1727349926 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1727349926 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1727349926 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1727349926 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1727349926 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1727349926 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -208,9 +210,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1727383632.29066 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1727383603 7135082 0d1f1d20e4c427407477d99789f64513 ""
-  "InformeFinalEDP.aux" 1729138328.05924 2203 79457f85eedccf3e49b5e62ff2ac1d3b "pdflatex"
-  "InformeFinalEDP.out" 1729138328.05924 1933 c0deb7b7086e1a9eb867d761f0c15168 "pdflatex"
-  "InformeFinalEDP.tex" 1729138326.34591 21320 7780957794c981bf3e1d1e8db0e2f98b ""
+  "InformeFinalEDP.aux" 1729143580.25606 2791 6612ce8e27ca11852c0617c7bf7bcac1 "pdflatex"
+  "InformeFinalEDP.out" 1729143580.2594 2706 fa95a48989e0ff8e862273d59a0d4a63 "pdflatex"
+  "InformeFinalEDP.tex" 1729143578.5194 25752 582ae1399a4fbe0ed128eed0aff7d317 ""
   "assets/logo-utp.png" 1728528884.33231 39230 c03999ec05698581c28121eaba34d47b ""
   (generated)
   "InformeFinalEDP.aux"
