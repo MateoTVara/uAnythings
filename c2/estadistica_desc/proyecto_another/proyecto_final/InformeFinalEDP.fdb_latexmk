@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1728530930.88181 "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/TA1-Huatay-Luis.tex" "TA1-Huatay-Luis.pdf" "TA1-Huatay-Luis" 1728530932.43186 0
-  "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/TA1-Huatay-Luis.tex" 1728530928.77889 12735 4a863ca80962313596cf142613871131 ""
+["pdflatex"] 1729138326.67039 "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" "InformeFinalEDP.pdf" "InformeFinalEDP" 1729138328.25099 0
+  "/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/InformeFinalEDP.tex" 1729138326.34591 21320 7780957794c981bf3e1d1e8db0e2f98b ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1727349926 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1727349926 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -208,13 +208,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1727383632.29066 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1727383603 7135082 0d1f1d20e4c427407477d99789f64513 ""
-  "TA1-Huatay-Luis.aux" 1728530932.29889 1333 ebbfcb17c1ce56564a381e7051fe89b1 "pdflatex"
-  "TA1-Huatay-Luis.out" 1728530932.30223 848 7d66ba86cdea437393cedb067b9b86c7 "pdflatex"
-  "TA1-Huatay-Luis.tex" 1728530928.77889 12735 4a863ca80962313596cf142613871131 ""
+  "InformeFinalEDP.aux" 1729138328.05924 2203 79457f85eedccf3e49b5e62ff2ac1d3b "pdflatex"
+  "InformeFinalEDP.out" 1729138328.05924 1933 c0deb7b7086e1a9eb867d761f0c15168 "pdflatex"
+  "InformeFinalEDP.tex" 1729138326.34591 21320 7780957794c981bf3e1d1e8db0e2f98b ""
   "assets/logo-utp.png" 1728528884.33231 39230 c03999ec05698581c28121eaba34d47b ""
   (generated)
-  "TA1-Huatay-Luis.aux"
-  "TA1-Huatay-Luis.log"
-  "TA1-Huatay-Luis.out"
-  "TA1-Huatay-Luis.pdf"
+  "InformeFinalEDP.aux"
+  "InformeFinalEDP.log"
+  "InformeFinalEDP.out"
+  "InformeFinalEDP.pdf"
   (rewritten before read)

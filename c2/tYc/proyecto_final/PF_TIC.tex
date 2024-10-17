@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage[a4paper, top=3cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Ajuste de márgenes
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+\usepackage{titlesec} % Para personalizar títulos
+\usepackage{tocloft}  % Para mejorar el índice
+\usepackage{setspace} % Para controlar el espaciado
+
+% Configuración de Fancyhdr para encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=2cm]{assets/logo-utp.png}}
+\fancyhead[R]{\textit{Introducción a las tecnologías de la información y comunicación}}
+
+\fancyfoot[R]{\thepage} % Número de página alineado a la derecha
+
+% Ajustes de espaciado entre párrafos y márgenes superiores
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{17.26935pt} % Altura del encabezado
+\addtolength{\topmargin}{-2.26935pt} % Compensar el aumento de la altura del encabezado
+\setlength{\textheight}{23cm}  % Ajusta el alto del texto
+
+% Definición de comandos personalizados
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
+% Título del documento con mejor control de espaciado
+\title{
+  \includegraphics[width=5cm]{./assets/logo-utp.png} \\
+  \vspace{1cm}
+  \textbf{Universidad Tecnológica del Perú} \\
+  \vspace{2cm}
+  \textbf{Implementación de Soluciones TIC para la Optimización Operativa en la Bodega Morocco} \\
+  \vspace{1cm}
+  \large \textbf{Para el curso de Introducción a las Tecnologías de la Información y Comunicación} \\
+}
+\author{
+  \begin{tabular}{ll}
+    \textbf{Luis Huatay Salcedo.} & \texttt{hsluis4326@gmail.com} \\
+    \textbf{Carlos Huari.} & \texttt{carlosplop123@gmail.com} \\
+    \textbf{Jhocelin Jimenez.} & \texttt{nicollj49@gmail.com} \\
+    \textbf{Eva Larico.} & \texttt{evalarico073@gmail.com} \\
+    \textbf{Kelvin Lázaro.} & \texttt{kelvinelb@gmail.com} \\
+  \end{tabular} \\\\
+  \texttt{Sección 24240}
+}
+
+
+% ENVIROMENTS
+
+\newenvironment{indexPart}{}{}
+\newenvironment{descripcionDeLaEmpresa}{}{}
+\newenvironment{problematica}{}{}
+\newenvironment{objetivo}{}{}
+\newenvironment{herramientasTicAEmplear}{}{}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  Docente. Mg. Anita Condo López  
+\end{center}
+\restoregeometry
+
+\newpage
+
+\begin{indexPart}
+  \begin{center}
+    \textbf{\Large Índice}
+  \end{center}
+  \begin{spacing}{1.5}
+    \noindent
+    \begin{enumerate}
+      \item Descripción de la Empresa
+      \item Problemática
+      \item Objetivo
+      \item Herramientas TIC a Emplear
+      \item Plan de Implementación de la Solución
+      \item Conclusiones
+      \item Bibliografía
+    \end{enumerate}
+  \end{spacing}
+\end{indexPart}
+
+\newpage
+
+\begin{descripcionDeLaEmpresa}
+  \section{Descripción de la Empresa}
+
+  \begin{spacing}{1.5}
+    \noindent
+    \textbf{Nombre de la Empresa:} Bodega Morocco \\
+    \textbf{Giro de la Empresa:} Venta de productos de primera necesidad \\
+    \textbf{Ubicación:} Jr. Los Pinos 123, San Juan de Lurigancho, Lima \\
+    \textbf{Correo Electrónico:} bodegaMorocco@gmail.com \\
+    \textbf{Teléfono:} 987654321
+  \end{spacing}
+
+  La Bodega Morocco es un negocio familiar que ha servido a la comunidad de San Juan de Miraflores, específicamente en el sector 12 de noviembre de Pamplona Alta, por más de una década. A pesar de su tamaño modesto, la bodega ha logrado ganarse la confianza de los vecinos por su atención cercana y productos de calidad. El establecimiento ofrece una variedad de productos básicos que cubren las necesidades diarias de sus clientes, tales como arroz, azúcar, bebidas, enlatados y productos de limpieza. Estos productos son esenciales para los hogares de la zona, y la atención al cliente es únicamente presencial, lo que refuerza la relación directa con su clientela.
+
+  Actualmente, la Bodega Morocco opera desde un único local. A pesar de las limitaciones en infraestructura, los dueños buscan constantemente mejorar sus servicios para agilizar los procesos de compra y brindar una mejor experiencia a sus clientes. La bodega ha experimentado un crecimiento constante en los últimos años, lo que ha llevado a los dueños a considerar la posibilidad de expandir su negocio. Sin embargo, antes de tomar esta decisión, desean optimizar sus operaciones actuales para garantizar que puedan manejar un mayor volumen de ventas sin comprometer la calidad de su servicio.
+
+\end{descripcionDeLaEmpresa}
+
+\begin{problematica}
+  \section{Problemática}
+
+  La Bodega Morocco enfrenta varios desafíos en su operación diaria que limitan su capacidad de crecimiento y la calidad de su servicio. A continuación, se escogió uno de los problemas más críticos que afectan a la bodega y que se busca resolver con la implementación de soluciones TIC.
+
+  \subsection{Procesos Manuales de venta e inventario:}
+
+  Actualmente, la Bodega Morocco enfrenta una serie de desafíos relacionados con la gestión manual de sus ventas y la falta de un control de inventario adecuado. Los propietarios llevan un registro manual de las transacciones diarias, lo que implica un proceso laborioso, propenso a errores y que consume un tiempo considerable. Esta metodología limita su capacidad para tomar decisiones rápidas y eficaces sobre las compras y la reposición de productos.
+
+  La ausencia de un sistema automatizado de inventario complica aún más la identificación de los artículos que se están agotando o aquellos con alta demanda. Esto puede resultar en una pérdida de oportunidades de venta y en la insatisfacción de los clientes al no encontrar productos disponibles. Además, la falta de un sistema digital impide analizar patrones de consumo, lo que dificulta la planificación de compras futuras. Sin una visión clara de los productos con mayor o menor rotación, es más probable que se acumulen productos no vendidos o se agoten artículos esenciales, afectando tanto la calidad del servicio como la satisfacción del cliente.
+
+\end{problematica}
+
+\newpage
+
+\begin{objetivo}
+  \section{Objetivo}
+
+  \begin{spacing}{1.5}
+    \noindent
+    \textbf{Objetivo General:} 
+    
+    Automatizar el registro de ventas y la gestión de inventario de la Bodega Morocco. Con esta solución se busca reducir significativamente el tiempo empleado en los procesos manuales y minimizar los errores que suelen ocurrir al realizar estas tareas de forma no automatizada. Implementar un sistema digital permitirá a los dueños de la bodega llevar un control más preciso y eficiente de sus ventas diarias, así como obtener una visión clara del estado del inventario. Esto facilitará la toma de decisiones informadas en cuanto a la reposición de productos, evitando tanto la falta de stock como la acumulación innecesaria de mercancías.
+
+    \textbf{Objetivos Específicos:}
+    \begin{itemize}
+      \item Implementar un sistema de bases de datos para almacenar información sobre los productos, las ventas y el inventario de la bodega.
+      \item Desarrollar una interfaz de usuario intuitiva y fácil de usar para registrar las ventas y actualizar el inventario de forma automatizada.
+      \item Generar reportes periódicos sobre las ventas, el inventario y los productos más vendidos para facilitar la toma de decisiones.
+      \item Capacitar al personal de la bodega en el uso del nuevo sistema y brindar soporte técnico continuo para garantizar su correcto funcionamiento.
+      \item Evaluar el impacto de la implementación de la solución TIC en la eficiencia operativa de la bodega y en la satisfacción del cliente.
+    \end{itemize}
+  \end{spacing}
+\end{objetivo}
+
+\newpage
+
+\begin{herramientasTicAEmplear}
+  
+  \section{Herramientas TIC a Emplear}
+
+  Para la implementación de la solución propuesta, se utilizarán las siguientes herramientas TIC:
+
+  \subsection{Sistema de Gestión de Bases de Datos (SGBD):}
+
+  \subsection{Aplicación Web para Registro de Ventas:}
+
+  \subsection{Sistema de Control de Inventario:}
+
+  \subsection{Generación de Reportes Automatizados:}
+
+\end{herramientasTicAEmplear}
+
+\end{document}

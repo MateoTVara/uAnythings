@@ -1,0 +1,411 @@
+\documentclass{article}
+\usepackage[a4paper, top=3cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry} % Ajuste de márgenes
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.18}
+\usepackage{titlesec} % Para personalizar títulos
+\usepackage{tocloft}  % Para mejorar el índice
+\usepackage{setspace} % Para controlar el espaciado
+
+% Configuración de Fancyhdr para encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=2cm]{assets/logo-utp.png}}
+\fancyhead[R]{\textit{Estadística descriptiva y probabilidad}}
+
+\fancyfoot[R]{\thepage} % Número de página alineado a la derecha
+
+% Ajustes de espaciado entre párrafos y márgenes superiores
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{17.26935pt} % Altura del encabezado
+\addtolength{\topmargin}{-2.26935pt} % Compensar el aumento de la altura del encabezado
+\setlength{\textheight}{23cm}  % Ajusta el alto del texto
+
+% Definición de comandos personalizados
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
+% Título del documento con mejor control de espaciado
+\title{
+  \includegraphics[width=5cm]{./assets/logo-utp.png} \\
+  \vspace{1cm}
+  \textbf{Universidad Tecnológica del Perú} \\
+  \vspace{2cm}
+  \textbf{Análisis estadístico-descriptivo sobre el uso de herramientas de inteligencia artificial en el rendimiento académico de los alumnos de la UTP darante el periodo académico 2024 I - II} \\
+  \vspace{1cm}
+  \large \textbf{Para el curso de Estadística descriptiva y probabilidad.}
+}
+\author{
+  \textbf{Autores aquí} \\
+}
+
+% ENVIROMENTS
+
+\newenvironment{indexPre}{}{}
+\newenvironment{introduccion}{}{}
+\newenvironment{problematica}{}{}
+\newenvironment{objetivoGeneral}{}{}
+\newenvironment{terminosEstadisticos}{}{}
+\newenvironment{recoleccionDeInformacion}{}{}
+\newenvironment{metodologia}{}{}
+\newenvironment{analisisDescriptivo}{}{}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  Docente. Mg. Luis Fernando Velarde Vela  
+\end{center}
+\restoregeometry
+
+\newpage
+
+\begin{indexPre}
+  \begin{center}
+    \textbf{\Large Índice}
+  \end{center}
+  \vspace{0.5cm} % Espacio entre título y contenido
+  
+  \begin{spacing}{1.15} % Espaciado personalizado para mayor legibilidad
+    \noindent
+    \begin{enumerate}
+      \item Introducción
+      \item Problemática
+      \item Objetivo general
+      \begin{enumerate}
+        \item Objetivos específicos
+      \end{enumerate}
+      \item Términos estadísticos
+      \item Recolección de información
+      \item Metodología
+      \begin{enumerate}
+        \item Tipo de muestreo
+        \item Técnicas de análisis
+        \item Consideraciones éticas
+        \item Limitaciones del estudio
+      \end{enumerate}
+      \item Análisis Descriptivo
+      \begin{itemize}
+        \item Tabla de frecuencias
+      \end{itemize}
+    \end{enumerate}
+  \end{spacing}
+
+\end{indexPre}
+
+\newpage
+
+\vspace*{\fill}
+
+\begin{introduccion}
+  \section{Introducción}
+  El uso de herramientas de inteligencia artificial (IA) en la educación ha crecido significativamente, transformando las dinámicas de enseñanza y aprendizaje. En la Universidad Tecnológica del Perú (UTP), se han implementado diversas tecnologías de IA durante el periodo académico 2024 I - II, con el objetivo de mejorar el rendimiento académico de los estudiantes. Este cambio ha despertado un interés creciente por evaluar el impacto real de estas herramientas en el desempeño de los alumnos.
+
+  Este proyecto tiene como objetivo realizar un análisis estadístico-descriptivo sobre el rendimiento académico de los estudiantes de la UTP que utilizan herramientas de IA. A través de la aplicación de técnicas y conceptos aprendidos en el curso de Estadística Descriptiva y Probabilidades, se espera identificar patrones y tendencias que contribuyan a una mejor comprensión del uso de estas tecnologías en el ámbito educativo y su potencial para optimizar el aprendizaje.
+\end{introduccion}
+
+\vspace*{\fill}
+
+\newpage
+
+\begin{problematica}
+
+  \section{Problemática}
+
+  Una problemática relevante en el uso de herramientas de inteligencia artificial (IA) en la educación es la preocupación por la ética y la privacidad de los datos de los estudiantes, así como las diferencias en los resultados académicos que estas tecnologías pueden generar. A medida que se integran sistemas de IA en los procesos de aprendizaje y evaluación, surge la inquietud sobre cómo se recopilan, almacenan y utilizan los datos personales de los alumnos. La falta de transparencia en el manejo de esta información puede comprometer la privacidad de los estudiantes y generar desconfianza hacia las instituciones educativas. Además, es fundamental analizar cómo el uso de estas herramientas impacta el rendimiento académico, ya que pueden beneficiar a ciertos grupos de estudiantes mientras que otros, que no tienen el mismo acceso o habilidades tecnológicas, pueden verse rezagados. Esta disparidad en los resultados puede acentuar las brechas existentes en la educación, lo que hace necesario un análisis ético y crítico sobre la implementación de la inteligencia artificial en el ámbito académico.
+  
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.8\textwidth, % Ancho del gráfico
+            height=0.5\textheight, % Altura del gráfico
+            xlabel={Año}, % Etiqueta del eje X
+            ylabel={Usuarios (millones)}, % Etiqueta del eje Y
+            xtick={2020, 2021, 2022, 2023, 2024}, % Ticks del eje X
+            ytick={0, 50, 100, 150, 200}, % Ticks del eje Y
+            ymin=0, % Límite inferior del eje Y
+            ymax=200, % Límite superior del eje Y
+            bar width=0.5cm, % Ancho de las barras
+            enlarge x limits=0.15, % Ampliar límites en el eje X
+            ylabel near ticks, % Posicionar la etiqueta del eje Y cerca de los ticks
+            xlabel near ticks, % Posicionar la etiqueta del eje X cerca de los ticks
+            grid=major, % Mostrar la cuadrícula
+            title={Usuarios de ChatGPT por Año}, % Título del gráfico
+            xticklabel style={align=center}, % Alinear los ticks del eje X
+        ]
+            \addplot[
+                ybar,
+                color=blue % Color de las barras
+            ] 
+            coordinates {(2020, 0.1) (2021, 0.5) (2022, 5) (2023, 100) (2024, 200)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Crecimiento de usuarios de ChatGPT desde su lanzamiento.}
+    \label{fig:usuarios_chatgpt}
+  \end{figure}
+    Gráficos que describe la recepción y uso de ChatGPT en la población mundial desde su implementación.
+\end{problematica}
+
+\newpage
+
+\begin{objetivoGeneral}
+  \section{Objetivo general}
+
+  Realizar un análisis estadístico-descriptivo que permita evaluar el impacto del uso de herramientas de inteligencia artificial en el rendimiento académico de los alumnos de la Universidad Tecnológica del Perú (UTP) durante el periodo académico 2024 I - II, identificando patrones, tendencias y relaciones significativas que contribuyan a una mejor comprensión de cómo estas tecnologías afectan el proceso de aprendizaje.
+  
+  
+  \subsection{Objetivos específicos}
+  
+  \begin{enumerate}
+    \item \textbf{Identificar y analizar} las herramientas de inteligencia artificial más utilizadas por los alumnos de la UTP y caracterizar su funcionalidad, así como su propósito en el proceso de aprendizaje.
+  
+    \item \textbf{Recopilar y clasificar} datos de rendimiento académico de los alumnos antes y después de la implementación de herramientas de inteligencia artificial, con el fin de facilitar la comparación y evaluación de su efectividad.
+  
+    \item \textbf{Calcular y comparar} las medidas de tendencia central (media, mediana y moda) de las calificaciones de los estudiantes que utilizan herramientas de inteligencia artificial versus aquellos que no las utilizan, para determinar la influencia de estas tecnologías en el rendimiento académico.
+  
+    \item \textbf{Evaluar la percepción} de los alumnos sobre el uso de herramientas de inteligencia artificial en su aprendizaje mediante encuestas, identificando las ventajas y desventajas que ellos perciben.
+  
+    \item \textbf{Analizar las diferencias} en el rendimiento académico entre diferentes grupos de estudiantes (por ejemplo, por carrera o nivel académico) que utilizan herramientas de inteligencia artificial, buscando patrones que puedan indicar un efecto significativo de estas tecnologías.
+  
+    \item \textbf{Investigar la relación} entre la frecuencia de uso de herramientas de inteligencia artificial y el rendimiento académico de los estudiantes, para entender mejor cómo la integración de estas tecnologías puede optimizar el aprendizaje.
+  \end{enumerate}
+\end{objetivoGeneral}
+
+\newpage
+
+\begin{terminosEstadisticos}
+  \section{Términos estadísticos}
+
+  A continuación, se presentan los términos estadísticos que se utilizarán en el análisis del rendimiento académico de los alumnos de la UTP en relación con el uso de herramientas de inteligencia artificial. La mayor parte de las definiciones están tomadas de Gaviria y Márquez (2019), con ajustes específicos al contexto del estudio.
+  
+  \begin{enumerate}
+    \item \textbf{Población:} Se define como el conjunto completo de elementos u objetos de interés sobre los cuales se realizarán las observaciones. En este estudio, la población estará compuesta por todos los estudiantes de la UTP que han utilizado herramientas de inteligencia artificial durante el periodo académico 2024 I - II.
+  
+    \item \textbf{Muestra:} Dada una población $P$, una muestra $M$ es un subconjunto representativo de dicha población. La muestra se seleccionará para obtener una representación adecuada del rendimiento académico, y se tomará de un grupo específico de estudiantes que han utilizado diversas herramientas de inteligencia artificial en su proceso de aprendizaje.
+  
+    \item \textbf{Unidad de análisis:} La unidad de análisis es el objeto o elemento que se observa en una investigación estadística. En este caso, la unidad de análisis será el rendimiento académico medido a través de las calificaciones de los estudiantes que han utilizado herramientas de inteligencia artificial.
+  
+    \item \textbf{Variable:} Una variable es una característica que puede ser medida o categorizada en una población o muestra. En este estudio, se considerarán tanto variables cualitativas, como la percepción de los estudiantes sobre el uso de herramientas de inteligencia artificial, como variables cuantitativas, tales como las calificaciones obtenidas.
+  
+    \item \textbf{Parámetro:} Un parámetro es un valor numérico $\theta$ que resume una característica de la población $P$. En este análisis, los parámetros se deducirán a partir del estudio del rendimiento académico en relación con el uso de herramientas de inteligencia artificial.
+  
+    \item \textbf{Estadístico:} Un estadístico es un valor numérico que resume la información de la muestra. También se considera una función de los datos muestrales. En este estudio, los estadísticos incluirán medidas de tendencia central, como media y mediana, y medidas de dispersión, como desviación estándar, que se calcularán a partir de las calificaciones de los estudiantes.
+  \end{enumerate}
+\end{terminosEstadisticos}
+
+\newpage
+
+\begin{recoleccionDeInformacion}
+  \section{Recolección de Información}
+
+  La recolección de información se llevará a cabo mediante un formulario digital diseñado específicamente para este estudio. Este formulario será compartido entre los estudiantes que forman parte de la muestra, permitiendo la recopilación eficiente de datos sobre su rendimiento académico y el uso de herramientas de inteligencia artificial. A continuación se muestras las preguntas y respectivas alternativas que se consideran para el formulario:
+  
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item \textbf{Género:}
+      \begin{itemize}
+        \item Masculino
+        \item Femenino
+      \end{itemize}
+      \item \textbf{Carrera a la pertenece:}
+      \begin{itemize}
+        \item Ingeniería
+        \item Psicología
+        \item Comunicaciones
+        \item Arquitectura
+        \item Derecho
+        \item Negocios
+        \item Medicina
+        \item Ciencias de la salud
+        \item Educación
+        \item Otros: (Por indicación)
+      \end{itemize}
+      \item \textbf{Edad:}
+      \begin{itemize}
+        \item Menos de 19 años
+        \item 20 - 23 años
+        \item 24 - 27 años
+        \item 28 años a más
+      \end{itemize}
+      \item \textbf{Ciclo al que pertenece:}
+      \begin{itemize}
+        \item Ciclos 1-2
+        \item Ciclos 3-4
+        \item Ciclos 5-6
+        \item Ciclos 7-8
+        \item Ciclos 9-10
+      \end{itemize}
+      \item \textbf{¿Cuáles son algunos motivos que te orientan a emplear las herramientas de inteligencia artificial?}
+      \begin{itemize}
+          \item Ha disminuido significativamente
+          \item Ahorrar tiempo al hacer trabajos o investigaciones
+          \item Obtener ideas y ejemplos
+          \item Resolver dudas cuando no encuentro respuestas en otras fuentes
+          \item Simplificar conceptos complejos para entenderlos mejor
+          \item Ampliar mi conocimiento sobre temas que no domino
+      \end{itemize}
+      \item \textbf{¿Cuánto crees que influye el uso de IA en tus notas?}
+      \begin{itemize}
+          \item Influye mucho, (Ayuda a obtener notas más altas)
+          \item Influye de forma moderada (me apoya en algunas áreas)
+          \item Influye ligeramente, (no cambia significativamente mis notas)
+          \item No influye en mis notas, (complementa muy poco en mis estudios)
+          \item No estoy seguro, (depende del tipo de tarea o examen)
+      \end{itemize}
+      \item \textbf{¿Cuánto nivel de confianza tienes sobre los resultados de la IA?}
+      \begin{itemize}
+        \item Muy alto (confío al 100\% en los resultados)
+        \item Alto (Verifico algunos resultados)
+        \item Moderado (Confío en ciertas situaciones, pero prefiero validarlos)
+        \item Bajo (Suelo desconfiar y siempre verifico)
+        \item Muy bajo (No confío para nada)
+      \end{itemize}
+      \item \textbf{¿En  qué  medida  consideras  que  el  uso  de  IA  ha  influido  en  tu  capacidad  de pensamiento  crítico?}
+      \begin{itemize}
+        \item Ha disminuido significativamente
+        \item Ha disminuido ligeramente
+        \item No ha tenido impacto
+        \item Ha aumentado ligeramente
+        \item Ha aumentado significativamente
+      \end{itemize}
+      \item \textbf{¿Con  qué  propósito  utilizas  la  función  de  análisis  de  documentos  de  IA?}
+      \begin{itemize}
+        \item Para preparar exámenes
+        \item Para profundizar en temas específicos
+        \item Para aclarar conceptos confusos
+        \item Para generar material de estudio adicional
+        \item Para resolver ejercicios
+      \end{itemize}
+      \item \textbf{¿En que medida consideras que el uso de IA  ha influido en tu capacidad de investigación independiente?}
+      \begin{itemize}
+        \item Ha disminuido significativamente
+        \item Ha disminuido ligeramente
+        \item No ha tenido impacto
+        \item Ha aumentado ligeramente
+        \item Ha aumentado significativamente
+      \end{itemize}
+      \item \textbf{¿Cómo te sientes respecto al uso de IA en tu aprendizaje a largo plazo?}
+      \begin{itemize}
+        \item Optimista
+        \item Neutro
+        \item Preocupado/a
+        \item No tengo una opinión formada
+      \end{itemize}
+      \item \textbf{¿Qué riesgos consideras que podría tener el uso de herramientas de IA en el ámbito académico?}
+      \begin{itemize}
+        \item Dependencia excesiva
+        \item Deshonestidad académica
+        \item Falta de desarrollo de habilidades personales
+        \item Otros: (Por indicación) 
+      \end{itemize}
+      \item \textbf{¿Cómo evalúas la precisión y calidad de las respuestas proporcionadas por herramientas de IA en tus trabajos académicos?}
+      \begin{itemize}
+        \item Muy alta
+        \item Alta
+        \item Regular
+        \item Baja
+        \item Muy baja
+      \end{itemize}
+      \item \textbf{¿Cuántas horas a la semana utilizas aplicaciones que emplean inteligencia artificial?}
+      \begin{itemize}
+        \item Menos de 1 hora
+        \item 1 - 5 horas
+        \item 6 - 10 horas
+        \item 11 - 20 horas
+        \item Más de 20 horas
+      \end{itemize}
+      \item \textbf{¿Qué tanto crees que este afectando de manera negativa a tu aprendizaje el uso de las inteligencias artificiales?}
+      \begin{itemize}
+        \item Nada
+        \item Poco
+        \item De manera significativa
+        \item Mucho
+        \item Demasiado
+      \end{itemize}
+      \item \textbf{¿Qué porcentaje de las tareas que realizas en tu trabajo  o estudios se automatizan mediante inteligencia artificial?}
+      \begin{itemize}
+        \item 0\%
+        \item 1\% - 10\%
+        \item 11\% - 25\%
+        \item 25\% - 50\%
+        \item Más de un 50\%
+      \end{itemize}
+      \item \textbf{¿Consideras que el uso de herramientas de IA debería regularse más estrictamente en el ámbito académico?}
+      \begin{itemize}
+        \item Sí, es necesario
+        \item No, está bien como está
+        \item No tengo opinión al respecto
+      \end{itemize}
+      \item \textbf{¿Has recibido alguna formación o capacitación sobre el uso de herramientas de IA en tu carrera?}
+      \begin{itemize}
+        \item Sí
+        \item No
+      \end{itemize}
+      \item \textbf{¿Cómo crees que las herramientas de IA afectarán el futuro de la educación universitaria?}
+      \begin{itemize}
+        \item Tendrán un impacto positivo
+        \item Tendrán un impacto negativo
+        \item No cambiarán mucho la situación actual
+        \item No estoy segura(o)
+      \end{itemize}
+  \end{itemize}
+  \end{multicols}
+\end{recoleccionDeInformacion}
+
+\newpage
+
+\begin{metodologia}
+  \section{Metodología}
+
+  \subsection{Tipo de muestreo}
+
+  Para la selección de la muestra, se utilizará un muestreo aleatorio simple, donde cada estudiante de la UTP que haya realizado la encuesta será seleccionado de forma independiente. Se establece un tamaño de muestra de acuerdo a la cantidad de respuestas, esto para garantizar la representatividad de los datos y se considerarán criterios de inclusión y exclusión para definir el grupo de participantes. Se espera obtener una muestra diversa y equilibrada que refleje la heterogeneidad de la población estudiantil de la UTP.
+
+  \subsection{Técnicas de análisis}
+
+  El análisis de los datos recolectados se realizará mediante técnicas estadísticas descriptivas, que permitirán resumir y visualizar la información obtenida. Se calcularán medidas de tendencia central, como la media, mediana y moda, así como medidas de dispersión, como la desviación estándar, para analizar el rendimiento académico de los estudiantes en relación con el uso de herramientas de inteligencia artificial. Además, se emplearán gráficos y tablas de frecuencias para representar los resultados de manera clara y comprensible.
+
+  \subsection{Consideraciones éticas}
+
+  Durante la recolección de información, se garantizará la confidencialidad y privacidad de los datos de los estudiantes, evitando la divulgación de información personal sin su consentimiento. Se solicitará la autorización de los participantes para el uso de sus respuestas con fines académicos y se asegurará que los resultados del estudio se presenten de manera anónima y agregada, sin identificar a los individuos de forma individual.
+
+  \subsection{Limitaciones del estudio}
+
+  Algunas limitaciones que pueden afectar la validez y generalización de los resultados incluyen el tamaño de la muestra, que podría no ser representativo de toda la población estudiantil de la UTP, así como la posibilidad de sesgos en las respuestas de los participantes. Además, la falta de control sobre variables externas que puedan influir en el rendimiento académico de los estudiantes, como el nivel de motivación o el entorno familiar, podría limitar la interpretación de los resultados.
+\end{metodologia}
+
+\newpage
+
+\begin{analisisDescriptivo}
+
+  \section{Análisis Descriptivo}
+
+  A continuación, se presenta un análisis descriptivo de los datos recolectados sobre el rendimiento académico de los estudiantes de la UTP en relación con el uso de herramientas de inteligencia artificial. Se calculan de acuerdo a los temas vistos en clase.
+
+  \subsection{Tabla de frecuencias}
+  
+\end{analisisDescriptivo}
+
+\newpage
+
+\begin{thebibliography}{9}
+
+  \bibitem{Estadística} 
+  Gaviria Peña, C., \& Márquez Fernández, C. A. (2019). \textit{Estadística descriptiva y probabilidad}. Editorial Bonaventuriano. 
+
+\end{thebibliography}
+  
+\end{document}

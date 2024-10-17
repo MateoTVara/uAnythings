@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.26)  9 OCT 2024 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.26)  16 OCT 2024 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/TA1-Huatay-Luis.tex
-(/home/tobi/Desktop/repos/uAnythings/c2/estadistica_desc/proyecto_another/proyecto_final/TA1-Huatay-Luis.tex
+**/home/tobi/Desktop/repos/uAnythings/c2/tYc/proyecto_final/PF_TIC.tex
+(/home/tobi/Desktop/repos/uAnythings/c2/tYc/proyecto_final/PF_TIC.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -638,30 +638,30 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count332
 \l__pdf_internal_box=\box112
-) (./TA1-Huatay-Luis.aux
+) (./PF_TIC.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
-\openout1 = `TA1-Huatay-Luis.aux'.
+\openout1 = `PF_TIC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -697,8 +697,8 @@ LaTeX Font Info:    ... okay on input line 55.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count333
@@ -720,59 +720,49 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package hyperref Info: Link coloring OFF on input line 55.
-(./TA1-Huatay-Luis.out) (./TA1-Huatay-Luis.out)
+Package hyperref Info: Link coloring OFF on input line 70.
+(./PF_TIC.out) (./PF_TIC.out)
 \@outlinefile=\write4
-\openout4 = `TA1-Huatay-Luis.out'.
+\openout4 = `PF_TIC.out'.
 
-<./assets/logo-utp.png, id=31, 2055.68pt x 493.845pt>
+<./assets/logo-utp.png, id=43, 2055.68pt x 493.845pt>
 File: ./assets/logo-utp.png Graphic file (type png)
 <use ./assets/logo-utp.png>
-Package pdftex.def Info: ./assets/logo-utp.png  used on input line 57.
+Package pdftex.def Info: ./assets/logo-utp.png  used on input line 72.
 (pdftex.def)             Requested size: 142.26378pt x 34.1733pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./assets/logo-utp.png>]
-<assets/logo-utp.png, id=42, 2055.68pt x 493.845pt>
+<assets/logo-utp.png, id=55, 2055.68pt x 493.845pt>
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 84.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 98.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [2
 
  <./assets/logo-utp.png>]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 92.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 131.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [3]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 130.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 153.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
  [4]
 File: assets/logo-utp.png Graphic file (type png)
 <use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 154.
+Package pdftex.def Info: assets/logo-utp.png  used on input line 171.
 (pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [5]
-File: assets/logo-utp.png Graphic file (type png)
-<use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 175.
-(pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [6]
-File: assets/logo-utp.png Graphic file (type png)
-<use assets/logo-utp.png>
-Package pdftex.def Info: assets/logo-utp.png  used on input line 214.
-(pdftex.def)             Requested size: 56.9055pt x 13.66931pt.
- [7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./TA1-Huatay-Luis.aux
+ [5] (./PF_TIC.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -780,22 +770,22 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `TA1-Huatay-Luis.out' has not changed.
-(rerunfilecheck)             Checksum: 7D66BA86CDEA437393CEDB067B9B86C7;848.
+Package rerunfilecheck Info: File `PF_TIC.out' has not changed.
+(rerunfilecheck)             Checksum: 3999B0710BE18728D2AC91CF208AF5AD;1888.
  ) 
 Here is how much of TeX's memory you used:
- 33409 strings out of 476014
- 766198 string characters out of 5792005
- 1938187 words of memory out of 5000000
- 54981 multiletter control sequences out of 15000+600000
- 566920 words of font info for 70 fonts, out of 8000000 for 9000
+ 32956 strings out of 476014
+ 753143 string characters out of 5792005
+ 1937187 words of memory out of 5000000
+ 54543 multiletter control sequences out of 15000+600000
+ 565055 words of font info for 62 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 102i,15n,107p,1255b,2075s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on TA1-Huatay-Luis.pdf (7 pages, 169062 bytes).
+ 102i,15n,107p,781b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PF_TIC.pdf (5 pages, 155741 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
