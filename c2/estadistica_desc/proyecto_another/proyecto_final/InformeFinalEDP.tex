@@ -37,6 +37,8 @@
     {\setlength\itemindent{15pt} \item[-] #1}
 }
 
+\pagenumbering{gobble}
+
 % Título del documento con mejor control de espaciado
 \title{
   \includegraphics[width=5cm]{./assets/logo-utp.png} \\
@@ -79,39 +81,43 @@
 
 \restoregeometry
 
+\pagenumbering{arabic} % Numeración arábiga para el resto del documento
+\setcounter{page}{2}   % Iniciar numeración en la página 2
+
 \newpage
 
 \begin{indexPre}
   \begin{center}
     \textbf{\Large Índice}
-  \end{center}
-  \vspace{0.5cm} % Espacio entre título y contenido
-  
-  \begin{spacing}{1.15} % Espaciado personalizado para mayor legibilidad
-    \noindent
-    \begin{enumerate}
-      \item Introducción
-      \item Marco Teórico
-      \item Problemática
-      \item Objetivo general
-      \begin{enumerate}
-        \item Objetivos específicos
-      \end{enumerate}
-      \item Términos estadísticos
-      \item Recolección de información
-      \item Metodología
+\end{center}
+\vspace{0.5cm} % Espacio entre título y contenido
+
+\begin{spacing}{1.15} % Espaciado personalizado para mayor legibilidad
+  \noindent
+  % Personalizar la numeración de la segunda lista
+  \renewcommand{\labelenumii}{\theenumi.\arabic{enumii}}
+  \begin{enumerate}
+    \item Introducción
+    \item Marco Teórico
+    \item Problemática
+    \item Objetivo general
+    \item Objetivos específicos
+    \item Términos estadísticos
+    \item Recolección de información
+    \item Metodología
       \begin{enumerate}
         \item Tipo de muestreo
         \item Técnicas de análisis
         \item Consideraciones éticas
         \item Limitaciones del estudio
       \end{enumerate}
-      \item Análisis Descriptivo
-      \begin{itemize}
+    \item Análisis Descriptivo
+      \begin{enumerate}
         \item Tabla de frecuencias
-      \end{itemize}
-    \end{enumerate}
-  \end{spacing}
+      \end{enumerate}
+  \end{enumerate}
+\end{spacing}
+
 
 \end{indexPre}
 
@@ -158,7 +164,9 @@
 
   \section{Problemática}
 
-  Una problemática relevante en el uso de herramientas de inteligencia artificial (IA) en la educación es la preocupación por la ética y la privacidad de los datos de los estudiantes, así como las diferencias en los resultados académicos que estas tecnologías pueden generar. A medida que se integran sistemas de IA en los procesos de aprendizaje y evaluación, surge la inquietud sobre cómo se recopilan, almacenan y utilizan los datos personales de los alumnos. La falta de transparencia en el manejo de esta información puede comprometer la privacidad de los estudiantes y generar desconfianza hacia las instituciones educativas. Además, es fundamental analizar cómo el uso de estas herramientas impacta el rendimiento académico, ya que pueden beneficiar a ciertos grupos de estudiantes mientras que otros, que no tienen el mismo acceso o habilidades tecnológicas, pueden verse rezagados. Esta disparidad en los resultados puede acentuar las brechas existentes en la educación, lo que hace necesario un análisis ético y crítico sobre la implementación de la inteligencia artificial en el ámbito académico.
+  Una problemática relevante en el uso de herramientas de inteligencia artificial (IA) en la educación es la preocupación por la ética en la resolución de problemas, además de la dependencia excesiva de estas tecnologías para el aprendizaje. La automatización de tareas y la generación de respuestas rápidas pueden limitar el desarrollo de habilidades críticas y creativas en los estudiantes, afectando su capacidad para resolver problemas de manera independiente y analítica.
+
+  Así mismo el uso indiscriminado de la información brindada por estas herramientas aún cuando explicitamente se menciona que puede ofrecer resultados erroneos o no confiables, puede llevar a una disminución en la capacidad de pensamiento crítico de los estudiantes, lo cual puede afectar su rendimiento académico.
   
   \begin{figure}[ht]
     \centering
@@ -248,7 +256,7 @@
   La recolección de información se llevará a cabo mediante un formulario digital diseñado específicamente para este estudio. Este formulario será compartido entre los estudiantes que forman parte de la muestra, permitiendo la recopilación eficiente de datos sobre su rendimiento académico y el uso de herramientas de inteligencia artificial. A continuación se muestras las preguntas y respectivas alternativas que se consideran para el formulario:
   
   \begin{multicols}{2}
-    \begin{itemize}
+    \begin{enumerate}
       \item \textbf{Género:}
       \begin{itemize}
         \item Masculino
@@ -395,7 +403,7 @@
         \item No cambiarán mucho la situación actual
         \item No estoy segura(o)
       \end{itemize}
-  \end{itemize}
+  \end{enumerate}
   \end{multicols}
 \end{recoleccionDeInformacion}
 
@@ -428,13 +436,107 @@
   \section{Análisis Descriptivo}
 
   Se presenta un análisis descriptivo de los datos recolectados sobre el rendimiento académico de los estudiantes de la UTP en relación con el uso de herramientas de inteligencia artificial. Se calculan de acuerdo a los temas vistos en clase.
-
-  Esta información es tomada de la encuesta realizada a los estudiantes de la UTP, en la cual se recopilaron datos sobre su género, carrera, edad, ciclo académico, motivos para utilizar herramientas de inteligencia artificial, percepción sobre el impacto de la IA en sus notas, nivel de confianza en los resultados de la IA, entre otros aspectos relevantes para el estudio.
-
-  \subsection{Tabla de frecuencias}
-
   
 \end{analisisDescriptivo}
+
+\vspace{-0.5cm}
+\subsection{Género de la muestra:}
+  
+  \textbf{Tabla de frecuencias:}
+
+  El siguiente cuadro muestra la distribución de género de los participantes en la muestra, dividiéndose en masculino y femenino, así mismo se muestra la frecuencua absoluta, acumulada, relativa porcentual y relativa porcentual acumulada.
+
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item \begin{center}
+        \textbf{Marca de Clase: $x_i$}
+        \hrulefill
+        \begin{equation*}
+            x_i = \frac{L_i + L_s}{2}
+        \end{equation*}
+    \end{center}
+    Donde:
+    \begin{itemize}
+        \item $L_i$: Límite inferior de la clase.
+        \item $L_s$: Límite superior de la clase.
+    \end{itemize}
+    Para este caso, la marca de clase para valores cualitativos es el valor mismo por lo que $x_1 = Masculino$ y $x_2 = Femenino$.
+
+    \item \begin{center}
+        \textbf{Frecuencia Absoluta: $f_i$}
+        \hrulefill
+        \begin{equation*}
+          f_i = \sum_{i=1}^{n} x_i
+        \end{equation*}
+    \end{center}
+    \vspace{-0.5cm}
+    Donde:
+    \begin{itemize}
+        \item $x_i$: Marca de clase.
+        \item $f_i$: Frecuencia absoluta.
+    \end{itemize}
+    Para este caso, $f_1 = 51$ y $f_2 = 26$.
+
+    \item \begin{center}
+      \textbf{Frecuencia Acumulada: $F_i$}
+      \hrulefill
+      \begin{equation*}
+        F_i = \sum_{i=1}^{n} f_i
+      \end{equation*}
+    \end{center}
+    Donde:
+    \begin{itemize}
+        \item $f_i$: Frecuencia absoluta.
+        \item $F_i$: Frecuencia acumulada.
+    \end{itemize}
+
+    \item \begin{center}
+      \textbf{Frecuencia Relativa \%: $h_i\%$}
+      \hrulefill
+      \begin{equation*}
+        h_i = \frac{f_i}{n} \times 100
+      \end{equation*}
+    \end{center}
+    \vspace{-1cm}
+    Donde:
+    \begin{itemize}
+        \item $f_i$: Frecuencia absoluta.
+        \item $h_i$: Frecuencia relativa porcentual.
+    \end{itemize}
+
+    \item \begin{center}
+      \textbf{Frecuencia Acumulada \%: $H_i\%$}
+      \hrulefill
+      \begin{equation*}
+        H_i = \sum_{i=1}^{n} h_i
+      \end{equation*}
+    \end{center}
+    \vspace{-1cm}
+    Donde:
+    \begin{itemize}
+        \item $h_i$: Frecuencia relativa porcentual.
+        \item $H_i$: Frecuencia acumulada porcentual.
+    \end{itemize}
+    \end{enumerate}
+  \end{multicols}
+
+  Finalmente se muestra la tabla de frecuencias:
+
+  \renewcommand{\arraystretch}{1.5} % Ajusta la altura de las filas
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l @{\hskip 0.5cm} c @{\hskip 0.5cm} c @{\hskip 0.5cm} c @{\hskip 0.5cm} c}
+      \hline
+      \textbf{Género} & \textbf{$f_i$} & \textbf{$F_i$} & \textbf{$h_i$ (\%)} & \textbf{$H_i$ (\%)} \\ \hline
+      Masculino       & 51             & 51             & 66.23               & 66.23               \\ \hline
+      Femenino        & 26             & 77             & 33.77               & 100.00              \\ \hline
+      Total           & 77             &                & 100.00              &                     \\
+    \end{tabular}
+    \caption{Distribución por género con frecuencias absolutas, acumuladas y relativas.}
+    \label{tab:genero-frecuencias}
+\end{table}
+
+
 
 \newpage
 
@@ -447,7 +549,7 @@
   Vargas Sabadías, A. (1995). \textit{Estadística descriptiva e inferencial}. Servicio de Publicaciones de la Universidad de Castilla-La Mancha, Cuenca.
 
   \bibitem{Moreno} 
-  Moreno Padilla, R. D. (año). \textit{The arrival of artificial intelligence to education}. Universidad Tecnológica de Pereira. Recuperado de [Sci-Hub]
+  Moreno Padilla, R. D. (2019). \textit{The arrival of artificial intelligence to education}. Universidad Tecnológica de Pereira. Recuperado de [Sci-Hub]
 
   \bibitem{Sigman} 
   Sigman, M., \& Bilinkis, S. (2024). \textit{Artificial. La nueva inteligencia y el contorno de lo humano}. TE \& ET, (37), 244-245. ISSN 1850-9959.

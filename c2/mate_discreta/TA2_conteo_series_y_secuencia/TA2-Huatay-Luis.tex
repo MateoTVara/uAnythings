@@ -1,0 +1,325 @@
+\documentclass[11pt, a4paper]{article}
+\setlength{\headheight}{17.74934pt}
+\addtolength{\topmargin}{-5.74934pt}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{enumitem} % Añadir este paquete en el preámbulo
+\pgfplotsset{compat=1.18}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=2cm]{assets/logo-utp.png}} % Reemplaza con la ruta de tu imagen
+\fancyhead[R]{\textbf{Matemática Discreta}}
+
+\fancyfoot[R]{\thepage} % Número de página alineado a la derecha
+
+\setlength{\textheight}{22cm}  % Ajusta el alto del texto (puedes aumentar este valor)
+
+
+
+\title{
+  \includegraphics[width=5cm]{./assets/logo-utp.png} \\
+  \vspace{1cm}
+  \textbf{Universidad Tecnológica del Perú} \\
+  \vspace{3.5cm}
+  \textbf{Teoría del conteo, series y sucesiones. Definiciones y aplicación práctica.} \\ 
+  \vspace{1cm}
+  \large \textbf{Para el curso de Matemática Discreta}
+}
+  \author{\textbf{Luis Huatay S.}\\\\\texttt{hsluis4326@gmail.com}\\\\\texttt{U24218809 - 35096}}
+  \vspace{-1cm}
+
+\begin{document}
+\newgeometry{top=4cm}
+\maketitle
+\begin{center}
+Docente Mag. Mattos Quevedo, Juan Manuel
+\end{center}
+\restoregeometry
+
+\newpage 
+
+\textbf{Índice}
+\begin{enumerate}
+  \item Introducción
+  \item Sobre la Teoría de Conteo
+  \item Sobre la teoría de series y susesiones
+  \item Series y sucesiones aplicadas por herramientas IA
+  \item Conclusiones
+  \item Bibliografía
+\end{enumerate}
+
+\newpage
+\vspace*{\fill}
+\section{Introducción}
+  
+En el vasto universo de las matemáticas, la teoría de conteo se alza como una de las disciplinas fundamentales que ha permitido a la humanidad comprender y organizar el mundo de las combinaciones y las posibilidades. Desde la antigüedad, los matemáticos han tratado de encontrar maneras eficientes de contar y clasificar objetos, retos que surgen tanto en problemas sencillos como en otros de gran complejidad. Es en este contexto que la teoría de conteo ha evolucionado, dotando a los matemáticos de herramientas poderosas para afrontar desafíos relacionados con la enumeración de elementos en conjuntos finitos.
+
+En este informe, nos sumergiremos en los principios fundamentales de la teoría de conteo, explorando su belleza inherente y su capacidad para transformar lo que podría parecer una simple tarea de enumeración en un arte preciso de organización matemática.
+\vspace*{\fill}
+
+\newpage
+
+\section{Sobre la Teoría de Conteo}
+  La teoría de conteo, también conocida como combinatoria, es una rama de las matemáticas que se ocupa de contar, organizar y clasificar objetos en conjuntos finitos. Esta disciplina abarca una amplia variedad de técnicas y conceptos que se utilizan para resolver problemas de enumeración en diversas áreas de las matemáticas, la informática, la estadística y otras disciplinas científicas. Algunos de los conceptos fundamentales de la teoría de conteo incluyen:
+  \begin{enumerate}[label=2.\arabic*] % Aquí definimos que siga la numeración de la sección
+    \item \textbf{Principio de la multiplicación:} Este principio establece que si un evento se puede realizar de \( m \) maneras diferentes y, una vez realizado, otro evento se puede realizar de \( n \) maneras diferentes, entonces los dos eventos se pueden realizar en \( m \times n \) maneras diferentes.
+    \item \textbf{Principio de la adición:} Este principio establece que si un evento se puede realizar de \( m \) maneras diferentes o de \( n \) maneras diferentes, entonces el evento se puede realizar de \( m + n \) maneras diferentes.
+    \item \textbf{Permutaciones:} Las permutaciones son arreglos ordenados de objetos en los que el orden importa. El número de permutaciones de \( n \) objetos distintos tomados de \( r \) en \( r \) se denota como \( P(n, r) \) y se calcula como \( P(n, r) = \frac{n!}{(n - r)!} \), donde \( n! \) representa el factorial de \( n \).
+    \item \textbf{Combinaciones:} Las combinaciones son selecciones no ordenadas de objetos en las que el orden no importa. El número de combinaciones de \( n \) objetos distintos tomados de \( r \) en \( r \) se denota como \( C(n, r) \) y se calcula como \( C(n, r) = \frac{n!}{r!(n - r)!} \).
+    \item \textbf{Principio del palomar:} Este principio establece que si \( n \) palomas se colocan en \( m \) palomares y \( n > m \), entonces al menos un palomar contendrá más de una paloma.
+  \end{enumerate}
+  % Cita aquí:
+  
+  Según Salgado H. y Tigueros M. (2008) El concepto de orden y repetición tiene un significado muy claro para todos fuera de las matemáticas. Estos términos se usan en el lenguaje natural y se comprenden en ese contexto. Pero al empezar el estudio formal de las ordenaciones y las combinaciones, los alumnos no distinguen las características relevantes del problema y tienen serias dificultades para resolverlo. Entonces, la manera como se cuenta se convierte en un problema didáctico, pues las ideas de orden y repetición se entienden fuera del ámbito escolar, pero cuando se abordan con determinados conjuntos, se pierde la transparencia que tienen en otros ámbitos
+
+  \begin{flushright}
+    \textit{Salgado H., Tigueros M. (2008). Conteo, una propuesta didáctica y si análisis.}
+  \end{flushright}
+
+Con respecto a estas ideas podemos entender que:
+
+  \begin{enumerate}
+    \item El principio de la multiplicación y la adición son fundamentales para contar y organizar eventos en la teoría de conteo, permitiendo calcular el número total de posibles resultados.
+    \item Las permutaciones y combinaciones son técnicas esenciales para contar arreglos ordenados y selecciones no ordenadas de objetos, respectivamente, lo que resulta útil en problemas de ordenación y selección.
+    \item El principio del palomar es un concepto importante que se aplica en situaciones donde la distribución de objetos en contenedores es relevante, lo que ayuda a predecir la ocurrencia de eventos específicos.
+    \item La teoría de conteo es una herramienta poderosa que se aplica en diversas áreas, como la probabilidad, la estadística, la informática y la ingeniería, para resolver problemas de enumeración y organización de objetos.
+  \end{enumerate}
+
+  A continuación se presentan algunos ejercicios prácticos sobre la teoría de conteo:
+
+  \newpage
+  \subsection{Guía práctica y definiciones sobre Teoría de Conteo}
+  \begin{multicols}{2}
+    \begin{center}
+      \textbf{1. Permutación:}
+    \end{center}
+    Es un arreglo ordenado de objetos. Se denota como \( P(n, r) \) y se calcula como \( P(n, r) = \dfrac{n!}{(n - r)!} \).
+
+    \textbf{Ejercicio:} Dado un grupo de 6 amigos (A, B, C, D, E, F), que hacen fila para ingresar a una sala de cine, ¿de cuántas maneras diferentes pueden formarse?
+
+    \textbf{Solución:} 
+     
+    Si los amigos se forman en una fila, se trata de una permutación de 6 objetos tomados de 6 en 6. Por lo tanto, el número de maneras diferentes de formar la fila es:
+
+    \begin{align*}
+      P(6, 6) & = \dfrac{6!}{(6 - 6)!} \\
+      & = \dfrac{720}{0!} \\
+      & = 720
+    \end{align*}
+
+    Cómo se puede obersevar, hay 720 maneras diferentes de formar la fila. esto porque cada amigo puede ocupar una posición diferente en la fila y además el orden importa.
+
+    \begin{center}
+      \textbf{2. Principio de multiplicación:}
+    \end{center}
+    Si un evento se puede realizar de \( m \) maneras diferentes y, una vez realizado, otro evento se puede realizar de \( n \) maneras diferentes, entonces los dos eventos se pueden realizar en \( m \times n \) maneras diferentes.
+  
+    \textbf{Ejercicio:} Un estudiante tiene 3 camisas y 4 pantalones diferentes. ¿De cuántas maneras diferentes puede vestirse?
+    
+    \textbf{Solución:} Dado que el estudiante puede elegir una camisa de 3 maneras diferentes y un pantalón de 4 maneras diferentes, el número total de maneras diferentes de vestirse es:
+
+    \[ 3 \times 4 = 12 \]
+
+    Cómo se puede observar, el estudiante puede vestirse de 12 maneras diferentes combinando las camisas y los pantalones disponibles. Esto es así porque el estudiante puede elegir una camisa y un pantalón de manera independiente.
+
+    \begin{center}
+      \textbf{3. Combinación:}
+    \end{center}
+    
+    Es una selección no ordenada de objetos. Se denota como \( C(n, r) \) y se calcula como \( C(n, r) = \dfrac{n!}{r!(n - r)!} \).
+    
+    \textbf{Ejercicio:} Dado un grupo de 5 estudiantes (A, B, C, D, E), ¿de cuántas maneras diferentes se pueden seleccionar 3 estudiantes para formar un equipo?
+    
+    \textbf{Solución:} Dado que se trata de una combinación de 5 estudiantes tomados de 3 en 3, el número de maneras diferentes de formar el equipo es: 
+
+    \[ C(5, 3) = \dfrac{5!}{3!(5 - 3)!} = 10 \]
+
+    Por lo tanto, hay 10 maneras diferentes de seleccionar un equipo de 3 estudiantes de un grupo de 5. Esto es así porque el orden de selección no importa, es decir, integrantes en un mismo grupo forman el mismo equipo.
+
+    \begin{center}
+      \textbf{4. Principio de adición:}
+    \end{center}
+    
+    Si un evento se puede realizar de \( m \) maneras diferentes o de \( n \) maneras diferentes, entonces el evento se puede realizar de \( m + n \) maneras diferentes.
+    
+    \textbf{Ejercicio:} Una tienda ofrece dos promociones: un 20\% de descuento en todos los productos o un 10\% de descuento adicional en productos seleccionados. ¿Cuántas opciones diferentes tiene un cliente al comprar un producto?
+    
+    \textbf{Solución:} Dado que el cliente puede elegir una de las dos promociones, el número total de opciones diferentes es: 
+
+    \[ 1 + 1 = 2 \]
+
+    Por lo tanto, el cliente tiene 2 opciones diferentes al comprar un producto: un 20\% de descuento en todos los productos o un 10\% de descuento adicional en productos seleccionados. Esto es así porque el cliente puede elegir una de las dos promociones disponibles.
+
+  \end{multicols}
+
+\newpage
+
+\section{Sobre la teoría de series y susesiones}
+
+  Según Bruzual R. y Dominguez M. (2005) La idea de sucesión en $\mathbb{R}$ es la de una lista de puntos de $\mathbb{R}$. Son ejemplos de sucesiones:
+
+  \begin{itemize}
+      \item $1, 1, 2, 3, 5, 8, 13, \dots$
+      \item $2, 4, 6, 8, 10, \dots$
+      \item $1, 4, 9, 25, 36, \dots$
+      \item $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots$
+      \item $1, 10, 100, 1000, 10\,000, \dots$
+      \item $1, -1, 1, -1, 1, \dots$
+  \end{itemize}
+  
+  Lo importante acerca de una sucesión es que a cada número natural $n$ le corresponde un punto de $\mathbb{R}$, por esto damos la siguiente definición.
+  
+  \textbf{Entonces,} Una sucesión es una función de $\mathbb{N}$ en $\mathbb{R}$.
+  
+  Si $a : \mathbb{N} \to \mathbb{R}$ es una sucesión, en vez de escribir $a(1), a(2), a(3), \dots$ suele escribirse $a_1, a_2, a_3, \dots$.
+  
+  La misma sucesión suele designarse mediante un símbolo tal como
+  
+  \begin{center}
+    $\{a_n\}$, $(a_n)$ o $\{a_1, a_2, \dots\}$.
+  \end{center}
+  
+  También usaremos $\{a_n\}$, $(a_n)$ o $\{a_1, a_2, \dots\}$.
+  
+  \textbf{Ejemplo 1.2.} La sucesión de Fibonacci $\{a_n\}$ está definida por
+  
+  \[
+  a_1 = a_2 = 1, \quad a_n = a_{n-1} + a_{n-2}.
+  \]
+  
+
+\begin{flushright}
+  \textit{Bruzual R., Dominguez M. (2005). Introducción a las sucesiones y series numéricas}
+\end{flushright}
+  
+  En resumen, las series y sucesiones son conceptos matemáticos fundamentales que se utilizan para representar y analizar secuencias de números en matemáticas. Las sucesiones son listas ordenadas de números que siguen un patrón específico, mientras que las series son sumas de términos de una sucesión. Estos conceptos son esenciales en el cálculo, la teoría de números, la probabilidad y otras áreas de las matemáticas, y se utilizan para modelar y resolver una amplia variedad de problemas matemáticos.
+
+  \subsection{Algunas definiciones importantes sobre series y sucesiones}
+
+  \begin{multicols}{2}
+    \begin{center}
+      \textbf{1. Serie Aritmética:}
+    \end{center}
+    Una serie aritmética es una serie en la que la diferencia entre cada par de términos sucesivos es constante. La fórmula general para una serie aritmética es:
+
+    \[ S_n = \dfrac{n}{2}(a_1 + a_n) \]
+
+    donde \( S_n \) es la suma de los primeros \( n \) términos, \( a_1 \) es el primer término y \( a_n \) es el último término.
+    
+    \begin{center}
+      \textbf{2. Serie Geométrica:}
+    \end{center}
+    Una serie geométrica es una serie en la que cada término es igual al anterior multiplicado por una constante llamada razón. La fórmula general para una serie geométrica es:
+
+    \[ S_n = \dfrac{a_1(1 - r^n)}{1 - r} \]
+
+    donde \( S_n \) es la suma de los primeros \( n \) términos, \( a_1 \) es el primer término y \( r \) es la razón.
+    
+    \begin{center}
+      \textbf{3. Serie armónica:}
+    \end{center}
+    La serie armónica es una serie en la que cada término es el inverso del número natural correspondiente. La fórmula general para la serie armónica es:
+
+    \[ S_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dots + \dfrac{1}{n} \]
+
+    donde \( S_n \) es la suma de los primeros \( n \) términos.
+
+    \begin{center}
+      \textbf{4. Sucesión de Fibonacci:}
+    \end{center}
+    La sucesión de Fibonacci es una sucesión en la que cada término es la suma de los dos términos anteriores. La sucesión comienza con 0 y 1, y los términos siguientes se calculan sumando los dos términos anteriores. La sucesión de Fibonacci es:
+
+    \[ 0, 1, 1, 2, 3, 5, 8, 13, 21, \dots \]
+
+    donde cada término es la suma de los dos términos anteriores.
+    
+    \begin{center}
+      \textbf{5. Serie de Taylor:}
+    \end{center}
+    La serie de Taylor es una serie infinita que representa una función como una suma infinita de términos. La serie de Taylor se utiliza para aproximar funciones mediante polinomios y es una herramienta fundamental en el cálculo y el análisis matemático. Esta se puede expresar como:
+
+    \begin{align*}
+      f(x) & = f(a) + f'(a)(x - a) + \frac{f''(a)}{2!}(x - a)^2 + \dots \nonumber \\
+      & = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)^n
+    \end{align*}
+
+    donde \( f(x) \) es la función, \( a \) es el punto de expansión y \( f'(a) \) es la derivada de la función en el punto \( a \).
+
+  \end{multicols}
+
+  \newpage
+
+  \section{Series y sucesiones aplicadas por herramientas IA}
+
+  \subsection{CUDA de Nvidia y la serie de Taylor}
+
+  La serie de Taylor es una herramienta matemática fundamental en el cálculo y el análisis matemático, que se utiliza para aproximar funciones mediante polinomios. En el contexto de la computación de alto rendimiento, la serie de Taylor es una técnica importante para acelerar el cálculo de funciones matemáticas complejas en GPUs. NVIDIA CUDA es una plataforma de computación paralela que permite a los desarrolladores aprovechar la potencia de las GPUs para acelerar el procesamiento de datos y cálculos numéricos.
+
+  \subsection{PyTorch, TensorFlow y la sucesión de Fibonacci}
+
+  La sucesión de Fibonacci es una sucesión matemática en la que cada término es la suma de los dos términos anteriores. En el campo del aprendizaje profundo y las redes neuronales, las bibliotecas de Python como PyTorch y TensorFlow se utilizan para implementar modelos de redes neuronales y realizar cálculos numéricos complejos. Estas bibliotecas permiten a los desarrolladores crear modelos de aprendizaje profundo que pueden aprender y representar relaciones complejas en los datos, lo que los hace ideales para aplicaciones de inteligencia artificial y aprendizaje automático.
+
+\subsection{Análisis de la aplicación}
+
+La serie de Taylor y la sucesión de Fibonacci son conceptos matemáticos fundamentales que se aplican en diversas áreas de la informática y la inteligencia artificial. En el contexto de la computación de alto rendimiento, la serie de Taylor se utiliza para acelerar el cálculo de funciones matemáticas complejas en GPUs, lo que permite a los desarrolladores aprovechar la potencia de las GPUs para realizar cálculos numéricos de manera eficiente. Por otro lado, la sucesión de Fibonacci se utiliza en el campo del aprendizaje profundo y las redes neuronales para modelar relaciones complejas en los datos y crear modelos de aprendizaje profundo que pueden aprender y representar patrones en los datos.
+
+\begin{enumerate}
+  \item \textbf{Productos de NVIDIA:} La aplicación de la serie de Taylor en las GPUs de NVIDIA permite acelerar el cálculo en paralelo de funciones matemáticas complejas, lo que es fundamental para aplicaciones de computación de alto rendimiento en campos como la física, la ingeniería y la ciencia de datos. Estos son usados finalmente en modelos predictivos y de análisis de datos.
+  
+  \item \textbf{Bibliotecas de Python:} Las bibliotecas de Python como PyTorch y TensorFlow permiten a los desarrolladores implementar modelos de redes neuronales y realizar cálculos numéricos complejos en el campo del aprendizaje profundo y la inteligencia artificial. Estas bibliotecas son esenciales para la creación de modelos de aprendizaje profundo que pueden aprender y representar relaciones complejas en los datos, lo que es fundamental para aplicaciones de inteligencia artificial y aprendizaje automático.
+  
+  \item \textbf{Renderizado en tiempo de ejecución:} La aplicación de estas herramientas en el cálculo de matrices de píxeles y la representación de gráficos en tiempo real es fundamental para aplicaciones de renderizado en tiempo de ejecución, como videojuegos, simulaciones y visualizaciones interactivas. La capacidad de acelerar el cálculo de funciones matemáticas complejas en GPUs permite una representación visual más rápida y realista de los datos, lo que mejora la experiencia del usuario y la eficiencia del sistema.
+  
+\end{enumerate}
+
+\subsection{\textbf{¿Cómo se usa en la práctica?}}
+
+Un ejemplo de cómo se aplican estos conceptos en la práctica es en el entrenamiento de redes neuronales artificiales. Las bibliotecas de Python como PyTorch y TensorFlow permiten a los desarrolladores implementar modelos de redes neuronales y realizar cálculos numéricos complejos para entrenar y optimizar los modelos. La serie de Taylor se utiliza en el cálculo de las derivadas de las funciones de activación y las funciones de pérdida en las redes neuronales, lo que es fundamental para el entrenamiento y la optimización de los modelos. Al acelerar el cálculo de estas funciones matemáticas complejas en GPUs, se mejora la eficiencia del entrenamiento de las redes neuronales y se reduce el tiempo de entrenamiento, lo que permite a los desarrolladores crear modelos de aprendizaje profundo más rápidos y precisos.
+
+\begin{enumerate}
+  \item \textbf{Serie de Taylor:} 
+  \begin{align*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \frac{f^{(3)}(x_0)}{3!}(x - x_0)^3 + \cdots
+  \end{align*}
+  \textbf{Ejemplo de la serie de Taylor para la función exponencial $e^x$:} 
+
+  \begin{center}
+    $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$
+  \end{center}
+
+  \item \textbf{Sucesión en Gradiente Descendente Estocástico (SGD):} 
+  
+  En el entrenamiento de redes neuronales, el algoritmo de Gradiente Descendente Estocástico (SGD) se utiliza para optimizar los pesos de la red mediante la actualización iterativa de los pesos en función del gradiente de la función de pérdida. La actualización de los pesos en SGD se realiza de la siguiente manera:
+
+  \begin{align*}
+    \theta_{t+1} = \theta_t - \eta \nabla_{\theta} L(\theta_t)
+  \end{align*}
+
+\end{enumerate}
+
+\newpage
+
+\section{Conclusiones}
+
+La teoría de conteo, las series y las sucesiones son conceptos matemáticos fundamentales que se aplican en diversas áreas de las matemáticas, la informática y la inteligencia artificial. Estos conceptos son esenciales para la resolución de problemas de enumeración, cálculo y modelado matemático, y se utilizan en una amplia variedad de aplicaciones prácticas. La teoría de conteo proporciona herramientas poderosas para contar y organizar objetos en conjuntos finitos, mientras que las series y sucesiones se utilizan para representar y analizar secuencias de números en matemáticas. En el campo de la inteligencia artificial y el aprendizaje profundo, estos conceptos se aplican en el entrenamiento de redes neuronales, la optimización de modelos y el cálculo de funciones matemáticas complejas. En resumen, la teoría de conteo, las series y las sucesiones son conceptos matemáticos fundamentales que desempeñan un papel crucial en la resolución de problemas matemáticos y la creación de modelos matemáticos en diversas áreas de la ciencia y la tecnología.
+
+\section{Bibliografía}
+
+\begin{enumerate}[label=6.\arabic*]
+  \item Salgado H., Tigueros M. (2008). Conteo, una propuesta didáctica y su análisis.
+  \item Bruzual R., Dominguez M. (2005). Introducción a las sucesiones y series numéricas.  
+\end{enumerate}
+\end{document}
