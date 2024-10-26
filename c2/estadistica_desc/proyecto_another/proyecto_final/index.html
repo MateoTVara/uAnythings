@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Viewer</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    #pdfContainer {
+      width: 100%;
+    }
+    canvas {
+      border: 1px solid black;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="pdfContainer"></div>
+
+  <!-- PDF.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.6.172/pdf.min.js"></script>
+
+  <script>
+    const url = './InformeFinalEDP.pdf';
+    const container = document.getElementById('pdfContainer');
+    const scale = 1.5; // Escala del PDF
+    const lastPageKey = 'lastPage'; // Clave para el almacenamiento local
+
+    // Cargar la última página desde localStorage
+    let lastPage = parseInt(localStorage.getItem(lastPageKey)) || 1;
+
+    // Función para renderizar una página
+    function renderPage(pageNum) {
+      const loadingTask = pdfjsLib.getDocument(url);
+      loadingTask.promise.then(function(pdf) {
+        pdf.getPage(pageNum).then(function(page) {
+          const viewport = page.getViewport({ scale: scale });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+          container.appendChild(canvas);
+        });
+      }, function(reason) {
+        console.error(reason);
+      });
+    }
+
+    // Cargar el PDF y renderizar la última página
+    const loadingTask = pdfjsLib.getDocument(url);
+    loadingTask.promise.then(function(pdf) {
+      const totalPages = pdf.numPages;
+      console.log('PDF cargado. Número de páginas: ' + totalPages);
+
+      // Renderizar la última página
+      renderPage(lastPage);
+
+      // Configurar evento para guardar la página actual antes de la recarga
+      window.addEventListener('beforeunload', function() {
+        localStorage.setItem(lastPageKey, lastPage);
+      });
+
+      // Habilitar cambio de página (navegación)
+      const nextPageButton = document.createElement('button');
+      nextPageButton.textContent = 'Siguiente Página';
+      nextPageButton.onclick = function() {
+        if (lastPage < totalPages) {
+          lastPage++;
+          container.innerHTML = ''; // Limpiar el contenedor
+          renderPage(lastPage);
+        }
+      };
+      document.body.appendChild(nextPageButton);
+
+      const prevPageButton = document.createElement('button');
+      prevPageButton.textContent = 'Página Anterior';
+      prevPageButton.onclick = function() {
+        if (lastPage > 1) {
+          lastPage--;
+          container.innerHTML = ''; // Limpiar el contenedor
+          renderPage(lastPage);
+        }
+      };
+      document.body.appendChild(prevPageButton);
+    }, function(reason) {
+      console.error(reason);
+    });
+  </script>
+</body>
+</html>

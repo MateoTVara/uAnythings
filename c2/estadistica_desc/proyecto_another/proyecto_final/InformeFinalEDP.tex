@@ -4,18 +4,23 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usepackage{titling}
+\usepackage{array} % Para mejorar el manejo de columnas
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{cancel}
+\usepackage{subcaption} % Para subtítulos de tablas
+\usepackage{float} % Para el manejo de posiciones de tablas
 \usepackage{pgfplots}
 \usepackage{hyperref}
 \pgfplotsset{compat=1.18}
 \usepackage{titlesec} % Para personalizar títulos
 \usepackage{tocloft}  % Para mejorar el índice
 \usepackage{setspace} % Para controlar el espaciado
+\usepackage{caption} % Para mejorar los captions
+
 
 % Configuración de Fancyhdr para encabezados y pies de página
 \pagestyle{fancy}
@@ -434,7 +439,7 @@
 \begin{analisisDescriptivo}
 
   \section{Análisis Descriptivo}
-
+  \vspace{-0.5cm}
   Se presenta un análisis descriptivo de los datos recolectados sobre el rendimiento académico de los estudiantes de la UTP en relación con el uso de herramientas de inteligencia artificial. Se calculan de acuerdo a los temas vistos en clase.
   
 \end{analisisDescriptivo}
@@ -443,7 +448,7 @@
 \subsection{Género de la muestra:}
   
   \textbf{Tabla de frecuencias:}
-
+  
   El siguiente cuadro muestra la distribución de género de los participantes en la muestra, dividiéndose en masculino y femenino, así mismo se muestra la frecuencua absoluta, acumulada, relativa porcentual y relativa porcentual acumulada.
 
   \begin{multicols}{2}
@@ -455,6 +460,7 @@
             x_i = \frac{L_i + L_s}{2}
         \end{equation*}
     \end{center}
+    \vspace{-0.5cm}
     Donde:
     \begin{itemize}
         \item $L_i$: Límite inferior de la clase.
@@ -469,7 +475,7 @@
           f_i = \sum_{i=1}^{n} x_i
         \end{equation*}
     \end{center}
-    \vspace{-0.5cm}
+    \vspace{-0.7cm}
     Donde:
     \begin{itemize}
         \item $x_i$: Marca de clase.
@@ -484,6 +490,7 @@
         F_i = \sum_{i=1}^{n} f_i
       \end{equation*}
     \end{center}
+    \vspace{-0.5cm}
     Donde:
     \begin{itemize}
         \item $f_i$: Frecuencia absoluta.
@@ -519,7 +526,7 @@
     \end{itemize}
     \end{enumerate}
   \end{multicols}
-
+  \vspace{-0.5cm}
   Finalmente se muestra la tabla de frecuencias:
 
   \renewcommand{\arraystretch}{1.5} % Ajusta la altura de las filas
@@ -536,7 +543,129 @@
     \label{tab:genero-frecuencias}
 \end{table}
 
+\textbf{Interpretación de resultados:}
 
+La tabla de frecuencias muestra que el 66.23\% de los participantes en la muestra son de género masculino, mientras que el 33.77\% son de género femenino. La distribución de género en la muestra refleja una mayor representación de estudiantes masculinos en comparación con las estudiantes femeninas.
+
+\newpage
+
+\subsection{Carrera a la que pertenecen los estudiantes:}
+
+A continuación se muestra un cuadro con los datos de cualitativos de las carreras de los estudiantes pertenecientes a muestra, se pretender hacer una ordenación de los mismos, generar una tabla de frecuencias y establecer una gráfica representativa.
+
+\begin{table}[H]
+  \centering
+  \hspace*{-2cm} % Mueve la primera tabla más a la izquierda
+  \begin{minipage}{0.35\textwidth} % Ajustar el ancho según sea necesario
+    \centering
+    \begin{tabular}{l @{\hskip 0.5cm} l}
+      \hline
+      \textbf{Carrera} & \textbf{Acrónimo} \\ \hline
+      Ingeniería       & \small{ING}                \\ \hline
+      Psicología       & \small{PSI}                \\ \hline
+      Comunicaciones   & \small{COM}                \\ \hline
+      Arquitectura     & \small{ARQ}                \\ \hline
+      Derecho          & \small{DER}                \\ \hline
+      Administración   & \small{ADM}                \\ \hline
+      Negocios         & \small{NEG}                \\ \hline
+      Medicina         & \small{MED}                \\ \hline
+      Gastronomía      & \small{GAS}               \\ \hline
+    \end{tabular}
+    \caption{Carreras y acrónimos de los estudiantes en la muestra.}
+    \label{tab:carreras-acronimos}
+  \end{minipage}
+  \hspace{0.2cm} % Espacio horizontal entre las tablas
+  \begin{minipage}{0.45\textwidth} % Ajustar el ancho según sea necesario
+    \centering
+    \caption{Representación de Carreras}
+    \begin{tabular}{|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|>{\footnotesize}m{0.7cm}|}
+      \hline
+      \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} \\ \hline
+      \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} \\ \hline
+      \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} \\ \hline
+      \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} \\ \hline
+      \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{ING}} & \footnotesize{\textbf{DER}} & \footnotesize{\textbf{DER}} & \footnotesize{\textbf{DER}} & \footnotesize{\textbf{PSI}} & \footnotesize{\textbf{PSI}} \\ \hline
+      \footnotesize{\textbf{PSI}} & \footnotesize{\textbf{PSI}} & \footnotesize{\textbf{PSI}} & \footnotesize{\textbf{MED}} & \footnotesize{\textbf{COM}} & \footnotesize{\textbf{ARQ}} & \footnotesize{\textbf{ARQ}} & \footnotesize{\textbf{ADM}} & \footnotesize{\textbf{ADM}} & \footnotesize{\textbf{ADM}} \\ \hline      
+      \footnotesize{\textbf{ADM}} & \footnotesize{\textbf{NEG}} & \footnotesize{\textbf{NEG}} & \footnotesize{\textbf{NEG}} & \footnotesize{\textbf{NEG}} & \footnotesize{\textbf{NEG}} & \footnotesize{\textbf{GAS}} & & & \\ \hline
+    \end{tabular}
+  \end{minipage}
+\end{table}
+
+\textbf{Tabla de frecuencias:}
+
+El siguiente cuadro muestra la distribución de carreras de los participantes en la muestra, dividiéndose en las diferentes opciones de carrera, así mismo se muestra la frecuencia absoluta, acumulada, relativa porcentual y relativa porcentual acumulada.
+
+% Tenemos estos datos:
+
+% Ing: 55
+% Der: 3
+% Psi: 5
+% Med: 1
+% Com: 1
+% Arq: 2
+% Adm: 4
+% Neg: 5
+% Gast: 1
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l @{\hskip 0.5cm} c @{\hskip 0.5cm} c @{\hskip 0.5cm} c @{\hskip 0.5cm} c}
+    \hline
+    \textbf{Carrera} & \textbf{$f_i$} & \textbf{$F_i$} & \textbf{$h_i$ (\%)} & \textbf{$H_i$ (\%)} \\ \hline
+    Ingeniería       & 55             & 55             & 71.43               & 71.43               \\ \hline
+    Derecho          & 3              & 58             & 3.90                & 75.32               \\ \hline
+    Psicología       & 5              & 63             & 6.49                & 81.82               \\ \hline
+    Medicina         & 1              & 64             & 1.30                & 83.12               \\ \hline
+    Comunicaciones   & 1              & 65             & 1.30                & 84.42               \\ \hline
+    Arquitectura     & 2              & 67             & 2.60                & 87.01               \\ \hline
+    Administración   & 4              & 71             & 5.19                & 92.21               \\ \hline
+    Negocios         & 5              & 76             & 6.49                & 98.70               \\ \hline
+    Gastronomía      & 1              & 77             & 1.30                & 100.00              \\ \hline
+    Total            & 77             &                & 100.00              &                     \\ \hline
+  \end{tabular}
+  \caption{Distribución de Carreras de los Estudiantes en la Muestra.}
+  \label{tab:carreras-frecuencias}
+\end{table}
+
+\textbf{Gráfico estadístico:}
+
+A continuación se muestra un gráfico de barras que representa la distribución de carreras de los estudiantes en la muestra, permitiendo visualizar la cantidad de participantes por cada opción de carrera.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+      \begin{axis}[
+          width=0.8\textwidth, % Ancho del gráfico
+          height=0.5\textheight, % Altura del gráfico
+          xlabel={Carrera}, % Etiqueta del eje X
+          ylabel={Frecuencia Absoluta}, % Etiqueta del eje Y
+          xtick=data, % Ticks del eje X
+          ytick={0, 10, 20, 30, 40, 50, 60}, % Ticks del eje Y
+          ymin=0, % Límite inferior del eje Y
+          ymax=60, % Límite superior del eje Y
+          bar width=0.5cm, % Ancho de las barras
+          enlarge x limits=0.15, % Ampliar límites en el eje X
+          ylabel near ticks, % Posicionar la etiqueta del eje Y cerca de los ticks
+          xlabel near ticks, % Posicionar la etiqueta del eje X cerca de los ticks
+          grid=major, % Mostrar la cuadrícula
+          title={Distribución de Carreras de los Estudiantes en la Muestra}, % Título del gráfico
+          xticklabel style={align=center}, % Alinear los ticks del eje X
+          symbolic x coords={ING, DER, PSI, MED, COM, ARQ, ADM, NEG, GAS}, % Etiquetas del eje X
+      ]
+          \addplot[
+              ybar,
+              color=blue % Color de las barras
+          ] 
+          coordinates {(ING, 55) (DER, 3) (PSI, 5) (MED, 1) (COM, 1) (ARQ, 2) (ADM, 4) (NEG, 5) (GAS, 1)};
+      \end{axis}
+  \end{tikzpicture}
+  \caption{Distribución de Carreras de los Estudiantes en la Muestra.}
+  \label{fig:carreras-frecuencias}
+\end{figure}
+
+\textbf{Interpretación de resultados:}
+
+La tabla de frecuencias y el gráfico de barras muestran que la mayoría de los participantes en la muestra pertenecen a la carrera de Ingeniería, con un 71.43\% de representación, seguida por Negocios con un 6.49\% y Psicología con un 6.49\%. Las carreras de Medicina, Comunicaciones y Gastronomía tienen la menor representación en la muestra, con un 1.30\% cada una.
 
 \newpage
 
@@ -556,5 +685,6 @@
 
 \end{thebibliography}
 
-  
+
+
 \end{document}
